@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('create.create');
 });
+Route::get('/create',"memberController@create");
+Route::get('/login',"memberController@login");
+
+// Route::get('/', "HomeController@create");
