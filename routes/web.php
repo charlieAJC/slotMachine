@@ -43,3 +43,11 @@ Route::post('/login',"memberController@login");
 
 
 // Route::get('/', "HomeController@create");
+
+// ------景翔的拉霸機測試用route------
+Route::get('slot', function () {
+    return view('slot.slot');
+});
+
+Route::post('slot', "SlotController@slot");
+// ------景翔的拉霸機測試用route------
