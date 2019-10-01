@@ -9,7 +9,6 @@ function increse(i) {
         coin.value = coin.value - increseMoney;
     } else {
         alert("請投幣");
-        lockClick();
     }
 }
 
@@ -83,24 +82,24 @@ function Calculation() {
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
 var result = 0;
-var temp = 0 ;
+var temp = 0;
 function run() {
-    var t = 30;
+    var t = 20;
+    var a = 1;
     let startGame = setTimeout(function go() {
         for (j = 1; j <= 28; j++) { //把所有格子改成白底
             document.getElementById(j).className = "normal";
         }
         document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成紅底
         runEndNum++;
-        if (runEndNum >= 28 && t<=1000) {
+        if (runEndNum >= 28 && t <= 1200) {
             runEndNum = 0;
         }
-        startGame = setTimeout(go, t);
-        t += 30;
+        a *= 1.001;
+        t = t * a;
         console.log(t);
-        console.log(runEndNum);
-        console.log(randNum);
-        if (t >= 1000 && randNum == runEndNum) {
+        startGame = setTimeout(go, t);
+        if (t >= 1200 && randNum == runEndNum) {
             clearTimeout(startGame);
             coin.value = parseInt(coin.value) + result; // 中獎金額返還
             clearAdjust();
@@ -111,9 +110,11 @@ function run() {
 
 // 鎖定/解鎖按鍵
 var isClick = false;
+
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
+    document.getElementById("finishButton").disabled = isClick ? true : false;
 }
 
 // 遊戲開始
@@ -126,15 +127,16 @@ function btnStart() {
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
-        randNum = Math.floor(Math.random() * 28 + 1);  // 接收一個亂數 1~28
+        randNum = Math.floor(Math.random() * 28 + 1); // 接收一個亂數 1~28
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }
+        console.log(randNum);
         Calculation();
         temp = parseInt(coin.value) + result // 如中斷遊戲則先返還 temp 至玩家帳戶
         run();
         //如無中斷應從玩家帳戶取回
-        temp = 0 ;
+        temp = 0;
     } else {
         lockClick();
         alert("請下注");
@@ -145,7 +147,7 @@ function btnStart() {
 function btnFinish() {
     coinAdjust();
     totall();
-    coin.value = parseInt(coin.value) + totallInsert ;
+    coin.value = parseInt(coin.value) + totallInsert;
     clearAdjust();
     for (i = 0; i <= 8; i++) {
         document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
