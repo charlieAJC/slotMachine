@@ -44,18 +44,23 @@ $(document).ready(function () {
                     password: $('#password').val()
                 },
                 success: function (e) {
-                    console.log(e);
-                    // if (e == "success") {
-                    //     // view("修改成功！"); 
-                    //     alert("登入成功！");
-                    //     window.location.href = "index";
-                    // } else {
-                    //     view(e);
-                    //     alert("false");
-                    // }
+                    // console.log(e);
+                    if (e == "success") {
+                        // view("修改成功！"); 
+                        alert("登入成功！");
+                        window.location.href = "index";
+                    } else {
+                        view(e);
+                        alert("false");
+                    }
                 }
             });
 
         }
     })
+
+    $("#index").click(function () {
+        window.location.href='index';
+    })
+
 });

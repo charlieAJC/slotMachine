@@ -13,8 +13,11 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">    
     <!-- Custom styles for this template -->
-    <link href="{{ asset('css/register.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/login.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/login.css')}}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/carousel.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/album.css')}}" rel="stylesheet">
+
 </head>
 
 <body>
