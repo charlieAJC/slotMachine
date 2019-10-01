@@ -83,6 +83,7 @@ function Calculation() {
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
 var result = 0;
+var temp = 0 ;
 function run() {
     var t = 30;
     let startGame = setTimeout(function go() {
@@ -101,7 +102,6 @@ function run() {
         console.log(randNum);
         if (t >= 1000 && randNum == runEndNum) {
             clearTimeout(startGame);
-            Calculation();
             coin.value = parseInt(coin.value) + result; // 中獎金額返還
             clearAdjust();
             lockClick();
@@ -114,7 +114,6 @@ var isClick = false;
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
-    document.getElementById("finishButton").disabled = isClick ? true : false;
 }
 
 // 遊戲開始
@@ -127,12 +126,17 @@ function btnStart() {
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
-        randNum = Math.floor(Math.random() * 28 + 1);
+        randNum = Math.floor(Math.random() * 28 + 1);  // 接收一個亂數 1~28
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }
+        Calculation();
+        temp = parseInt(coin.value) + result // 如中斷遊戲則先返還 temp 至玩家帳戶
         run();
+        //如無中斷應從玩家帳戶取回
+        temp = 0 ;
     } else {
+        lockClick();
         alert("請下注");
     }
 }
