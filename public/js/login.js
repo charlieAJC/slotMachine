@@ -38,7 +38,7 @@ $(document).ready(function () {
             });
             $.ajax({
                 type: "post",
-                url: "index/show",
+                url: "login",
                 data: {
                     account: $('#account').val(),
                     password: $('#password').val()
@@ -46,12 +46,11 @@ $(document).ready(function () {
                 success: function (e) {
                     // console.log(e);
                     if (e == "success") {
-                        // view("修改成功！"); 
                         alert("登入成功！");
-                        window.location.href = "index";
+                        window.location.href = "/";
                     } else {
-                        view(e);
-                        alert("false");
+                        alert("帳號或密碼錯誤");
+                        $("#password").val("");
                     }
                 }
             });

@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand"  href="{{route('index')}}">
+    <a class="navbar-brand"  href="/">
         <img src="img/jackpot.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Slot Machine
     </a>
@@ -30,13 +30,13 @@
                     我的帳號
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('login')}}">登入</a>
-                    <a class="dropdown-item" href="{{route('register')}}">註冊帳號</a>
+                    <a class="dropdown-item" href="login">登入</a>
+                    <a class="dropdown-item" href="register">註冊帳號</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">帳號設定</a>
                 </div>
             </li>
-            <a class="nav-link" href="{{route('index')}}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">購點/儲值</a>

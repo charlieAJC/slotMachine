@@ -43,7 +43,7 @@
 </div> --}}
 
 <div id="form-signin">
-    <form id="user_login" method="POST">
+    {{-- <form id="user_login" method="POST"> --}}
         @csrf
         <br>
         <img class="mb-4" src="img/gambler.png" alt="" width="80" height="80">
@@ -58,7 +58,7 @@
         <button type="button" class="btn btn-light"><a href="/">回首頁</a></button>
 
         <div id="login_success" style="display:none;"></div>
-    </form>
+    {{-- </form> --}}
     <div id="errormsg" style="color: red"></div>
 </div>
 @endsection

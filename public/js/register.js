@@ -63,7 +63,7 @@ $(document).ready(function () {
             });
             $.ajax({
                 type: "post",
-                url: "login/show",
+                url: "create",
                 data: {
                     name: $('#name').val(),
                     account: $('#account').val(),
@@ -72,12 +72,10 @@ $(document).ready(function () {
                 },
                 success: function (e) {
                     if (e == "success") {
-                        // view("修改成功！"); 
                         alert("註冊成功！");
                         window.location.href = "login";
                     } else {
-                        view(e);
-                        alert("false");
+                        alert("帳號已存在");
                     }
                 }
             });

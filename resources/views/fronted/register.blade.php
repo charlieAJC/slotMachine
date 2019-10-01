@@ -4,7 +4,7 @@
 
 @section('content')
 <div id="form-signin">
-    <form id="user_register" method="POST">
+    {{-- <form id="user_register" method="POST"> --}}
         @csrf
         <br>
         <img class="mb-4" src="img/gambler.png" alt="" width="80" height="80">
@@ -15,15 +15,14 @@
         <input type="password" id="password" class="form-control" placeholder="密碼" required><span class='error4'></span><br>
         {{-- <label><input type="checkbox" value="remember-me">記住我</label> --}}
         <button type="button" id="register" class="btn btn-info btn-primary btn-block">送出</button><br>
-        
         <button type="button" id="index" class="btn btn-light"><a href="/">回首頁</a></button>
         <div id="register_success" style="display:none;"></div>
-    </form>
+    {{-- </form> --}}
     <div id="errormsg" style="color: red"></div>
 
 </div>
 
-<div class="container">
+{{-- <div class="container">
     <h2>註冊帳號</h2>
     <form action="/action_page.php" class="needs-validation" novalidate>
       <div class="form-group">
@@ -50,5 +49,5 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  </div>
+  </div> --}}
 @endsection
