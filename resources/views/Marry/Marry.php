@@ -70,102 +70,102 @@
     <div class="table" style="margin: 0px">
         <table>
             <tr>
-                <td id="1"><img src="img/pic1.png"></td>
-                <td id="2"><img src="img/pic2.png"></td>
-                <td id="3"><img src="img/pic2.png"></td>
-                <td id="4"><img src="img/pic3.png"></td>
-                <td id="5"><img src="img/pic3.png"></td>
-                <td id="6"><img src="img/pic3.png"></td>
-                <td id="7"><img src="img/pic4.png"></td>
-                <td id="8"><img src="img/pic4.png"></td>
+                <td id="1"><img src="../../../public/img/Marry/pic1.png"></td>
+                <td id="2"><img src="../../../public/img/Marry/pic2.png"></td>
+                <td id="3"><img src="../../../public/img/Marry/pic2.png"></td>
+                <td id="4"><img src="../../../public/img/Marry/pic3.png"></td>
+                <td id="5"><img src="../../../public/img/Marry/pic3.png"></td>
+                <td id="6"><img src="../../../public/img/Marry/pic3.png"></td>
+                <td id="7"><img src="../../../public/img/Marry/pic4.png"></td>
+                <td id="8"><img src="../../../public/img/Marry/pic4.png"></td>
             </tr>
             <tr>
-                <td id="28"><img src="img/pic9.png"></td>
+                <td id="28"><img src="../../../public/img/Marry/pic9.png"></td>
                 <td colspan="6" rowspan="6">
-                    <img src="img/pic1.png">X5.0
-                    <img src="img/pic2.png">X3.0
-                    <img src="img/pic3.png">X1.5
-                    <img src="img/pic4.png">X1.2<br>
-                    <img src="img/pic5.png">X1.0
-                    <img src="img/pic6.png">X0.8
-                    <img src="img/pic7.png">X0.7
-                    <img src="img/pic8.png">X0.6<br>
-                    <img src="img/pic9.png">X0.5
+                    <img src="../../../public/img/Marry/pic1.png">X5.0
+                    <img src="../../../public/img/Marry/pic2.png">X3.0
+                    <img src="../../../public/img/Marry/pic3.png">X1.5
+                    <img src="../../../public/img/Marry/pic4.png">X1.2<br>
+                    <img src="../../../public/img/Marry/pic5.png">X1.0
+                    <img src="../../../public/img/Marry/pic6.png">X0.8
+                    <img src="../../../public/img/Marry/pic7.png">X0.7
+                    <img src="../../../public/img/Marry/pic8.png">X0.6<br>
+                    <img src="../../../public/img/Marry/pic9.png">X0.5
                 </td>
-                <td id="9"><img src="img/pic4.png"></td>
+                <td id="9"><img src="../../../public/img/Marry/pic4.png"></td>
             </tr>
             <tr>
-                <td id="27"><img src="img/pic9.png"></td>
-                <td id="10"><img src="img/pic5.png"></td>
+                <td id="27"><img src="../../../public/img/Marry/pic9.png"></td>
+                <td id="10"><img src="../../../public/img/Marry/pic5.png"></td>
             </tr>
             <tr>
-                <td id="26"><img src="img/pic9.png"></td>
-                <td id="11"><img src="img/pic5.png"></td>
+                <td id="26"><img src="../../../public/img/Marry/pic9.png"></td>
+                <td id="11"><img src="../../../public/img/Marry/pic5.png"></td>
             </tr>
             <tr>
-                <td id="25"><img src="img/pic9.png"></td>
-                <td id="12"><img src="img/pic5.png"></td>
+                <td id="25"><img src="../../../public/img/Marry/pic9.png"></td>
+                <td id="12"><img src="../../../public/img/Marry/pic5.png"></td>
             </tr>
             <tr>
-                <td id="24"><img src="img/pic8.png"></td>
-                <td id="13"><img src="img/pic6.png"></td>
+                <td id="24"><img src="../../../public/img/Marry/pic8.png"></td>
+                <td id="13"><img src="../../../public/img/Marry/pic6.png"></td>
             </tr>
             <tr>
-                <td id="23"><img src="img/pic8.png"></td>
-                <td id="14"><img src="img/pic6.png"></td>
+                <td id="23"><img src="../../../public/img/Marry/pic8.png"></td>
+                <td id="14"><img src="../../../public/img/Marry/pic6.png"></td>
             </tr>
             <tr>
-                <td id="22"><img src="img/pic8.png"></td>
-                <td id="21"><img src="img/pic8.png"></td>
-                <td id="20"><img src="img/pic7.png"></td>
-                <td id="19"><img src="img/pic7.png"></td>
-                <td id="18"><img src="img/pic7.png"></td>
-                <td id="17"><img src="img/pic7.png"></td>
-                <td id="16"><img src="img/pic6.png"></td>
-                <td id="15"><img src="img/pic6.png"></td>
+                <td id="22"><img src="../../../public/img/Marry/pic8.png"></td>
+                <td id="21"><img src="../../../public/img/Marry/pic8.png"></td>
+                <td id="20"><img src="../../../public/img/Marry/pic7.png"></td>
+                <td id="19"><img src="../../../public/img/Marry/pic7.png"></td>
+                <td id="18"><img src="../../../public/img/Marry/pic7.png"></td>
+                <td id="17"><img src="../../../public/img/Marry/pic7.png"></td>
+                <td id="16"><img src="../../../public/img/Marry/pic6.png"></td>
+                <td id="15"><img src="../../../public/img/Marry/pic6.png"></td>
             </tr>
         </table>
     </div>
     <!-- 轉盤區域結束 -->
     <!-- 投注區域 -->
     <div class="set" style="margin: 5px">
-        <li><img src="img/pic1.png">
+        <li><img src="../../../public/img/Marry/pic1.png">
             <p><button onclick="increse(1)">+</button><button onclick="decrese(1)">-</button></p>
             <p><input type="number" id="coinAdjust1" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/pic2.png">
+        <li><img src="../../../public/img/Marry/pic2.png">
             <p><button onclick="increse(2)">+</button><button onclick="decrese(2)">-</button></p>
             <p><input type="number" id="coinAdjust2" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/pic3.png">
+        <li><img src="../../../public/img/Marry/pic3.png">
             <p><button onclick="increse(3)">+</button><button onclick="decrese(3)">-</button></p>
             <p><input type="number" id="coinAdjust3" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/pic4.png">
+        <li><img src="../../../public/img/Marry/pic4.png">
             <p><button onclick="increse(4)">+</button><button onclick="decrese(4)">-</button></p>
             <p><input type="number" id="coinAdjust4" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/pic5.png">
+        <li><img src="../../../public/img/Marry/pic5.png">
             <p><button onclick="increse(5)">+</button><button onclick="decrese(5)">-</button></p>
             <p><input type="number" id="coinAdjust5" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/pic6.png">
+        <li><img src="../../../public/img/Marry/pic6.png">
             <p><button onclick="increse(6)">+</button><button onclick="decrese(6)">-</button></p>
             <p><input type="number" id="coinAdjust6" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/pic7.png">
+        <li><img src="../../../public/img/Marry/pic7.png">
             <p><button onclick="increse(7)">+</button><button onclick="decrese(7)">-</button></p>
             <p><input type="number" id="coinAdjust7" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/pic8.png">
+        <li><img src="../../../public/img/Marry/pic8.png">
             <p><button onclick="increse(8)">+</button><button onclick="decrese(8)">-</button></p>
             <p><input type="number" id="coinAdjust8" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/pic9.png">
+        <li><img src="../../../public/img/Marry/pic9.png">
             <p><button onclick="increse(9)">+</button><button onclick="decrese(9)">-</button></p>
             <p><input type="number" id="coinAdjust9" value="0" readonly="readonly" /></p>
         </li>
-        <form action="game1.php" method="GET"></form>
+        <form action="" method="GET"></form>
         <p style="margin: 5px">
             <input type="number" id="coin" value="0" readonly="readonly">
             <button onclick="btnInsert()">insert coins</button>
