@@ -17,6 +17,16 @@
                     遊戲
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
+                        {{-- <style>
+                            
+                            ul li {
+                            　display:inline;
+                            }
+                            
+                        </style> --}}
+=======
+>>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
                     <a class="dropdown-item" href="#"><img src="img/jackpot.png" width="30" height="30"></a>
                     <a class="dropdown-item" href="#"><img src="img/jackpot.png" width="30" height="30"></a>
                 </div>
@@ -36,7 +46,11 @@
                     <a class="dropdown-item" href="#">帳號設定</a>
                 </div>
             </li>
+<<<<<<< HEAD
+            <a class="nav-link" href="/">回首頁<span class="sr-only">(current)</span></a>
+=======
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+>>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">購點/儲值</a>
