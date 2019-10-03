@@ -45,6 +45,7 @@ function addNumber() {
         list[i] = i + 1;
     }
 }
+addNumber();
 
 // 產生當次投注金額陣列 coinAdjustList[i]
 var coinAdjustList = new Array(9);
@@ -90,16 +91,20 @@ function run() {
         for (j = 1; j <= 28; j++) { //把所有格子改成白底
             document.getElementById(j).className = "normal";
         }
+
         document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成紅底
         runEndNum++;
-        if (runEndNum >= 28 && t <= 1200) {
+        if (runEndNum >= 28 && t < 500) {
             runEndNum = 0;
         }
-        a *= 1.001;
+
+        a *= 1.0005;
         t = t * a;
+        
         console.log(t);
+        console.log(runEndNum);
         startGame = setTimeout(go, t);
-        if (t >= 1200 && randNum == runEndNum) {
+        if (t > 500 && randNum == runEndNum) {
             clearTimeout(startGame);
             coin.value = parseInt(coin.value) + result; // 中獎金額返還
             clearAdjust();
@@ -121,7 +126,6 @@ function lockClick() {
 var randNum = 0;
 var odds = [5, 3, 1.5, 1.2, 1, 0.8, 0.7, 0.6, 0.5] //賠率
 var typeOf = [1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9] //格子種類
-addNumber(); // 產生格子陣列list[index]其值為1~28
 function btnStart() {
     lockClick();
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
@@ -131,7 +135,6 @@ function btnStart() {
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }
-        console.log(randNum);
         Calculation();
         temp = parseInt(coin.value) + result // 如中斷遊戲則先返還 temp 至玩家帳戶
         run();
