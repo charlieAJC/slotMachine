@@ -11,25 +11,16 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap core CSS -->
-<<<<<<< HEAD
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">  
-=======
-    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">    
->>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
+    <link href="{{ asset('fontawesome/css/fontawesome.min.css') }}" rel="stylesheet">  
     <!-- Custom styles for this template -->
-    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/login.css')}}" rel="stylesheet"> --}}
-    <link href="{{ asset('css/carousel.css')}}" rel="stylesheet">
-<<<<<<< HEAD
-    {{-- <link href="{{ asset('css/carousel2.css')}}" rel="stylesheet"> --}}
-=======
->>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
-    <link href="{{ asset('css/album.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/fronted/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/fronted/index.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/fronted/login&register.css')}}" rel="stylesheet">
 
 </head>
 
 <body>
-    @include('fronted.layouts.header')
     @include('fronted.layouts.navbar')
     @yield('content')
     @include('fronted.layouts.footer')
@@ -37,13 +28,11 @@
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<<<<<<< HEAD
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-=======
->>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
 
-    <script src="{{ asset('js/register.js') }}"></script>
-    <script src="{{ asset('js/login.js') }}"></script>
+    <script src="{{ asset('js/fronted/index.js') }}"></script>
+    <script src="{{ asset('js/fronted/register.js') }}"></script>
+    <script src="{{ asset('js/fronted/login.js') }}"></script>
 
 </body>
 

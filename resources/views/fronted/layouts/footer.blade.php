@@ -1,13 +1,7 @@
 {{-- Footer Start --}}
-<<<<<<< HEAD
 <footer class="footer text-faded text-center py-2">
     <div class="container">
         {{-- <p class="float-right"><a href="#">Back to top</a></p> --}}
-=======
-<footer class="footer text-faded text-center py-5 ">
-    <div class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
->>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
         <p class="m-0 small">Copyright &copy; Slot Machine 2019</p>
     </div>
 </footer>
