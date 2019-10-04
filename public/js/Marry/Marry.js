@@ -70,6 +70,7 @@ function clearAdjust() {
 }
 
 // 中獎金額計算 改由後端提供
+var result = 0;
 function Calculation() {
     for (i = 0; i <= 27; i++) {
         if (list[i] == randNum) {
@@ -82,7 +83,6 @@ function Calculation() {
 
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
-var result = 0;
 var temp = 0;
 function run() {
     var t = 20;

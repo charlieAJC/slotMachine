@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crazy Marry</title>
-    <script src="jquery-3.4.1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../../../public/js/Marry/jquery-3.4.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="Marry.js"></script>
+    <script src="../../../public/js/Marry/Marry.js"></script>
     <style>
         td {
             border: 2px solid black;
@@ -20,7 +19,7 @@
             background-color: rgb(120, 151, 236);
         }
 
-        .set {
+        .setBoard {
             background-color: rgb(240, 134, 204);
         }
 
@@ -52,6 +51,35 @@
             width: 50px;
             height: 50px;
         }
+
+        .pic1{
+            background-image: url("../../../public/img/Marry/pic1.png");
+        }
+        .pic2{
+            background-image: url("../../../public/img/Marry/pic2.png");
+        }
+        .pic3{
+            background-image: url("../../../public/img/Marry/pic3.png");
+        }
+        .pic4{
+            background-image: url("../../../public/img/Marry/pic4.png");
+        }
+        .pic5{
+            background-image: url("../../../public/img/Marry/pic5.png");
+        }
+        .pic6{
+            background-image: url("../../../public/img/Marry/pic6.png");
+        }
+        .pic7{
+            background-image: url("../../../public/img/Marry/pic7.png");
+        }
+        .pic8{
+            background-image: url("../../../public/img/Marry/pic8.png");
+        }
+        .pic9{
+            background-image: url("../../../public/img/Marry/pic9.png");
+        }
+
     </style>
     <!--bootstrap 4.3-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -126,7 +154,7 @@
     </div>
     <!-- 轉盤區域結束 -->
     <!-- 投注區域 -->
-    <div class="set" style="margin: 5px">
+    <div class="setBoard" style="margin: 5px">
         <li><img src="../../../public/img/Marry/pic1.png">
             <p><button onclick="increse(1)">+</button><button onclick="decrese(1)">-</button></p>
             <p><input type="number" id="coinAdjust1" value="0" readonly="readonly" /></p>
@@ -175,11 +203,32 @@
     </div>
     <!-- 投注區域結束 -->
     <script>
+
+        // 測試中, 後端給盤面配置
+        // $(document).ready(function () {
+        //     $.ajax({
+        //         type : "GET" ,
+        //         url : "" ,
+        //         dataType : "json" ,
+        //         success: function () {
+        //             alert("OKopenBroswer")
+        //             for(i=1;i<=28;i++){
+        //                 document.getElementById(i).style.backgroundImage = ;
+        //                 }
+        //             }
+        //         },
+        //         error: function () {
+        //             alert("發生錯誤openBroswer");
+
+        //         }
+        //     })
+        // }
+
         $(document).ready(function () {
             $("#startButton").click(function () {
                 $.ajax({
                     type: "POST",
-                    url: "http://127.0.0.1:8000",
+                    url: "",
                     dataType: "json",
                     set: coinAdjustList,
                     success: function () {
