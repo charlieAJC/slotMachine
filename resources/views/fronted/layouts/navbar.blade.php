@@ -12,31 +12,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="#game1" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     遊戲
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {{-- <style>
-                            
-                            ul li {
-                            　display:inline;
-                            }
-                            
-                        </style> --}}
-                    <a class="dropdown-item" href="#"><img src="img/fronted/jackpot.png" width="30" height="30"></a>
-                    <a class="dropdown-item" href="#"><img src="img/fronted/jackpot.png" width="30" height="30"></a>
+                <div id="game1" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#"><img src="img/fronted/jackpot.png" width="30" height="30">　拉霸機</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"><img src="img/fronted/jackpot.png" width="30" height="30">　小瑪莉</a>
                 </div>
             </li>
         </ul>
         <ul class="navbar-nav mr-auto mr-sm-2">
             <li class="nav-item active">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="#game2" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     我的帳號
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div id="game2" class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="login">登入</a>
                     <a class="dropdown-item" href="register">註冊帳號</a>
                     <div class="dropdown-divider"></div>

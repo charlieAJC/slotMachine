@@ -33,7 +33,7 @@
                 <div class="container">
                     <img src="img/fronted/game.jpg" alt="Avatar" class="image">
                     <div class="overlay">
-                        <button class="button" style="vertical-align:middle"><span>Start Game </span></button>
+                        <button class="button" href="Marry" style="vertical-align:middle"><span>Start Game </span></button>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                             <h1 style="font-size:40px">拉霸機</h1>
                             <p>And I'm a Photographer</p>
                             </div> --}}
-                        <button class="button" style="vertical-align:middle"><span>Start Game </span></button>
+                        <button class="button" href="slot" style="vertical-align:middle"><span>Start Game </span></button>
                     </div>
                 </div>
             </div>

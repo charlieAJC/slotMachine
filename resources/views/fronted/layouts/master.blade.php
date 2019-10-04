@@ -16,8 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/fronted/style.css')}}" rel="stylesheet">
     <link href="{{ asset('css/fronted/index.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/fronted/login&register.css')}}" rel="stylesheet">
-
+    <link href="{{ asset('css/fronted/carousel.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/fronted/form.css')}}" rel="stylesheet">
 </head>
 
 <body>
