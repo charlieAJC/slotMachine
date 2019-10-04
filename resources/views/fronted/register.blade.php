@@ -33,7 +33,7 @@
     <div class="col-sm-5" id="form-signin">
         <form id="user_register" method="POST">
             @csrf
-            <img class="mb-4" src="img/gambler.png" alt="" width="80" height="80" style="align:left">
+            <img class="mb-4" src="img/fronted/gambler.png" alt="" width="80" height="80" style="align:left">
             <h1 class="h3 mb-3 font-weight-normal">註冊帳號</h1>
             <input type="name" id="name" class="form-control" placeholder="姓名" required autofocus><span
                 class='error1'></span><br>

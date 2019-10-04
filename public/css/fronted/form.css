@@ -1,0 +1,73 @@
+#form-signin {
+  display: block;
+  justify-content: left;
+  align-items: left;
+  max-width: 350px;
+  display: block;
+  text-align: center;
+  margin: 30px 0px 30px 0px ;
+}
+#form-signin .checkbox {
+  font-weight: 400;
+}
+#form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+#form-signin .form-control:focus {
+  z-index: 2;
+}
+/* .form-signin input[type="name"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+} */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+.error1,
+.error2,
+.error3,
+.error4 {
+    color: red;
+    font-size: small;
+}
+<<<<<<< HEAD:public/css/style.css
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  color: #8c8c8c;
+  text-align: center;
+}
+=======
+>>>>>>> 5b3809691505d144183cffdf237e893e2c1c3024:public/css/fronted/form.css
