@@ -226,15 +226,24 @@
 
         $(document).ready(function () {
             $("#startButton").click(function () {
+                console.log(typeof coinAdjustList);
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 $.ajax({
-                    type: "POST",
-                    url: "",
+                    type: "post",
+                    url: "/LittleMary/test",
                     dataType: "json",
-                    set: coinAdjustList,
-                    success: function () {
-                        alert("OKstartButton")
+                    data: {coinAdjustList},
+                    // data : {"bet":'1,2,3,4,5,6,7,8,9'} ,
+                    success: function (e) {
+                        alert("OKstartButton");
+                        console.log(e, "OK");
                     },
-                    error: function () {
+                    error: function (e) {
+                        console.log(e);
                         alert("發生錯誤startButton");
                     }
                 })

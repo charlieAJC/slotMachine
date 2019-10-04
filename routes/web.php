@@ -51,3 +51,7 @@ Route::get('slot', function () {
 
 Route::post('slot', "SlotController@slot");
 // ------景翔的拉霸機測試用route------
+
+// ------小瑪莉route-------
+Route::get('/LittleMary', "MaryController@index");
+Route::post('/LittleMary/test', "MaryController@test");
