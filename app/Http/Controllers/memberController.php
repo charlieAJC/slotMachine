@@ -35,14 +35,14 @@ class memberController extends Controller
         $acFlag = preg_match('/^\w{6,12}$/', $memberAccount);
 
         $memberPassword = Hash::make($memberPassword);
-        $count = User::where('memberAccount', '=', $memberAccount)->count();
+        $count = User::where('Account', '=', $memberAccount)->count();
        
         
         if($count==0 && $pwFlag && $acFlag && $memberName !=""){
             $msg=User::insert([
-                'memberAccount'=>$memberAccount,
-                'memberPassword'=>$memberPassword,
-                'memberName'=>$memberName
+                'Account'=>$memberAccount,
+                'Password'=>$memberPassword,
+                'Name'=>$memberName
             ]);
             echo "success";
             // var_dump($msg);
@@ -62,12 +62,12 @@ class memberController extends Controller
     public function login(Request $request){
         $memberAccount = $request -> account;
         $memberPassword = $request -> password;
-        $count = User::where('memberAccount', '=', $memberAccount)->count();
+        $count = User::where('Account', '=', $memberAccount)->count();
         if($count){
             // 帳號存在
-            $user = User::where('memberAccount', '=', $memberAccount)->firstOrFail();
+            $user = User::where('Account', '=', $memberAccount)->firstOrFail();
             
-            if (Hash::check($memberPassword, $user->memberPassword))
+            if (Hash::check($memberPassword, $user->Password))
             {
                 // The passwords match...
                 echo 'success';
