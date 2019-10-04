@@ -35,7 +35,7 @@
     <div class="col-sm-5" id="form-signin">
         <form id="user_login" method="POST">
             @csrf
-            <img class="mb-4" src="img/gambler.png" alt="" width="80" height="80">
+            <img class="mb-4" src="img/fronted/gambler.png" alt="" width="80" height="80">
             <h1 class="h3 mb-3 font-weight-normal">登入</h1>
             <label for="account" class="sr-only">帳號</label><input type="account" id="account" class="form-control"
                 placeholder="帳號" required><span class='error2'></span><br>
