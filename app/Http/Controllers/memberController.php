@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use Illuminate\Support\Facades\Session;
 
 
 class memberController extends Controller
@@ -14,8 +15,8 @@ class memberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
+        $userName = Session::get("account","Guest");
         return view("fronted.index");
     }
 
@@ -71,7 +72,7 @@ class memberController extends Controller
             {
                 // The passwords match...
                 echo 'success';
-
+                Session::put("account",$memberAccount);
             }else{
                 echo 'pw not correct';
             }
@@ -94,6 +95,10 @@ class memberController extends Controller
         // return $model->memberPassword;
         // var_dump($model->memberPassword);
         
+    }
+
+    public function logout(){
+        Session::pull("account");
     }
 
     /**
