@@ -141,6 +141,7 @@ class MaryController extends Controller
             // $key = array_search($qwe,$fruit);
             // echo "Key值為：".$key.'<hr>';
             // echo $qqq[$key]*$odds[$number].'<hr>';
+            // wwwww
             
             echo json_encode(array($request->coinAdjustList));
             
