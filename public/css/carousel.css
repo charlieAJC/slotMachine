@@ -4,7 +4,6 @@
 
 body {
   padding-top: 3rem;
-<<<<<<< HEAD
   padding-bottom: 5rem;
   color: #5a5a5a;
 }
@@ -27,23 +26,13 @@ body {
   margin: auto;
 }
 
-=======
-  padding-bottom: 3rem;
-  color: #5a5a5a;
-}
-
->>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
 /* Carousel base class */
 .carousel {
-<<<<<<< HEAD
   /* margin-bottom: 4rem; */
-=======
-  margin-bottom: 4rem;
->>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -53,7 +42,6 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-<<<<<<< HEAD
   /* height: 32rem; */
 }
 .carousel-item > img {
@@ -62,16 +50,6 @@ body {
   left: 0;
   min-width: 100%;
   height: 32rem; */
-=======
-  height: 32rem;
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
->>>>>>> 5a799645043d43fb55a078e77f5f157c535672a7
 }
 
 
