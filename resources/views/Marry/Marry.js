@@ -1,3 +1,12 @@
+//產生格子id陣列list[index]其值為1~28
+var list = new Array(28);
+function addNumber() {
+    for (i = 0; i <= 27; i++) {
+        list[i] = i + 1;
+    }
+}
+addNumber();
+
 // 增加下注金額
 function increse(i) {
     var Id = ("coinAdjust" + i);
@@ -38,15 +47,6 @@ function ChangeMode() {
     decreseMoney = isMode ? 100 : 1000;
 }
 
-//產生格子id陣列list[index]其值為1~28
-var list = new Array(28);
-function addNumber() {
-    for (i = 0; i <= 27; i++) {
-        list[i] = i + 1;
-    }
-}
-addNumber();
-
 // 產生當次投注金額陣列 coinAdjustList[i]
 var coinAdjustList = new Array(9);
 function coinAdjust() {
@@ -69,7 +69,7 @@ function clearAdjust() {
     coinAdjustList = [0, 0, 0, 0, 0, , 0, 0, 0, 0];
 }
 
-// 中獎金額計算
+// 中獎金額計算 改由後端提供
 function Calculation() {
     for (i = 0; i <= 27; i++) {
         if (list[i] == randNum) {
@@ -91,18 +91,13 @@ function run() {
         for (j = 1; j <= 28; j++) { //把所有格子改成白底
             document.getElementById(j).className = "normal";
         }
-
         document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成紅底
         runEndNum++;
-        if (runEndNum >= 28 && t < 500) {
+        if (runEndNum >= 28) {
             runEndNum = 0;
         }
-
-        a *= 1.0005;
-        t = t * a;
-        
-        console.log(t);
-        console.log(runEndNum);
+        a = a.toFixed(8) * 1.0005;
+        t = t.toFixed(8) * a;
         startGame = setTimeout(go, t);
         if (t > 500 && randNum == runEndNum) {
             clearTimeout(startGame);
@@ -115,7 +110,6 @@ function run() {
 
 // 鎖定/解鎖按鍵
 var isClick = false;
-
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
@@ -132,6 +126,24 @@ function btnStart() {
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
         randNum = Math.floor(Math.random() * 28 + 1); // 接收一個亂數 1~28
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
+        // var xhttp = new XMLHttpRequest();
+        // $.ajax({
+        //     method: "POST",
+        //     url: "Marry",
+        //     data: {
+        //         set : coinAdjustList
+        //     },
+        //     success: function (e) {
+        //         alert("OK");
+        //         randNum = JSON.parse(e);
+        //     }
+        // })
+
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }

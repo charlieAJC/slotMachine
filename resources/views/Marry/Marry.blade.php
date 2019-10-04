@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>game1</title>
+    <title>Crazy Marry</title>
     <script src="Marry.js"></script>
     <script src="jquery-3.4.1.js"></script>
+
     <style>
         td {
             border: 2px solid black;
@@ -165,7 +166,6 @@
             <p><button onclick="increse(9)">+</button><button onclick="decrese(9)">-</button></p>
             <p><input type="number" id="coinAdjust9" value="0" readonly="readonly" /></p>
         </li>
-        <form action="" method="GET"></form>
         <p style="margin: 5px">
             <input type="number" id="coin" value="0" readonly="readonly">
             <button onclick="btnInsert()">insert coins</button>
@@ -175,9 +175,7 @@
             <button type="submit" onclick="btnStart()" id="startButton">Start</button>
             <button type="submit" onclick="btnFinish()" id="finishButton">Finish</button>
         </p>
-
     </div>
     <!-- 投注區域結束 -->
 </body>
-
 </html>
