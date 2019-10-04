@@ -126,24 +126,7 @@ function btnStart() {
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
         randNum = Math.floor(Math.random() * 28 + 1); // 接收一個亂數 1~28
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
-        // var xhttp = new XMLHttpRequest();
-        // $.ajax({
-        //     method: "POST",
-        //     url: "Marry",
-        //     data: {
-        //         set : coinAdjustList
-        //     },
-        //     success: function (e) {
-        //         alert("OK");
-        //         randNum = JSON.parse(e);
-        //     }
-        // })
-
+        
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }
