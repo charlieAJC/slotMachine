@@ -50,4 +50,4 @@ Route::post('slot', "SlotController@slot");
 
 // ------小瑪莉route-------
 Route::get('/LittleMary', "MaryController@index");
-Route::post('/LittleMary/test', "MaryController@test");
+Route::get('/LittleMary/test', "MaryController@test");
