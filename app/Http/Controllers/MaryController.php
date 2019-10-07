@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\User;
+use App\Stamp;
+use Session;
 
 class MaryController extends Controller
 {
@@ -82,7 +86,10 @@ class MaryController extends Controller
         //
     }
     function test(Request $request){
-        if (isset($request->bet)) {
+        if(Session::has('account')){
+            
+        
+            if (isset($request->bet)) {
             // echo gettype($request->coinAdjustList);
             $name=$request->bet;
             $qqq=explode(",", $name);        //把字串以,分割成陣列  
@@ -149,11 +156,32 @@ class MaryController extends Controller
             echo json_encode($number);
             echo json_encode($coin);
             // echo json_encode(array($request->coinAdjustList));
+            $Account=Session::get('account');
+            echo $Account;
+            $UserID=User::where('Account','=',$Account)->pluck('UserID');
+            echo $UserID;
+            $GameCoin=User::where('Account','=',$Account)->pluck('GameCoin');
+            echo $GameCoin;
+            $NewGameCoin=$GameCoin[0]-$sum+$coin;
+            echo $NewGameCoin;
+            DB::update('update users set GameCoin = ?-?+?,UpdateDate= current_timestamp where Account=?',[$NewGameCoin,$sum,$coin,$Account]);
+
+            Stamp::insert([
+                'UserID'=>$UserID[0],
+                'GetWay'=>'Play',
+                'GameName'=>'LittleMary',
+                'BetCoin'=>$sum,
+                'ChangeCoin'=>$coin,
+                'GameCoin'=>$NewGameCoin
+            ]);
+          
             
+            }else{
+                echo 'insert bet';
+            }
+
         }else{
-            echo 'insert bet';
+            return redirect("/login");
         }
-
-
     }
 }
