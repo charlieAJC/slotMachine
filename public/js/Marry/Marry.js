@@ -1,4 +1,4 @@
-//產生格子id陣列list[index]其值為1~28
+//產生格子id list = [1,2,3,....,28]
 var list = new Array(28);
 function addNumber() {
     for (i = 0; i <= 27; i++) {
@@ -47,7 +47,7 @@ function ChangeMode() {
     decreseMoney = isMode ? 100 : 1000;
 }
 
-// 產生當次投注金額陣列 coinAdjustList[i]
+// 產生當次投注金額陣列 coinAdjustList = [0,0,0,0,0,0,0,0,0]
 var coinAdjustList = new Array(9);
 function coinAdjust() {
     for (i = 0; i <= 8; i++) {
@@ -126,7 +126,6 @@ function btnStart() {
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
         randNum = Math.floor(Math.random() * 28 + 1); // 接收一個亂數 1~28
-        
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }
@@ -158,3 +157,66 @@ function btnFinish() {
         alert("遊戲繼續");
     }
 }
+
+// 測試中, 後端給盤面配置
+// $(document).ready(function () {
+//     $.ajax({
+//         type : "GET" ,
+//         url : "" ,
+//         dataType : "json" ,
+//         success: function () {
+//             alert("OKopenBroswer")
+//             for(i=1;i<=28;i++){
+//                 document.getElementById(i).style.backgroundImage = ;
+//                 }
+//             }
+//         },
+//         error: function () {
+//             alert("發生錯誤openBroswer");
+
+//         }
+//     })
+// }
+
+$(document).ready(function () {
+    $("#startButton").click(function () {
+        // console.log(typeof coinAdjustList);
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "post",
+            url: "/LittleMary/test",
+            dataType: "json",
+            // data: coinAdjustList,
+            data : {"bet":'1,2,3,4,5,6,7,8,9'} ,
+            success: function (e) {
+                alert("OKstartButton");
+                console.log(e, "OK");
+            },
+            error: function (e) {
+                console.log(e);
+                alert("發生錯誤startButton");
+            }
+        })
+    })
+
+    $("#finishButton").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "",
+            dataType: "json",
+            data: {
+                餘額: coin.value,
+            },
+            success: function () {
+                alert("OKfinishButton")
+            },
+            error: function () {
+                alert("發生錯誤finishButton");
+            }
+        })
+    })
+});
