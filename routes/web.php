@@ -75,4 +75,4 @@ Route::post('slot', "SlotController@slot");
 
 // ------小瑪莉route-------
 Route::get('/LittleMary', "MaryController@index");
-Route::get('/LittleMary/test', "MaryController@test");
+Route::post('/LittleMary', "MaryController@test");
