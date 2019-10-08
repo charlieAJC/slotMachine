@@ -140,7 +140,6 @@ function btnStart() {
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
         var sentCoinAdjustLis = JSON.stringify(jsonCoinAdjustList);
-<<<<<<< HEAD
         console.log(sentCoinAdjustLis);
         $.ajaxSetup({
             headers: {
@@ -164,8 +163,6 @@ function btnStart() {
         })
 
         
-=======
->>>>>>> a77446e6f126b3b12d3b12ba77a548c7f7998a2f
         randNum = Math.floor(Math.random() * 28 + 1); // 接收一個亂數 1~28
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
