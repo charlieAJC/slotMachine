@@ -41,6 +41,9 @@ Route::get('/login', function () {
 Route::post('/login',"memberController@login");
 // Route::get('/login',"memberController@login");
 
+//登出
+Route::post('/logout',"memberController@logout");
+
 //遊戲介紹
 Route::get('/game', function () {
     return view('fronted.game');
@@ -53,11 +56,15 @@ Route::get('/news', function () {
 });
 Route::post('/news',"memberController@news");
 
-//儲值
-Route::get('/buy', function () {
-    return view('fronted.buy');
+
+Route::group(['middleware'=>'Permission'],function(){
+    //儲值
+    Route::get('/buy', function () {return view('fronted.buy');});
+    Route::post('/buy',"memberController@buy");
+
 });
-Route::post('/buy',"memberController@buy");
+
+
 
 //客服
 Route::get('/contact', function () {

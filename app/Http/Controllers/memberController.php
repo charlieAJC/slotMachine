@@ -73,6 +73,9 @@ class memberController extends Controller
                 // The passwords match...
                 echo 'success';
                 Session::put("account",$memberAccount);
+                Session::put("Permission",$user->Permission);
+                // $Per=Session::get("Permission");
+                // echo $Per;
             }else{
                 echo 'pw not correct';
             }
@@ -99,6 +102,7 @@ class memberController extends Controller
 
     public function logout(){
         Session::pull("account");
+        Session::pull("Permission");
     }
 
     /**
