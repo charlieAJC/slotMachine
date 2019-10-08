@@ -45,8 +45,10 @@ $(document).ready(function () {
                 },
                 success: function (e) {
                     // console.log(e);
-                    if (e == "success") {
+                    let msg = JSON.parse(e);
+                    if (msg.status === 1) {
                         alert("登入成功！");
+                        localStorage.setItem('account', msg.account);
                         window.location.href = "/";
                     } else {
                         alert("帳號或密碼錯誤");

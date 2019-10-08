@@ -41,6 +41,9 @@ Route::get('/login', function () {
 Route::post('/login',"memberController@login");
 // Route::get('/login',"memberController@login");
 
+//登出
+Route::post('/logout',"memberController@logout");
+
 //遊戲介紹
 Route::get('/game', function () {
     return view('fronted.game');
