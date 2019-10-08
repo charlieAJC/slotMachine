@@ -21,7 +21,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <h3 class="card-title">客服中心電話維護說明公告</h3>
+                    <h3 class="card-title font-weight-bolder">客服中心電話維護說明公告</h3>
                     <p class="card-text">親愛的玩家您好：<br>
                         為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<br>
                         影響時間：2019/10/12（六）11:00~12:00<br>
@@ -43,7 +43,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <h3 class="card-title">嚴正聲明：<br>本公司從未對外徵求銀行存簿、金融卡，切勿受騙上當！</h3>
+                    <h3 class="card-title font-weight-bolder">嚴正聲明：<br>本公司從未對外徵求銀行存簿、金融卡，切勿受騙上當！</h3>
                     <p class="card-text">親愛的玩家您好：<br>
                         近期接獲玩家反應，有不肖之徒冒用本團隊名義，以調整財務為由蒐購銀行存摺、提款卡，企圖欺瞞大眾提供銀行帳戶，作為人頭帳戶使用。<br>
                         對於此類不法行徑本公司已主動調查瞭解，並採取相關法律行動，也再次呼籲各位切勿提供重要財務資料予他人，以免淪為犯罪共犯！</p>
@@ -64,7 +64,7 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <h3 class="card-title">網頁HD版優化說明公告</h3>
+                    <h3 class="card-title font-weight-bolder">網頁HD版優化說明公告</h3>
                     <p class="card-text">各位親愛的玩家您好：<br>
                         因進行網頁及遊戲優化作業，故網頁HD版將會於2019/10/08（二）更換登入介面。<br>
                         新的網頁HD版遊戲館僅開放【拉霸機】、【小瑪莉】共二款遊戲館。<br>
@@ -78,14 +78,12 @@
         </div>
     </div>
     <ul class="pagination justify-content-center mb-4">
-        <li class="page-item">
-            <a class="page-link" href="#">&larr; 上一頁</a>
-        </li>
-        <li class="page-item disabled">
-            <a class="page-link" href="#">下一頁 &rarr;</a>
-        </li>
+       <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
+       <li class="page-item"><a class="page-link" href="#">1</a></li>
+       <li class="page-item"><a class="page-link" href="#">2</a></li>
+       <li class="page-item"><a class="page-link" href="#">3</a></li>
+       <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
     </ul>
-</div>
 </div>
 
 @endsection

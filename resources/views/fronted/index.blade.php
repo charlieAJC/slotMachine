@@ -43,6 +43,59 @@
 </header>
 
 <div class="container">
+    <h2 class="mt-4 mb-3">最新消息</h2>
+    <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                    <span class="badge badge-secondary">New</span>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">【2019/10/08】客服中心電話維護說明公告</a>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-body">
+                    親愛的玩家您好：<br>
+                    為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<br>
+                    影響時間：2019/10/12（六）11:00~12:00<br>
+                    遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">【2019/10/07】嚴正聲明：本公司從未對外徵求銀行存簿、金融卡，切勿受騙上當！
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-body">
+                    親愛的玩家您好：<br>
+                    近期接獲玩家反應，有不肖之徒冒用本團隊名義，以調整財務為由蒐購銀行存摺、提款卡，企圖欺瞞大眾提供銀行帳戶，作為人頭帳戶使用。<br>
+                    對於此類不法行徑本公司已主動調查瞭解，並採取相關法律行動，也再次呼籲各位切勿提供重要財務資料予他人，以免淪為犯罪共犯！<br>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+                <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">【2019/10/06】網頁HD版優化說明公告</a>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-body">
+                    各位親愛的玩家您好：<br>
+                    因進行網頁及遊戲優化作業，故網頁HD版將會於2019/10/08（二）更換登入介面。<br>
+                    新的網頁HD版遊戲館僅開放【拉霸機】、【小瑪莉】共二款遊戲館。<br>
+                    其餘遊戲館則陸續增加，若遇未開放遊戲館還請玩家透過PC版或手機裝置進行遊戲及新活動，造成不便，敬請見諒！謝謝。<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <h2 class="mt-4 mb-3">遊戲介紹</h2>
     <div class="row">
         <div class="col-lg-4 col-sm-6 portfolio-item">
@@ -58,10 +111,10 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-                <a href="Marry"><img class="card-img-top d-block w-100" src="http://placehold.it/700x400" alt=""></a>
+                <a href="LittleMary"><img class="card-img-top d-block w-100" src="img/fronted/2.jpg" alt=""></a>
                 <div class="card-body">
                     <h4 class="card-title">
-                        <a href="Marry">小瑪莉</a>
+                        <a href="LittleMary">小瑪莉</a>
                     </h4>
                     <p class="card-text">Marry</p>
                 </div>
@@ -112,59 +165,6 @@
             </div>
         </div>
     </div>
-
-    <h2 class="mt-4 mb-3">最新消息</h2>
-    <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="card">
-            <div class="card-header" role="tab" id="headingOne">
-                <h5 class="mb-0">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseOne">【2019/10/08】客服中心電話維護說明公告</a>
-                </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                <div class="card-body">
-                    親愛的玩家您好：<br>
-                    為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<br>
-                    影響時間：2019/10/12（六）11:00~12:00<br>
-                    遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" role="tab" id="headingTwo">
-                <h5 class="mb-0">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-                        aria-expanded="false" aria-controls="collapseTwo">【2019/10/07】嚴正聲明：本公司從未對外徵求銀行存簿、金融卡，切勿受騙上當！
-                    </a>
-                </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="card-body">
-                        親愛的玩家您好：<br>
-                        近期接獲玩家反應，有不肖之徒冒用本團隊名義，以調整財務為由蒐購銀行存摺、提款卡，企圖欺瞞大眾提供銀行帳戶，作為人頭帳戶使用。<br>
-                        對於此類不法行徑本公司已主動調查瞭解，並採取相關法律行動，也再次呼籲各位切勿提供重要財務資料予他人，以免淪為犯罪共犯！<br>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" role="tab" id="headingThree">
-                <h5 class="mb-0">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
-                        aria-expanded="false" aria-controls="collapseThree">【2019/10/06】網頁HD版優化說明公告</a>
-                </h5>
-            </div>
-            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="card-body">
-                        各位親愛的玩家您好：<br>
-                        因進行網頁及遊戲優化作業，故網頁HD版將會於2019/10/08（二）更換登入介面。<br>                        
-                        新的網頁HD版遊戲館僅開放【拉霸機】、【小瑪莉】共二款遊戲館。<br>
-                        其餘遊戲館則陸續增加，若遇未開放遊戲館還請玩家透過PC版或手機裝置進行遊戲及新活動，造成不便，敬請見諒！謝謝。<br>                       
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-<!-- /.container -->
 
 @endsection
