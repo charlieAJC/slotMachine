@@ -39,22 +39,40 @@
         </li>
         <li class="breadcrumb-item active">登入會員</li>
     </ol>
-    <div id="form-signin">
-        <form id="user_login" method="POST">
-            @csrf
-            <img class="mb-4" src="img/fronted/gambler.png" alt="" width="80" height="80">
-            {{-- <h1 class="h3 mb-3 font-weight-normal">登入</h1> --}}
-            <label for="account" class="sr-only">帳號</label><input type="account" id="account" class="form-control"
-                placeholder="帳號" required><span class='error2'></span><br>
-            <label for="password" class="sr-only">密碼</label><input type="password" id="password" class="form-control"
-                placeholder="密碼" required><span class='error4'></span><br>
-            <button type="button" id="login" class="btn btn-info btn-primary btn-block">登入</button><br>
-            <button type="button" class="btn btn-light"><a href="register">註冊帳號</a></button>
-            <button type="button" class="btn btn-light"><a href="/">回首頁</a></button>
-            <hr>
-            <div id="login_success" style="display:none;"></div>
-        </form>
-        <div id="errormsg" style="color: red"></div>
-    </div>
+    <form id="user_login" method="POST" action="/index.blade.php" class="form-signin needs-validation" novalidate>
+        @csrf
+        <div class="text-center mb-1">
+            <img class="mb-4" src="img/fronted/gambler.png" alt="" width="72" height="72">
+        </div>
+        <div class="form-label-group">
+            <input type="account" id="account" class="form-control" placeholder="帳號" pattern="^\w{6,12}$" required autofocus>
+            <label for="account">帳號</label>
+            <span class='error2'></span>
+
+            <div class="valid-feedback">符合規則</div>
+            <div class="invalid-feedback">請輸入6-12位英文或數字的帳號</div>
+        </div>
+        <div class="form-label-group">
+            <input type="password" id="password" class="form-control" placeholder="密碼" pattern="^\w{6,12}$" required>
+            <label for="password">密碼</label>
+            <span class='error4'></span>
+
+            <div class="valid-feedback">符合規則</div>
+            <div class="invalid-feedback">請輸入6-12位英文或數字的密碼</div>
+        </div>
+        {{-- <div class="checkbox mb-0">
+          <label>
+            <input type="checkbox" value="remember-me">記住我
+          </label>
+        </div> --}}
+        <button class="btn btn-info btn-primary btn-block" id="login" type="submit">登入</button>
+        <hr>
+        <div class="row">
+            <button type="button" class="col-sm-6 btn btn-light"><a href="register">註冊帳號</a></button>
+            <button type="button" class="col-sm-6 btn btn-light"><a href="/">回首頁</a></button>
+        </div>
+        <div id="login_success" style="display:none;"></div>
+    </form>
 </div>
+
 @endsection

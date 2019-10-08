@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('fronted.layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+@section('title', 'slot')
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/slot/style.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/slot/jquery.slotmachine.css" type="text/css" media="screen" />
+@section('content')
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/slot/slotmachine.js"></script>
-
-    <title>Document</title>
-</head>
-
-<body>
-    <div id="casino" style="padding-top:50px;">
+    <div id="casino" >
         <div class="content">
-            <h1>SLOT!</h1>
-
+            
+{{-- <h1>SLOT!</h1> --}}
             <div>
+                <div>
+                    
+                </div>
                 <div id="casino1" class="slotMachine" style="margin-left: -65px;">
                     <div id="img1" class="slot slot1"></div>
                 </div>
@@ -42,6 +31,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+    @endsection

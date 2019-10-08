@@ -15,6 +15,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/fronted/style.css')}}" rel="stylesheet">
     <link href="{{ asset('css/fronted/index.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/fronted/login.css')}}" rel="stylesheet">
     {{-- <link href="{{ asset('css/fronted/carousel.css')}}" rel="stylesheet"> --}}
 
 </head>
@@ -34,6 +35,9 @@
     <script src="{{ asset('js/fronted/register.js') }}"></script>
     <script src="{{ asset('js/fronted/login.js') }}"></script>
     <script src="{{ asset('js/fronted/logout.js') }}"></script>
+    
+    <link href="{{ asset('css/slot/style.css')}}" rel="stylesheet">
+    <script src="{{ asset('js/slot/slotmachine.js') }}"></script>
 
 </body>
 
