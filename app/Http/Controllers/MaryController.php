@@ -17,7 +17,11 @@ class MaryController extends Controller
      */
     public function index()
     {
-        return view("Marry.Marry");
+        if (Session::has('account')) {
+            return view("Marry.Marry");
+        }else{
+            return redirect("/login");
+        }
     }
 
     /**
@@ -86,36 +90,20 @@ class MaryController extends Controller
         //
     }
     function test(Request $request){   
-        // if(Session::has('account')){
-            if (isset($request->bet)) {
-            // echo gettype($request->coinAdjustList);
+            if (isset($request->bet)) {         
             // $name=$request->bet;
             // $qqq=explode(",", $name);        //把字串以,分割成陣列  
-            // echo $name.'<hr>';
-            // echo '下注陣列:'.var_dump($qqq).'<hr>';
             $qqq=$request->bet;
+            // echo '下注陣列:'.var_dump($qqq).'<hr>';
             $sum=0;
             foreach($qqq as $v){  
-                $sum +=$v;        
-                // echo $sum,'<hr>';
+                $sum +=$v;
             }
             //下注總額 $sum
             // echo '下注總額:'.$sum,'<hr>';          
             //中獎號碼 $number
             $number=rand(1, 28);
             // echo '中獎號嗎:'.$number.'<hr>';
-            //水果圖形位置
-            // $fruit=array(
-            // $pineapple=[27],
-            // $watermelon=[4,20],
-            // $grape=[8,21],
-            // $strawberry=[2,10,25],
-            // $orange=[5,13,16],
-            // $cherry=[3,9,18,23],
-            // $tomato=[7,14,17,22],
-            // $cranberry=[6,11,19,28],
-            // $carrot=[1,12,15,24,26],
-            // );
             $fruit=array(
                 'pineapple'=>[27],
                 'watermelon'=>[4,20],
@@ -127,7 +115,7 @@ class MaryController extends Controller
                 'cranberry'=>[6,11,19,28],
                 'carrot'=>[1,12,15,24,26],
                 );
-                //水果種類賠率 [$pineapple,$watermelon,$grape,$strawberry,$orange,$cherry,$tomato,$cranberry,$carrot]
+            //水果種類賠率 [$pineapple,$watermelon,$grape,$strawberry,$orange,$cherry,$tomato,$cranberry,$carrot]
             $fruitodds=[10,5,4,3,2,1,0.4,0.25,0.2];
             $fruittype=array();
             foreach($fruit as $u=>$k){
@@ -151,11 +139,6 @@ class MaryController extends Controller
             // echo "中獎水果號碼為：".$fruitnumber.'<hr>';
             $coin=$qqq[$fruitnumber]*$odds[$number];
             // echo '中獎金額:'.$coin.'<hr>';
-            
-            // echo json_encode(array($number));
-            // echo json_encode(array($coin));
-            $transJSON=array('number'=>$number,'coin'=>$coin);
-            echo json_encode($transJSON);
             // echo json_encode(array($request->coinAdjustList));
             $Account=Session::get('account');
             // echo $Account;
@@ -176,14 +159,14 @@ class MaryController extends Controller
                 'GameCoin'=>$NewGameCoin
             ]);
           
+            $transJSON=array('number'=>$number,'coin'=>$coin,'BetCoin'=>$sum,'GameCoin'=>$NewGameCoin,);
+            echo json_encode($transJSON);
             
             }else{
                 echo 'insert bet';
+                
             }
 
-        // }else{
-        //     return redirect("/login");
-        // }
         // echo json_encode($request->bet);
     }
 }
