@@ -1,5 +1,6 @@
 //產生格子id list = [1,2,3,....,28]
 var list = new Array(28);
+
 function addNumber() {
     for (i = 0; i <= 27; i++) {
         list[i] = i + 1;
@@ -32,14 +33,16 @@ function decrese(i) {
 
 // 預儲遊戲機台,扣玩家儲值金
 function btnInsert() {
-    coin.value = parseInt(coin.value) + insertMoney;
-}
-
+    
+        coin.value = parseInt(coin.value) + insertMoney;
+    }
+    
 // 切換 小賭/豪賭 模式
 var isMode = true;
 var insertMoney = 1000;
 var increseMoney = 100;
 var decreseMoney = 100;
+
 function ChangeMode() {
     isMode = !isMode;
     insertMoney = isMode ? 1000 : 10000;
@@ -49,14 +52,22 @@ function ChangeMode() {
 
 // 產生當次投注金額陣列 coinAdjustList = [0,0,0,0,0,0,0,0,0]
 var coinAdjustList = new Array(9);
+var jsonCoinAdjustList = new Array(9);
+
 function coinAdjust() {
     for (i = 0; i <= 8; i++) {
         coinAdjustList[i] = document.getElementById("coinAdjust" + parseInt(i + 1)).value;
+    }
+    for (i = 0; i <= 8; i++) {
+        jsonCoinAdjustList[i] = {
+            "value": coinAdjustList[i]
+        };
     }
 }
 
 // 合計當次下注金額 totallInsert
 var totallInsert = 0;
+
 function totall() {
     for (i = 0; i < 8; i++) {
         totallInsert = parseInt(totallInsert) + parseInt(coinAdjustList[i]);
@@ -71,6 +82,7 @@ function clearAdjust() {
 
 // 中獎金額計算 改由後端提供
 var result = 0;
+
 function Calculation() {
     for (i = 0; i <= 27; i++) {
         if (list[i] == randNum) {
@@ -84,6 +96,7 @@ function Calculation() {
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
 var temp = 0;
+
 function run() {
     var t = 20;
     var a = 1;
@@ -110,6 +123,7 @@ function run() {
 
 // 鎖定/解鎖按鍵
 var isClick = false;
+
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
@@ -125,6 +139,7 @@ function btnStart() {
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
+        var sentCoinAdjustLis = JSON.stringify(jsonCoinAdjustList);
         randNum = Math.floor(Math.random() * 28 + 1); // 接收一個亂數 1~28
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
@@ -180,7 +195,6 @@ function btnFinish() {
 
 $(document).ready(function () {
     $("#startButton").click(function () {
-        // console.log(typeof coinAdjustList);
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -188,10 +202,11 @@ $(document).ready(function () {
         });
         $.ajax({
             type: "post",
-            url: "/LittleMary/test",
+            url: "/LittleMary",
             dataType: "json",
-            // data: coinAdjustList,
-            data : {"bet":'1,2,3,4,5,6,7,8,9'} ,
+            data: {
+                'bet': coinAdjustList
+            },
             success: function (e) {
                 alert("OKstartButton");
                 console.log(e, "OK");
