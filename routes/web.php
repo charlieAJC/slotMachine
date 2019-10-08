@@ -41,6 +41,31 @@ Route::get('/login', function () {
 Route::post('/login',"memberController@login");
 // Route::get('/login',"memberController@login");
 
+//遊戲介紹
+Route::get('/game', function () {
+    return view('fronted.game');
+});
+Route::post('/game',"memberController@game");
+
+//最新消息
+Route::get('/news', function () {
+    return view('fronted.news');
+});
+Route::post('/news',"memberController@news");
+
+//儲值
+Route::get('/buy', function () {
+    return view('fronted.buy');
+});
+Route::post('/buy',"memberController@buy");
+
+//客服
+Route::get('/contact', function () {
+    return view('fronted.contact');
+});
+Route::post('/contact',"memberController@contact");
+
+
 // ------景翔的拉霸機測試用route------
 Route::get('slot', function () {
     return view('slot.slot');
