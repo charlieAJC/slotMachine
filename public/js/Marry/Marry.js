@@ -1,6 +1,11 @@
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 //產生格子id list = [1,2,3,....,28]
 var list = new Array(28);
-
 function addNumber() {
     for (i = 0; i <= 27; i++) {
         list[i] = i + 1;
@@ -33,16 +38,46 @@ function decrese(i) {
 
 // 預儲遊戲機台,扣玩家儲值金
 function btnInsert() {
-    
-        coin.value = parseInt(coin.value) + insertMoney;
+    $('#insertButton').disabled = true ;
+    coinAdjust();
+    totall();
+    if(isMode==true){
+        $.ajax({
+            async: true, //啟用同步請求
+            type: "POST",
+            url: "/LittleMary",
+            dataType: "json",
+            data: { 'total':totallInsert ,'need':insertMoney},
+            success: function (response) {
+                coin.value = parseInt(coin.value) + insertMoney;
+            },
+            error: function(){
+                alert("請儲值");
+            }
+        })
+    }else{
+        $.ajax({
+            async: true, //啟用同步請求
+            type: "POST",
+            url: "/LittleMary",
+            dataType: "json",
+            data: { 'total':totallInsert ,'need':insertMoney},
+            success: function (response) {
+                coin.value = parseInt(coin.value) + insertMoney;
+            },
+            error: function(){
+                alert("請儲值");
+            }
+        })
     }
-    
+    $('#insertButton').disabled = false ;
+}
+
 // 切換 小賭/豪賭 模式
 var isMode = true;
 var insertMoney = 1000;
 var increseMoney = 100;
 var decreseMoney = 100;
-
 function ChangeMode() {
     isMode = !isMode;
     insertMoney = isMode ? 1000 : 10000;
@@ -52,21 +87,14 @@ function ChangeMode() {
 
 // 產生當次投注金額陣列 coinAdjustList = [0,0,0,0,0,0,0,0,0]
 var coinAdjustList = new Array(9);
-var jsonCoinAdjustList = new Array(9);
 function coinAdjust() {
     for (i = 0; i <= 8; i++) {
         coinAdjustList[i] = document.getElementById("coinAdjust" + parseInt(i + 1)).value;
-    }
-    for (i = 0; i <= 8; i++) {
-        jsonCoinAdjustList[i] = {
-            "value": coinAdjustList[i]
-        };
     }
 }
 
 // 合計當次下注金額 totallInsert
 var totallInsert = 0;
-
 function totall() {
     for (i = 0; i < 8; i++) {
         totallInsert = parseInt(totallInsert) + parseInt(coinAdjustList[i]);
@@ -77,26 +105,11 @@ function totall() {
 function clearAdjust() {
     totallInsert = 0;
     coinAdjustList = [0, 0, 0, 0, 0, , 0, 0, 0, 0];
-    jsonCoinAdjustList = [0, 0, 0, 0, 0, , 0, 0, 0, 0];
-}
-
-// 中獎金額計算 改由後端提供
-var result = 0;
-
-function Calculation() {
-    for (i = 0; i <= 27; i++) {
-        if (list[i] == randNum) {
-            result = odds[typeOf[i] - 1] * coinAdjustList[typeOf[i] - 1];
-            console.log("中獎數字:" + randNum);
-            console.log("中獎金額:" + result + "=賠率:" + odds[typeOf[i] - 1] + "*下注金額:" + coinAdjustList[typeOf[i] - 1]);
-        }
-    }
 }
 
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
 var temp = 0;
-
 function run() {
     var t = 20;
     var a = 1;
@@ -123,7 +136,6 @@ function run() {
 
 // 鎖定/解鎖按鍵
 var isClick = false;
-
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
@@ -131,6 +143,7 @@ function lockClick() {
 }
 
 // 遊戲開始
+var result = 0;
 var randNum = 0;
 var odds = [5, 3, 1.5, 1.2, 1, 0.8, 0.7, 0.6, 0.5] //賠率
 var typeOf = [1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9] //格子種類
@@ -139,36 +152,28 @@ function btnStart() {
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
-        var sentCoinAdjustLis = JSON.stringify(jsonCoinAdjustList);
-        console.log(sentCoinAdjustLis);
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
         $.ajax({
-            async: false , //啟用同步請求
-            type: "post",
+            async: true, //啟用同步請求
+            type: "POST",
             url: "/LittleMary",
             dataType: "json",
-            data: {'bet':coinAdjustList},
-            success: function (e) {
-                alert("OKstartButton");
-                console.log(e, "OK");
+            data: {
+                'bet': coinAdjustList
             },
-            error: function (e) {
-                console.log(e);
+            success: function (response) {
+                randNum = response["number"];
+                result = response["coin"];
+                console.log(randNum);
+                console.log(result);
+            },
+            error: function () {
                 alert("發生錯誤startButton");
             }
         })
 
-        
-        randNum = Math.floor(Math.random() * 28 + 1); // 接收一個亂數 1~28
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }
-
-        Calculation();
         temp = parseInt(coin.value) + result // 如中斷遊戲則先返還 temp 至玩家帳戶
         run();
         //如無中斷應從玩家帳戶取回
@@ -194,17 +199,12 @@ function btnFinish() {
         alert("返還金額 :" + coin.value + ", 時間:" + d.getFullYear() + "年" + d.getMonth() + "月" +
             d.getDate() + "日" + d.getHours() + "時" + d.getMinutes() + "分" + d.getSeconds() + "秒");
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
         $.ajax({
-            async: false , //啟用同步請求
+            async: false, //啟用同步請求
             type: "POST",
             url: "../",
             dataType: "json",
-            data: coin.value ,
+            data: coin.value,
             success: function () {
                 alert("OKfinishButton")
             },
@@ -238,46 +238,3 @@ function btnFinish() {
 //         }
 //     })
 // }
-
-$(document).ready(function () {
-    $("#startButton").click(function () {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: "post",
-            url: "/LittleMary",
-            dataType: "json",
-            data: {
-                'bet': coinAdjustList
-            },
-            success: function (e) {
-                alert("OKstartButton");
-                console.log(e, "OK");
-            },
-            error: function (e) {
-                console.log(e);
-                alert("發生錯誤startButton");
-            }
-        })
-    })
-
-    $("#finishButton").click(function () {
-        $.ajax({
-            type: "POST",
-            url: "",
-            dataType: "json",
-            data: {
-                餘額: coin.value,
-            },
-            success: function () {
-                alert("OKfinishButton")
-            },
-            error: function () {
-                alert("發生錯誤finishButton");
-            }
-        })
-    })
-});
