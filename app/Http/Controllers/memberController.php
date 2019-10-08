@@ -71,13 +71,18 @@ class memberController extends Controller
             if (Hash::check($memberPassword, $user->Password))
             {
                 // The passwords match...
-                echo 'success';
+                // echo 'success';
                 Session::put("account",$memberAccount);
                 Session::put("Permission",$user->Permission);
                 // $Per=Session::get("Permission");
                 // echo $Per;
+                $arr["status"] = 1;
+                $arr["account"] = $memberAccount;
+                echo json_encode($arr);
+                // Session::put("account",$memberAccount);
             }else{
-                echo 'pw not correct';
+                $arr["status"] = 0;
+                echo json_encode($arr);
             }
             
             // if($memberPassword === $user->memberPassword){
@@ -100,9 +105,15 @@ class memberController extends Controller
         
     }
 
-    public function logout(){
-        Session::pull("account");
-        Session::pull("Permission");
+    public function logout(Request $request){
+        if(isset($request->logout) && $request->logout==1){
+            // $logout= $request->logout;
+            Session::pull("account");
+            Session::pull("Permission");
+            echo "1";
+        } else {
+            echo "0";
+        }
     }
 
     /**

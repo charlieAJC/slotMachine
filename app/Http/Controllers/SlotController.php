@@ -12,7 +12,8 @@ class SlotController extends Controller
         
         
         if(isset($request->slot) && $request->slot === '1'){
-            $memberAccount = $request->account;
+            // $memberAccount = $request->account;
+            $memberAccount = Session::get("account");
             $cost = $request->cost;
             // $cost = 100;
             // echo "hi, PHP get it!";
