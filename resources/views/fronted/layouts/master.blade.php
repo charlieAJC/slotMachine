@@ -33,6 +33,7 @@
     <script src="{{ asset('js/fronted/index.js') }}"></script>
     <script src="{{ asset('js/fronted/register.js') }}"></script>
     <script src="{{ asset('js/fronted/login.js') }}"></script>
+    <script src="{{ asset('js/fronted/logout.js') }}"></script>
 
 </body>
 
