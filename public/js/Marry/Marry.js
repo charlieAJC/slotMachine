@@ -49,9 +49,15 @@ function ChangeMode() {
 
 // 產生當次投注金額陣列 coinAdjustList = [0,0,0,0,0,0,0,0,0]
 var coinAdjustList = new Array(9);
+var jsonCoinAdjustList = new Array(9);
 function coinAdjust() {
     for (i = 0; i <= 8; i++) {
         coinAdjustList[i] = document.getElementById("coinAdjust" + parseInt(i + 1)).value;
+    }
+    for (i = 0; i <= 8; i++) {
+        jsonCoinAdjustList[i] = {
+            "value": coinAdjustList[i]
+        };
     }
 }
 
@@ -67,6 +73,7 @@ function totall() {
 function clearAdjust() {
     totallInsert = 0;
     coinAdjustList = [0, 0, 0, 0, 0, , 0, 0, 0, 0];
+    jsonCoinAdjustList = [0, 0, 0, 0, 0, , 0, 0, 0, 0];
 }
 
 // 中獎金額計算 改由後端提供
@@ -125,10 +132,36 @@ function btnStart() {
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
     totall(); // 輸出 投注金額總計 totallInsert
     if (totallInsert != 0) { //未下注則不執行
+
+        var sentCoinAdjustLis = JSON.stringify(jsonCoinAdjustList);
+        console.log(sentCoinAdjustLis);
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            async: false , //啟用同步請求
+            type: "post",
+            url: "/LittleMary",
+            dataType: "json",
+            data: {'bet':jsonCoinAdjustList},
+            success: function (e) {
+                alert("OKstartButton");
+                console.log(e, "OK");
+            },
+            error: function (e) {
+                console.log(e);
+                alert("發生錯誤startButton");
+            }
+        })
+
+        
         randNum = Math.floor(Math.random() * 28 + 1); // 接收一個亂數 1~28
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }
+
         Calculation();
         temp = parseInt(coin.value) + result // 如中斷遊戲則先返還 temp 至玩家帳戶
         run();
@@ -149,13 +182,35 @@ function btnFinish() {
     for (i = 0; i <= 8; i++) {
         document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
     }
+
     if (confirm("遊戲結束,即將返還您的遊戲餘額至您的帳號,確定要離開嗎?")) {
         var d = new Date();
         alert("返還金額 :" + coin.value + ", 時間:" + d.getFullYear() + "年" + d.getMonth() + "月" +
             d.getDate() + "日" + d.getHours() + "時" + d.getMinutes() + "分" + d.getSeconds() + "秒");
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            async: false , //啟用同步請求
+            type: "POST",
+            url: "../",
+            dataType: "json",
+            data: coin.value ,
+            success: function () {
+                alert("OKfinishButton")
+            },
+            error: function () {
+                alert("發生錯誤finishButton");
+            }
+        })
+
     } else {
         alert("遊戲繼續");
     }
+
 }
 
 // 測試中, 後端給盤面配置
@@ -177,46 +232,3 @@ function btnFinish() {
 //         }
 //     })
 // }
-
-$(document).ready(function () {
-    $("#startButton").click(function () {
-        // console.log(typeof coinAdjustList);
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: "post",
-            url: "/LittleMary/test",
-            dataType: "json",
-            // data: coinAdjustList,
-            data : {"bet":'1,2,3,4,5,6,7,8,9'} ,
-            success: function (e) {
-                alert("OKstartButton");
-                console.log(e, "OK");
-            },
-            error: function (e) {
-                console.log(e);
-                alert("發生錯誤startButton");
-            }
-        })
-    })
-
-    $("#finishButton").click(function () {
-        $.ajax({
-            type: "POST",
-            url: "",
-            dataType: "json",
-            data: {
-                餘額: coin.value,
-            },
-            success: function () {
-                alert("OKfinishButton")
-            },
-            error: function () {
-                alert("發生錯誤finishButton");
-            }
-        })
-    })
-});
