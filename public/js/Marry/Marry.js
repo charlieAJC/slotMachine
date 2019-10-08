@@ -145,7 +145,7 @@ function btnStart() {
             type: "post",
             url: "/LittleMary",
             dataType: "json",
-            data: {'bet':jsonCoinAdjustList},
+            data: {'bet':coinAdjustList},
             success: function (e) {
                 alert("OKstartButton");
                 console.log(e, "OK");
