@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-        <h2 class="mt-4 mb-3">客服中心</h2>
+        {{-- <h2 class="mt-4 mb-3">客服中心</h2> --}}
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="/">首頁</a>
