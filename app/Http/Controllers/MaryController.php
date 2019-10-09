@@ -115,7 +115,9 @@ class MaryController extends Controller
                     $fruitarray[$v]=$u;
                 }
             } 
-            echo json_encode(array('fruitarray'=>$fruitarray,'fruitodds'=>$fruitodds));
+            $Account=Session::get('account');
+            $GameCoin=User::where('Account', '=', $Account)->pluck('GameCoin');
+            echo json_encode(array('fruitarray'=>$fruitarray,'fruitodds'=>$fruitodds,'GameCoin'=>$GameCoin[0]));
         }else{
             if (isset($request->bet)) {
                 // $name=$request->bet;
@@ -187,7 +189,7 @@ class MaryController extends Controller
                 'ChangeCoin'=>$coin,
                 'GameCoin'=>$NewGameCoin
             ]);
-                $transJSON=array('number'=>$number,'coin'=>$coin,'GameCoin'=>$NewGameCoin,'fruitarray'=>$fruitarray);
+                $transJSON=array('number'=>$number,'coin'=>$coin,'GameCoin'=>$NewGameCoin);
                 echo json_encode($transJSON);
             } else {
                 $Account=Session::get('account');
