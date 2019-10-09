@@ -12,6 +12,108 @@
         </li>
         <li class="breadcrumb-item active">購點儲值</li>
     </ol>
+
+    {{-- ------------景翔CSS很智障的儲值表格------------ --}}
+    <div>
+        <p>儲值方法</p>
+    </div>
+
+    <div>
+        <img src="img\fronted\buy\jkopc.png" style="background-color:grey;" id="jkBuy">
+        <img src="img\fronted\buy\shineidianhua_pc_tw.png" style="background-color:grey;" id="chtBuy">
+    </div>
+
+    {{-- 用js更改敘述內容 --}}
+    <div>
+        <p id="buyDesc">使用街口支付App掃描網頁內付款QRCode碼，並以「街口帳戶」餘額付款或連結「銀行帳戶」付款</p>
+    </div>
+
+    <div style="width: 415px; flex: 0 1 auto;">
+        <table id="buyPlan">
+            <tr>
+                <th></th>
+                <th>價格</th>
+                <th>點數</th>
+            </tr>
+            <tr>
+                <td>NT$ 100</td>
+                <td>貝殼幣 × 140</td>
+            </tr>
+            <tr>
+                <td>NT$ 250</td>
+                <td>貝殼幣 × 350</td>
+            </tr>
+            <tr>
+                <td>NT$ 500</td>
+                <td>貝殼幣 × 700</td>
+            </tr>
+            <tr>
+                <td>NT$ 1000</td>
+                <td>貝殼幣 × 1400</td>
+            </tr>
+            <tr>
+                <td>NT$ 2500</td>
+                <td>貝殼幣 × 3500</td>
+            </tr>
+        </table>
+    </div>
+
+    {{-- <div style="width: 415px; flex: 0 1 auto;">
+        <table>
+            <tr>
+                <th>價格</th>
+                <th>點數</th>
+            </tr>
+            <tr>
+                <td>NT$ 100</td>
+                <td>貝殼幣 × 140</td>
+            </tr>
+            <tr>
+                <td>NT$ 250</td>
+                <td>貝殼幣 × 350</td>
+            </tr>
+            <tr>
+                <td>NT$ 500</td>
+                <td>貝殼幣 × 700</td>
+            </tr>
+            <tr>
+                <td>NT$ 1000</td>
+                <td>貝殼幣 × 1400</td>
+            </tr>
+        </table>
+    </div> --}}
+
+    <div>
+        <table>
+            <tr>
+                <th>確認購買內容</th>
+            </tr>
+            <tr>
+                <td>商品</td>
+                <td>貝殼幣 × 140</td>
+            </tr>
+            <tr>
+                <td>價格</td>
+                <td>NT$ 100</td>
+            </tr>
+            <tr>
+                <td>付費方式</td>
+                <td>街口支付</td>
+            </tr>
+        </table>
+        <input type="checkbox" id="agree">
+        <label for="agree">
+            我同意會員系統服務合約、個人資料隱私權保護政策未滿20歲之消費者，
+            應由法定代理人閱讀並同意上述合約後，方得使用本儲值服務。
+        </label>
+        <br>
+        <button>同意</button>
+    </div>
+    {{-- ------------景翔CSS很智障的儲值表格------------ --}}
+
+
+
+
     {{-- <div class="row">
         <div class="col-lg-4 mb-4">
             <div class="card h-100">
@@ -66,5 +168,6 @@
         </div>
     </div> --}}
 </div>
+{{-- <script src="{{ asset('js/fronted/buy.js') }}"></script> --}}
 
 @endsection
