@@ -4,9 +4,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 /* @import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One); */
 
-* {
+/* * {
   font-family: 'Roboto', sans-serif;
-}
+} */
 
 /* code {
   border: 1px solid #eee;
@@ -34,6 +34,7 @@ h1 {
   text-align: center;
   padding-bottom: 25px;
 }
+
 
 .slotMachine .slot{
   height:100px;

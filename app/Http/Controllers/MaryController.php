@@ -118,6 +118,7 @@ class MaryController extends Controller
             //水果種類賠率 [$pineapple,$watermelon,$grape,$strawberry,$orange,$cherry,$tomato,$cranberry,$carrot]
             $fruitodds=[10,5,4,3,2,1,0.4,0.25,0.2];
             $fruittype=array();
+            $fruitarray=array();
             foreach($fruit as $u=>$k){
                 array_push($fruittype, $u);
                 foreach($k as $v){
@@ -126,7 +127,8 @@ class MaryController extends Controller
                     } //else {
                     //     echo "";
                     // }
-                    $odds[$v]=$fruitodds[array_search($u,$fruittype)];        
+                    $odds[$v]=$fruitodds[array_search($u,$fruittype)]; 
+                    $fruitarray[$v]=$u;
                 }
             } 
             // echo var_dump($odds).'<hr>';
@@ -158,15 +160,25 @@ class MaryController extends Controller
                 'ChangeCoin'=>$coin,
                 'GameCoin'=>$NewGameCoin
             ]);
-          
-            $transJSON=array('number'=>$number,'coin'=>$coin,'BetCoin'=>$sum,'GameCoin'=>$NewGameCoin,);
+            $transJSON=array('number'=>$number,'coin'=>$coin,'GameCoin'=>$NewGameCoin,'fruitarray'=>$fruitarray);
             echo json_encode($transJSON);
             
             }else{
-                echo 'insert bet';
+                $Account=Session::get('account');
+                $GameCoin=User::where('Account','=',$Account)->pluck('GameCoin');
+                $total=$request->total;
+                $need=$request->need;
+                if($GameCoin[0]>=$total+$need){
+                    // echo json_encode(array('yoyo'=>'123'));
+                    echo json_encode(array('need'=>$need,'GameCoin'=>$GameCoin[0]-($total+$need),'tatal'=>$total));
+                }else{
+                    echo json_encode(array('need'=>$GameCoin[0]-$total,'GameCoin'=>$GameCoin[0]-($total+($GameCoin[0]-$total)),'total'=>$total));
+                }
+                // echo json_encode(array('yoyo'=>'123'));
                 
-            }
 
+            }
+        //if($GameCoin[0]<$total+$need+$need&&)) 
         // echo json_encode($request->bet);
     }
 }

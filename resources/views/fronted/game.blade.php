@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="mt-4 mb-3">遊戲介紹</h2>
+    {{-- <h2 class="mt-4 mb-3">遊戲介紹</h2> --}}
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="/">首頁</a>
@@ -26,10 +26,10 @@
         </div>
         <div class="col-lg-6 portfolio-item">
             <div class="card h-100">
-                <a href="Marry"><img class="card-img-top d-block w-100" src="http://placehold.it/700x400" alt=""></a>
+                <a href="LittleMary"><img class="card-img-top d-block w-100" src="img/fronted/2.jpg" alt=""></a>
                 <div class="card-body">
                     <h4 class="card-title">
-                        <a href="Marry">小瑪莉</a>
+                        <a href="LittleMary">小瑪莉</a>
                     </h4>
                     <p class="card-text">Marry</p>
                 </div>
