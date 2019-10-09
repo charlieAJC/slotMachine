@@ -38,8 +38,9 @@
     <script src="{{ asset('js/fronted/buy.js') }}"></script>
     <script src="{{ asset('js/fronted/update.js') }}"></script>
     
-    <link href="{{ asset('css/slot/style.css')}}" rel="stylesheet">
-    <script src="{{ asset('js/slot/slotmachine.js') }}"></script>
+    {{-- <link href="{{ asset('css/slot/style.css')}}" rel="stylesheet"> --}}
+    <script src="{{ asset('js/slot/slotmachine.js') }}"></script>    
+    <link href="{{ asset('css/slot/style copy.css')}}" rel="stylesheet">
 
 </body>
 

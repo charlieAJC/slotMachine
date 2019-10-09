@@ -29,15 +29,11 @@ Route::get('/', function () {
 });
 
 //註冊
-Route::get('/register', function () {
-    return view('fronted.register');
-});
+Route::get('/register', function () {return view('fronted.register');});
 Route::post('/create',"memberController@create");
 
 //登入
-Route::get('/login', function () {
-    return view('fronted.login');
-});
+Route::get('/login', function () {return view('fronted.login');});
 Route::post('/login',"memberController@login");
 // Route::get('/login',"memberController@login");
 
@@ -45,15 +41,11 @@ Route::post('/login',"memberController@login");
 Route::post('/logout',"memberController@logout");
 
 //遊戲介紹
-Route::get('/game', function () {
-    return view('fronted.game');
-});
+Route::get('/game', function () {return view('fronted.game');});
 Route::post('/game',"memberController@game");
 
 //最新消息
-Route::get('/news', function () {
-    return view('fronted.news');
-});
+Route::get('/news', function () {return view('fronted.news');});
 Route::post('/news',"memberController@news");
 
 //客服
@@ -88,4 +80,10 @@ Route::group(['middleware'=>'Permission'],function(){
 
 
 
+// ------佩諠 拉霸機test-----
+Route::get('slot copy', function () {
+    return view('slot.slot copy');
+});
+Route::post('slot copy', "SlotController@slot copy");
+// ------佩諠 拉霸機test------
 

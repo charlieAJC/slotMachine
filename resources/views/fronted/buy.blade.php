@@ -12,7 +12,6 @@
         </li>
         <li class="breadcrumb-item active">購點儲值</li>
     </ol>
-
     {{-- ------------景翔CSS很智障的儲值表格------------ --}}
     <div>
         <p>儲值方法</p>

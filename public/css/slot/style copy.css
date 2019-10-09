@@ -1,0 +1,103 @@
+.slotmachine {
+  background-color: rgb(240, 150, 150);
+}
+
+/* #machine{
+  　position:absolute;
+  　top:10px;
+  　left:10px;
+  　width:150px;
+  　height:150px;
+  　z-index:1;
+  } */
+  
+
+.btn-group-justified {
+  padding-top: 50%;
+  padding-left: 9%;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+
+.slotMachine .slot{
+  height:100px;
+  background-position-x: 55%;
+  background-repeat: no-repeat;
+}
+
+.slot1 {
+  background-image: url("../../img/slot/slot1.png");
+}
+
+.slot2 {
+  background-image: url("../../img/slot/slot2.png");
+}
+
+.slot3 {
+  background-image: url("../../img/slot/slot3.png");
+}
+
+.slot4 {
+  background-image: url("../../img/slot/slot4.png");
+}
+
+.slot5 {
+  background-image: url("../../img/slot/slot5.png");
+}
+
+.slot6 {
+  background-image: url("../../img/slot/slot6.png");
+}
+
+/*
+ * Casino
+ */
+
+
+#casino .content:nth-child(1) {
+  text-align: center;
+  background: url('../../img/slot/machine.png') no-repeat ;
+  padding: 1px 0px 5px 0px;
+  background-position-x: calc(50% + 16px);
+  background-position-y: calc(10%);
+  min-height: 515px;
+}
+
+#casino .content > div {
+  padding-top: 165px;
+  width: 300px;
+  margin: 0 auto;
+  transform: translateX(30px);
+}
+
+.machineContainer{
+  padding: 5px 1px 5px 1px;
+  height: 135px;
+}
+
+.slotMachine{
+  width: 36.333333%;
+  border: 5px solid #CF5178;
+  height: 110px;
+  display: inline-block;
+}
+
+/* #casino .btn-group {
+  margin: 150px;
+  transform: translateX(20%);
+} */
+
+#casino .btn-group .btn {
+  border: none;
+  background-color: rgb(209, 79, 119);
+}
+
+#casino .btn-group .btn:hover, .btn-group .btn:focus {
+  background-color: rgb(180, 75, 119);
+}
+
+.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}

@@ -10,22 +10,30 @@ $(document).ready(function () {
     $("#name").blur(function () {
         if (rule1.test($(this).val())) {
             $('.error1').text('')
-            $(this).css("border-color", "green")
+            $('#name').css("border-color", "green")
             nameFlag = true;
         } else {
             $('.error1').text('請輸入姓名')
-            $(this).css("border-color", "red")
+            $('.error1').css({
+                "color": "red",
+                "font-size": "0.8rem"
+            })
+            $('#name').css("border-color", "red")
         }
     })
     var rule2 = /^\w{6,12}$/;
     $("#account").blur(function () {
         if (rule2.test($(this).val())) {
             $('.error2').text('')
-            $(this).css("border-color", "green")
+            $('#account').css("border-color", "green")
             acFlag = true;
         } else {
             $('.error2').text('請輸入6-12位英文或數字的帳號')
-            $(this).css("border-color", "red")
+            $('.error2').css({
+                "color": "red",
+                "font-size": "0.8rem"
+            })
+            $('#account').css("border-color", "red")
         }
     })
     // var rule3=/^([\w\.\-]){1,64}\@([\w\.\-]){1,64}$/;
@@ -46,11 +54,15 @@ $(document).ready(function () {
     $("#password").blur(function () {
         if (rule4.test($(this).val())) {
             $('.error4').text('')
-            $(this).css("border-color", "green")
+            $('#password').css("border-color", "green")
             pwFlag = true;
         } else {
             $('.error4').text('請輸入6-12位英文或數字的密碼')
-            $(this).css("border-color", "red")
+            $('.error4').css({
+                "color": "red",
+                "font-size": "0.8rem"
+            })
+            $('#password').css("border-color", "red")
         }
     })
 
