@@ -69,7 +69,9 @@ Route::group(['middleware'=>'Permission'],function(){
     // ------景翔的拉霸機測試用route------
     
     // ------小瑪莉route-------
-    Route::get('/LittleMary', "MaryController@index");
+    Route::get('/LittleMary', function () {
+        return view('Marry.Marry');
+    });
     Route::post('/LittleMary', "MaryController@test");
 
 });
