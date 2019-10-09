@@ -6,21 +6,24 @@ $.ajaxSetup({
 
 //產生格子id list = [1,2,3,....,28]
 var list = new Array(28);
+var odds = new Array(9);
+var typeOf = new Array(28);
 function addNumber() {
     for (i = 0; i <= 27; i++) {
         list[i] = i + 1;
     }
 }
 addNumber();
-
-var typeOf = [1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9]
 $.ajax({
     async: true, //啟用同步請求
     type: "GET",
     url: "/LittleMary",
     dataType: "json",
-    data: {},
     success: function (response) {
+        typeOf = response["fruitarry"];
+        odds = response["fruitodds"];
+        console.log(odds);
+        console.log(typeOf);
         for (i = 1; i <= 28; i++) {
             document.getElementById(i).style.backgroundImage = url("img/Marry/pic" + typeOf[i - 1] + ".png");
         }
@@ -53,7 +56,7 @@ function decrese(i) {
     }
 }
 
-var totallCoin = 0 ;
+var totallCoin = 0;
 // 預儲遊戲機台,扣玩家儲值金
 function btnInsert() {
     document.getElementById("insertButton").disabled = true;
@@ -96,7 +99,7 @@ function btnInsert() {
         })
     }
     document.getElementById("insertButton").disabled = false;
-    totallCoin = 0 ;
+    totallCoin = 0;
 }
 
 // 切換 小賭/豪賭 模式
@@ -104,6 +107,7 @@ var isMode = true;
 var insertMoney = 1000;
 var increseMoney = 100;
 var decreseMoney = 100;
+
 function ChangeMode() {
     isMode = !isMode;
     insertMoney = isMode ? 1000 : 10000;
@@ -113,6 +117,7 @@ function ChangeMode() {
 
 // 產生當次投注金額陣列 coinAdjustList = [0,0,0,0,0,0,0,0,0]
 var coinAdjustList = new Array(9);
+
 function coinAdjust() {
     for (i = 0; i <= 8; i++) {
         coinAdjustList[i] = document.getElementById("coinAdjust" + parseInt(i + 1)).value;
@@ -121,6 +126,7 @@ function coinAdjust() {
 
 // 合計當次下注金額 totallInsert
 var totallInsert = 0;
+
 function totall() {
     for (i = 0; i < 8; i++) {
         totallInsert = parseInt(totallInsert) + parseInt(coinAdjustList[i]);
@@ -135,10 +141,34 @@ function clearAdjust() {
 
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
+
 function run() {
-    var t = 20;
-    var a = 1;
-    let startGame = setTimeout(function go() {
+    var t = 50;
+    var times = 1;
+    let startGame1 = setTimeout(function go1() {
+        for (j = 1; j <= 28; j++) { //把所有格子改成白底
+            document.getElementById(j).className = "normal";
+        }
+        document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成紅底
+        runEndNum++;
+        times++;
+        if (runEndNum >= 28) {
+            runEndNum = 0;
+        }
+        startGame1 = setTimeout(go1, t);
+        if (times >= 56) {
+            if(randNum-7 >= 0 && randNum-7 == runEndNum){
+                clearTimeout(startGame1);
+            }else{
+                randNum = randNum+7 ;
+                if(randNum==runEndNum){
+                    clearTimeout(startGame1);
+                }
+            }
+        }
+    }, 20)
+
+    let startGame2 = setTimeout(function go2() {
         for (j = 1; j <= 28; j++) { //把所有格子改成白底
             document.getElementById(j).className = "normal";
         }
@@ -147,16 +177,16 @@ function run() {
         if (runEndNum >= 28) {
             runEndNum = 0;
         }
-        a = a.toFixed(8) * 1.0005;
-        t = t.toFixed(8) * a;
-        startGame = setTimeout(go, t);
-        if (t > 500 && randNum == runEndNum) {
-            clearTimeout(startGame);
+        t = t.toFixed(8) * 1.2 ;
+        startGame2 = setTimeout(go2, t);
+        if (randNum == runEndNum) {
+            clearTimeout(startGame2);
             coin.value = parseInt(coin.value) + result;
             clearAdjust();
             lockClick();
         }
-    }, 20)
+    }, 50)
+
 }
 
 // 鎖定/解鎖按鍵
@@ -170,7 +200,7 @@ function lockClick() {
 // 遊戲開始
 var result = 0;
 var randNum = 0;
-var odds = [5, 3, 1.5, 1.2, 1, 0.8, 0.7, 0.6, 0.5] //賠率
+
 function btnStart() {
     lockClick();
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
