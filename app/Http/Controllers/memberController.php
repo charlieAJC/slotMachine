@@ -92,7 +92,9 @@ class memberController extends Controller
             // }
         }else{
             // 帳號不存在
-            echo 'error';
+            // echo 'error';
+            $arr["status"] = 0;
+            echo json_encode($arr);
         }
         // if( User::find($memberAccount)==true){
         //     echo 'success';
