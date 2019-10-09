@@ -47,7 +47,7 @@
         <div class="form-label-group">
             <input type="account" id="account" class="form-control" placeholder="帳號" pattern="^\w{6,12}$" required autofocus>
             <label for="account">帳號</label>
-            <span class='error2'></span>
+            <span class='error2' style="color:red"></span>
 
             <div class="valid-feedback">符合規則</div>
             <div class="invalid-feedback">請輸入6-12位英文或數字的帳號</div>
@@ -55,7 +55,7 @@
         <div class="form-label-group">
             <input type="password" id="password" class="form-control" placeholder="密碼" pattern="^\w{6,12}$" required>
             <label for="password">密碼</label>
-            <span class='error4'></span>
+            <span class='error4' style="color:red"></span>
 
             <div class="valid-feedback">符合規則</div>
             <div class="invalid-feedback">請輸入6-12位英文或數字的密碼</div>
