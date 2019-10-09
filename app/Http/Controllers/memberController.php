@@ -158,9 +158,19 @@ class memberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $Phone = $request -> phone;
+        $Address = $request -> address;
+        $Account=Session::get("account");
+        $msg = User::where('Account',$Account)->update(['Phone'=>$Phone,'Address'=>$Address]);
+        // echo $msg;
+        // dd ($msg);
+        if($msg){
+            echo "1";
+        } else {
+            echo "0";
+        }
     }
 
     /**

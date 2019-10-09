@@ -34,7 +34,7 @@
                         使用者帳號
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">更改個人資料</a>
+                        <a class="dropdown-item" href="update">更改個人資料</a>
                         <a class="dropdown-item" href="#" id="navLogout">登出</a>
                     </div>
                 </li>

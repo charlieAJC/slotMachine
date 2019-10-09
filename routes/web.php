@@ -56,29 +56,36 @@ Route::get('/news', function () {
 });
 Route::post('/news',"memberController@news");
 
-
-Route::group(['middleware'=>'Permission'],function(){
-    //儲值
-    Route::get('/buy', function () {return view('fronted.buy');});
-    Route::post('/buy',"memberController@buy");
-    // ------景翔的拉霸機測試用route------
-    Route::get('slot', function () {
-        return view('slot.slot');
-    });
-    Route::post('slot', "SlotController@slot");
-    // ------景翔的拉霸機測試用route------
-    
-    // ------小瑪莉route-------
-    Route::get('/LittleMary', "MaryController@index");
-    Route::post('/LittleMary', "MaryController@test");
-
-});
-
-
-
 //客服
 Route::get('/contact', function () {
     return view('fronted.contact');
 });
 Route::post('/contact',"memberController@contact");
+
+
+//--------------會員頁面---------------
+Route::group(['middleware'=>'Permission'],function(){
+//-----------------會員資料修改-----------------
+    Route::get('/update', function () {return view('fronted.Update');});
+    Route::post('/update', "memberController@Update");
+
+    //---------------管理者頁面--------------
+    Route::group(['middleware'=>'Manager'],function(){
+        //---------------------測試用
+        Route::get('/manager', function () {return view('fronted.Manager');});
+    });
+    //儲值
+    Route::get('/buy', function () {return view('fronted.buy');});
+    Route::post('/buy',"memberController@buy");
+    // ------拉霸機------
+    Route::get('/slot', function () {return view('slot.slot');});
+    Route::post('/slot', "SlotController@slot");
+    // ------小瑪莉-------
+    Route::get('/LittleMary', "MaryController@index");
+    Route::post('/LittleMary', "MaryController@test");
+});
+
+
+
+
 
