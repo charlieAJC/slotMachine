@@ -8,6 +8,7 @@ $.ajaxSetup({
 var list = new Array(28);
 var odds = new Array(9);
 var typeOf = new Array(28);
+
 function addNumber() {
     for (i = 0; i <= 27; i++) {
         list[i] = i + 1;
@@ -59,7 +60,6 @@ function decrese(i) {
 var totallCoin = 0;
 // 預儲遊戲機台,扣玩家儲值金
 function btnInsert() {
-    document.getElementById("insertButton").disabled = true;
     coinAdjust();
     totall();
     totallCoin = parseInt(totallInsert) + parseInt(coin.value);
@@ -98,7 +98,6 @@ function btnInsert() {
             }
         })
     }
-    document.getElementById("insertButton").disabled = false;
     totallCoin = 0;
 }
 
@@ -145,7 +144,7 @@ var runEndNum = 0;
 function run() {
     var t = 50;
     var times = 1;
-    let startGame1 = setTimeout(function go1() {
+    let startGame = setTimeout(function go1() {
         for (j = 1; j <= 28; j++) { //把所有格子改成白底
             document.getElementById(j).className = "normal";
         }
@@ -155,42 +154,28 @@ function run() {
         if (runEndNum >= 28) {
             runEndNum = 0;
         }
-        startGame1 = setTimeout(go1, t);
+        startGame = setTimeout(go1, t);
         if (times >= 56) {
-            if(randNum-7 >= 0 && randNum-7 == runEndNum){
-                clearTimeout(startGame1);
-            }else{
-                randNum = randNum+7 ;
-                if(randNum==runEndNum){
-                    clearTimeout(startGame1);
-                }
+            if (randNum - 7 >= 0 && randNum - 7 == runEndNum) {
+                t = 1000;
+            } else if (randNum - 7 < 0 && randNum + 21 == runEndNum){
+                t = 1000;
             }
+            if (randNum == runEndNum) {
+                clearTimeout(startGame);
+                coin.value = parseInt(coin.value) + result;
+                clearAdjust();
+                lockClick();
+            }
+            
         }
     }, 20)
-
-    let startGame2 = setTimeout(function go2() {
-        for (j = 1; j <= 28; j++) { //把所有格子改成白底
-            document.getElementById(j).className = "normal";
-        }
-        document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成紅底
-        runEndNum++;
-        if (runEndNum >= 28) {
-            runEndNum = 0;
-        }
-        t = t.toFixed(8) * 1.2 ;
-        startGame2 = setTimeout(go2, t);
-        if (randNum == runEndNum) {
-            clearTimeout(startGame2);
-            coin.value = parseInt(coin.value) + result;
-            clearAdjust();
-            lockClick();
-        }
-    }, 50)
 
 }
 
 // 鎖定/解鎖按鍵
 var isClick = false;
+
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
