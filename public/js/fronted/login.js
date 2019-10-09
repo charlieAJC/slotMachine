@@ -12,11 +12,15 @@ $(document).ready(function () {
     $("#loginAccount").blur(function () {
         if (rule2.test($(this).val())) {
             $('.error2').text('')
-            $(this).css("border-color", "green")
+            $('#loginAccount').css("border-color", "green")
             acFlag = true;
         } else {
             $('.error2').text('請輸入6-12位英文或數字的帳號')
-            $(this).css("border-color", "red")
+            $('.error2').css({
+                "color": "red",
+                "font-size": "0.8rem"
+            })
+            $('#loginAccount').css("border-color", "red")
         }
     })
 
@@ -24,11 +28,15 @@ $(document).ready(function () {
     $("#loginPassword").blur(function () {
         if (rule4.test($(this).val())) {
             $('.error4').text('')
-            $(this).css("border-color", "green")
+            $('#loginPassword').css("border-color", "green")
             pwFlag = true;
         } else {
             $('.error4').text('請輸入6-12位英文或數字的密碼')
-            $(this).css("border-color", "red")
+            $('.error4').css({
+                "color": "red",
+                "font-size": "0.8rem"
+            })
+            $('#loginPassword').css("border-color", "red")
         }
     })
 
@@ -84,4 +92,3 @@ $(document).ready(function () {
 //       });
 //     }, false);
 //   })();
-

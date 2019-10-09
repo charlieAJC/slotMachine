@@ -36,8 +36,9 @@
     <script src="{{ asset('js/fronted/login.js') }}"></script>
     <script src="{{ asset('js/fronted/logout.js') }}"></script>
     
-    <link href="{{ asset('css/slot/style.css')}}" rel="stylesheet">
-    <script src="{{ asset('js/slot/slotmachine.js') }}"></script>
+    {{-- <link href="{{ asset('css/slot/style.css')}}" rel="stylesheet"> --}}
+    <script src="{{ asset('js/slot/slotmachine.js') }}"></script>    
+    <link href="{{ asset('css/slot/style copy.css')}}" rel="stylesheet">
 
 </body>
 

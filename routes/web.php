@@ -82,3 +82,11 @@ Route::get('/contact', function () {
 });
 Route::post('/contact',"memberController@contact");
 
+
+// ------佩諠 拉霸機test-----
+Route::get('slot copy', function () {
+    return view('slot.slot copy');
+});
+Route::post('slot copy', "SlotController@slot copy");
+// ------佩諠 拉霸機test------
+
