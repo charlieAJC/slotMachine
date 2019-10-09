@@ -13,6 +13,23 @@ function addNumber() {
 }
 addNumber();
 
+var typeOf = [1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9]
+$.ajax({
+    async: true, //啟用同步請求
+    type: "GET",
+    url: "/LittleMary",
+    dataType: "json",
+    data: {},
+    success: function (response) {
+        for (i = 1; i <= 28; i++) {
+            document.getElementById(i).style.backgroundImage = url("img/Marry/pic" + typeOf[i - 1] + ".png");
+        }
+    },
+    error: function () {
+        alert("版面載入錯誤");
+    }
+})
+
 // 增加下注金額
 function increse(i) {
     var Id = ("coinAdjust" + i);
@@ -36,41 +53,50 @@ function decrese(i) {
     }
 }
 
+var totallCoin = 0 ;
 // 預儲遊戲機台,扣玩家儲值金
 function btnInsert() {
-    $('#insertButton').disabled = true ;
+    document.getElementById("insertButton").disabled = true;
     coinAdjust();
     totall();
-    if(isMode==true){
+    totallCoin = parseInt(totallInsert) + parseInt(coin.value);
+    if (isMode == true) {
         $.ajax({
             async: true, //啟用同步請求
             type: "POST",
             url: "/LittleMary",
             dataType: "json",
-            data: { 'total':totallInsert ,'need':insertMoney},
+            data: {
+                'total': totallCoin,
+                'need': insertMoney
+            },
             success: function (response) {
                 coin.value = parseInt(coin.value) + insertMoney;
             },
-            error: function(){
+            error: function () {
                 alert("請儲值");
             }
         })
-    }else{
+    } else {
         $.ajax({
             async: true, //啟用同步請求
             type: "POST",
             url: "/LittleMary",
             dataType: "json",
-            data: { 'total':totallInsert ,'need':insertMoney},
+            data: {
+                'total': totallCoin,
+                'need': insertMoney
+            },
             success: function (response) {
                 coin.value = parseInt(coin.value) + insertMoney;
             },
-            error: function(){
+            error: function () {
                 alert("請儲值");
             }
         })
     }
-    $('#insertButton').disabled = false ;
+    document.getElementById("insertButton").disabled = false;
+    totallCoin = 0 ;
 }
 
 // 切換 小賭/豪賭 模式
@@ -109,7 +135,6 @@ function clearAdjust() {
 
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
-var temp = 0;
 function run() {
     var t = 20;
     var a = 1;
@@ -127,7 +152,7 @@ function run() {
         startGame = setTimeout(go, t);
         if (t > 500 && randNum == runEndNum) {
             clearTimeout(startGame);
-            coin.value = parseInt(coin.value) + result; // 中獎金額返還
+            coin.value = parseInt(coin.value) + result;
             clearAdjust();
             lockClick();
         }
@@ -146,7 +171,6 @@ function lockClick() {
 var result = 0;
 var randNum = 0;
 var odds = [5, 3, 1.5, 1.2, 1, 0.8, 0.7, 0.6, 0.5] //賠率
-var typeOf = [1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9] //格子種類
 function btnStart() {
     lockClick();
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
@@ -158,7 +182,8 @@ function btnStart() {
             url: "/LittleMary",
             dataType: "json",
             data: {
-                'bet': coinAdjustList
+                'bet': coinAdjustList,
+                'MaryCoin': coin.value
             },
             success: function (response) {
                 randNum = response["number"];
@@ -174,10 +199,7 @@ function btnStart() {
         for (i = 0; i <= 8; i++) {
             document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
         }
-        temp = parseInt(coin.value) + result // 如中斷遊戲則先返還 temp 至玩家帳戶
         run();
-        //如無中斷應從玩家帳戶取回
-        temp = 0;
     } else {
         lockClick();
         alert("請下注");
@@ -218,23 +240,3 @@ function btnFinish() {
     }
 
 }
-
-// 測試中, 後端給盤面配置
-// $(document).ready(function () {
-//     $.ajax({
-//         type : "GET" ,
-//         url : "" ,
-//         dataType : "json" ,
-//         success: function () {
-//             alert("OKopenBroswer")
-//             for(i=1;i<=28;i++){
-//                 document.getElementById(i).style.backgroundImage = ;
-//                 }
-//             }
-//         },
-//         error: function () {
-//             alert("發生錯誤openBroswer");
-
-//         }
-//     })
-// }
