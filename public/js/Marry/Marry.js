@@ -1,3 +1,7 @@
+var list = new Array(28);
+var odds = new Array(9);
+var typeOf = new Array(28);
+
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -5,35 +9,34 @@ $.ajaxSetup({
 });
 
 //產生格子id list = [1,2,3,....,28]
-var list = new Array(28);
-var odds = new Array(9);
-var typeOf = new Array(28);
-
 function addNumber() {
     for (i = 0; i <= 27; i++) {
         list[i] = i + 1;
     }
 }
 addNumber();
-$.ajax({
-    async: true, //啟用同步請求
-    type: "POST",
-    url: "/LittleMary",
-    dataType: "json",
-    data: "1",
-    success: function (response) {
-        typeOf = response["fruitarry"];
-        odds = response["fruitodds"];
-        console.log(odds);
-        console.log(typeOf);
-        for (i = 1; i <= 28; i++) {
-            document.getElementById(i).style.backgroundImage = url("img/Marry/pic" + typeOf[i - 1] + ".png");
+
+$(document).ready(function () {
+    $.ajax({
+        async: true, //啟用同步請求
+        type: "POST",
+        url: "/LittleMary",
+        dataType: "json",
+        data: {'documentready':'ready'},
+        success: function (response) {
+            typeOf = response["fruitarry"];
+            odds = response["fruitodds"];
+            console.log(odds);
+            console.log(typeOf);
+            for (i = 1; i <= 28; i++) {
+                document.getElementById(i).style.backgroundImage = url("img/Marry/pic" + typeOf[i - 1] + ".png");
+            }
+        },
+        error: function () {
+            alert("版面載入錯誤");
         }
-    },
-    error: function () {
-        alert("版面載入錯誤");
-    }
-})
+    })
+});
 
 // 增加下注金額
 function increse(i) {
@@ -58,7 +61,7 @@ function decrese(i) {
     }
 }
 
-var totallCoin = 0;
+var totallCoin = 0; //盤面總金額
 // 預儲遊戲機台,扣玩家儲值金
 function btnInsert() {
     coinAdjust();
@@ -141,7 +144,6 @@ function clearAdjust() {
 
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
-
 function run() {
     var t = 50;
     var times = 1;
@@ -163,13 +165,13 @@ function run() {
             }
         }
         startGame = setTimeout(go, t);
-            if (t == 500 && randNum == runEndNum) {
-                clearTimeout(startGame);
-                coin.value = parseInt(coin.value) + result;
-                clearAdjust();
-                lockClick();
-            }
-        
+        if (t == 500 && randNum == runEndNum) {
+            clearTimeout(startGame);
+            coin.value = parseInt(coin.value) + result;
+            clearAdjust();
+            lockClick();
+        }
+
     }, 20)
 }
 
@@ -203,8 +205,8 @@ function btnStart() {
             success: function (response) {
                 randNum = response["number"];
                 result = response["coin"];
-                console.log(randNum);
-                console.log(result);
+                console.log("中獎數字:" + randNum);
+                console.log("獎金:" + result);
             },
             error: function () {
                 alert("發生錯誤startButton");
