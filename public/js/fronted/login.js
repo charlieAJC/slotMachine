@@ -1,15 +1,15 @@
 $(document).ready(function () {
     let acFlag, pwFlag;
-    $('#account').focus(function () {
+    $('#loginAccount').focus(function () {
         $(this).css("border-color", "#006cff")
     })
 
-    $('#account').blur(function () {
+    $('#loginAccount').blur(function () {
         $(this).css("border-color", "")
     })
 
     var rule2 = /^\w{6,12}$/;
-    $("#account").blur(function () {
+    $("#loginAccount").blur(function () {
         if (rule2.test($(this).val())) {
             $('.error2').text('')
             $(this).css("border-color", "green")
@@ -21,7 +21,7 @@ $(document).ready(function () {
     })
 
     var rule4 = /^\w{6,12}$/;
-    $("#password").blur(function () {
+    $("#loginPassword").blur(function () {
         if (rule4.test($(this).val())) {
             $('.error4').text('')
             $(this).css("border-color", "green")
@@ -45,8 +45,8 @@ $(document).ready(function () {
                 type: "post",
                 url: "login",
                 data: {
-                    account: $('#account').val(),
-                    password: $('#password').val()
+                    account: $('#loginAccount').val(),
+                    password: $('#loginPassword').val()
                 },
                 success: function (e) {
                     // console.log(e);
@@ -57,33 +57,31 @@ $(document).ready(function () {
                         window.location.href = "/";
                     } else {
                         alert("帳號或密碼錯誤");
-                        $("#password").val("");
+                        $("#loginPassword").val("");
                     }
                 }
             });
-
-            $("#index").click(function () {
-                window.location.href = 'index';
-            })
 
         }
     });
 });
 
-// (function () {
+// // Disable form submissions if there are invalid fields
+// (function() {
 //     'use strict';
-//     window.addEventListener('load', function () {
-//         // Get the forms we want to add validation styles to
-//         var forms = document.getElementsByClassName('needs-validation');
-//         // Loop over them and prevent submission
-//         var validation = Array.prototype.filter.call(forms, function (form) {
-//             form.addEventListener('submit', function (event) {
-//                 if (form.checkValidity() === false) {
-//                     event.preventDefault();
-//                     event.stopPropagation();
-//                 }
-//                 form.classList.add('was-validated');
-//             }, false);
-//         });
+//     window.addEventListener('load', function() {
+//       // Get the forms we want to add validation styles to
+//       var forms = document.getElementsByClassName('needs-validation');
+//       // Loop over them and prevent submission
+//       var validation = Array.prototype.filter.call(forms, function(form) {
+//         form.addEventListener('submit', function(event) {
+//           if (form.checkValidity() === false) {
+//             event.preventDefault();
+//             event.stopPropagation();
+//           }
+//           form.classList.add('was-validated');
+//         }, false);
+//       });
 //     }, false);
-// })();
+//   })();
+
