@@ -61,6 +61,16 @@ Route::group(['middleware'=>'Permission'],function(){
     //儲值
     Route::get('/buy', function () {return view('fronted.buy');});
     Route::post('/buy',"memberController@buy");
+    // ------景翔的拉霸機測試用route------
+    Route::get('slot', function () {
+        return view('slot.slot');
+    });
+    Route::post('slot', "SlotController@slot");
+    // ------景翔的拉霸機測試用route------
+    
+    // ------小瑪莉route-------
+    Route::get('/LittleMary', "MaryController@index");
+    Route::post('/LittleMary', "MaryController@test");
 
 });
 
@@ -72,14 +82,3 @@ Route::get('/contact', function () {
 });
 Route::post('/contact',"memberController@contact");
 
-
-// ------景翔的拉霸機測試用route------
-Route::get('slot', function () {
-    return view('slot.slot');
-});
-Route::post('slot', "SlotController@slot");
-// ------景翔的拉霸機測試用route------
-
-// ------小瑪莉route-------
-Route::get('/LittleMary', "MaryController@index");
-Route::post('/LittleMary', "MaryController@test");

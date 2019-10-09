@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Session;
 
 class SlotController extends Controller
 {
