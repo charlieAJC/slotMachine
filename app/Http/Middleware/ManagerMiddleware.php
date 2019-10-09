@@ -1,15 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
-
-use App\User;
-use Closure;
-use Illuminate\Support\Facades\Auth;
-// use Symfony\Component\HttpFoundation\Session\Session;
 use Illuminate\Support\Facades\Session;
+use Closure;
 
-
-class PermissionMiddleware
+class ManagerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -20,12 +15,11 @@ class PermissionMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Session::has('account') && Session::get('Permission') >= 1) {
+        if (Session::has('account') && Session::get('Permission') == 2) {
             return $next($request);
         }else{
-            return redirect('/login');
+            return redirect('/');
         }
     }
 
-    
 }
