@@ -39,7 +39,7 @@
         </li>
         <li class="breadcrumb-item active">登入會員</li>
     </ol>
-    <form id="user_login" method="POST" action="/index.blade.php" class="form-signin needs-validation" novalidate>
+    {{-- <form id="user_login" method="POST" action="/index.blade.php" class="form-signin needs-validation" novalidate> --}}
         @csrf
         <div class="text-center mb-1">
             <img class="mb-4" src="img/fronted/gambler.png" alt="" width="72" height="72">
@@ -72,7 +72,7 @@
             <button type="button" class="col-sm-6 btn btn-light"><a href="/">回首頁</a></button>
         </div>
         <div id="login_success" style="display:none;"></div>
-    </form>
+    {{-- </form> --}}
 </div>
 
 @endsection
