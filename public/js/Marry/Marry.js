@@ -17,9 +17,10 @@ function addNumber() {
 addNumber();
 $.ajax({
     async: true, //啟用同步請求
-    type: "GET",
+    type: "POST",
     url: "/LittleMary",
     dataType: "json",
+    data: "1",
     success: function (response) {
         typeOf = response["fruitarry"];
         odds = response["fruitodds"];
@@ -144,7 +145,7 @@ var runEndNum = 0;
 function run() {
     var t = 50;
     var times = 1;
-    let startGame = setTimeout(function go1() {
+    let startGame = setTimeout(function go() {
         for (j = 1; j <= 28; j++) { //把所有格子改成白底
             document.getElementById(j).className = "normal";
         }
@@ -154,23 +155,22 @@ function run() {
         if (runEndNum >= 28) {
             runEndNum = 0;
         }
-        startGame = setTimeout(go1, t);
-        if (times >= 56) {
-            if (randNum - 7 >= 0 && randNum - 7 == runEndNum) {
-                t = 1000;
-            } else if (randNum - 7 < 0 && randNum + 21 == runEndNum){
-                t = 1000;
+        if (times >= 42) {
+            if (randNum - 14 > 0 && randNum - 14 == runEndNum) {
+                t = 500;
+            } else if (randNum - 14 <= 0 && randNum + 14 == runEndNum) {
+                t = 500;
             }
-            if (randNum == runEndNum) {
+        }
+        startGame = setTimeout(go, t);
+            if (t == 500 && randNum == runEndNum) {
                 clearTimeout(startGame);
                 coin.value = parseInt(coin.value) + result;
                 clearAdjust();
                 lockClick();
             }
-            
-        }
+        
     }, 20)
-
 }
 
 // 鎖定/解鎖按鍵
