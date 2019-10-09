@@ -68,8 +68,12 @@ Route::group(['middleware'=>'Permission'],function(){
     // ------拉霸機------
     Route::get('slot', function () {return view('slot.slot');});
     Route::post('slot', "SlotController@slot");
-    // ------小瑪莉-------
-    Route::get('/LittleMary', "MaryController@index");
+    // ------景翔的拉霸機測試用route------
+    
+    // ------小瑪莉route-------
+    Route::get('/LittleMary', function () {
+        return view('Marry.Marry');
+    });
     Route::post('/LittleMary', "MaryController@test");
 
 

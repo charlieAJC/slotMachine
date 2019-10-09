@@ -24,13 +24,13 @@ $(document).ready(function () {
         dataType: "json",
         data: {'documentready':'ready'},
         success: function (response) {
-            typeOf = response["fruitarry"];
+            typeOf = response["fruitarray"];
             odds = response["fruitodds"];
             console.log(odds);
             console.log(typeOf);
-            for (i = 1; i <= 28; i++) {
-                document.getElementById(i).style.backgroundImage = url("img/Marry/pic" + typeOf[i - 1] + ".png");
-            }
+            // for (i = 1; i <= 28; i++) {
+            //     document.getElementById(i).style.backgroundImage = url("img/Marry/pic" + typeOf[i - 1] + ".png");
+            // }
         },
         error: function () {
             alert("版面載入錯誤");
