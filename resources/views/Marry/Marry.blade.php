@@ -54,32 +54,32 @@
             height: 50px;
         }
 
-        .pic1{
-            background-image: url("img/Marry/pic1.png");
+        .pineapple{
+            background-image: url("img/Marry/pineapple.png");
         }
-        .pic2{
-            background-image: url("img/Marry/pic2.png");
+        .watermelon{
+            background-image: url("img/Marry/watermelon.png");
         }
-        .pic3{
-            background-image: url("img/Marry/pic3.png");
+        .grape{
+            background-image: url("img/Marry/grape.png");
         }
-        .pic4{
-            background-image: url("img/Marry/pic4.png");
+        .strawberry{
+            background-image: url("img/Marry/strawberry.png");
         }
-        .pic5{
-            background-image: url("img/Marry/pic5.png");
+        .orange{
+            background-image: url("img/Marry/orange.png");
         }
-        .pic6{
-            background-image: url("img/Marry/pic6.png");
+        .cherry{
+            background-image: url("img/Marry/cherry.png");
         }
-        .pic7{
-            background-image: url("img/Marry/pic7.png");
+        .tomato{
+            background-image: url("img/Marry/tomato.png");
         }
-        .pic8{
-            background-image: url("img/Marry/pic8.png");
+        .cranberry{
+            background-image: url("img/Marry/cranberry.png");
         }
-        .pic9{
-            background-image: url("img/Marry/pic9.png");
+        .carrot{
+            background-image: url("img/Marry/carrot.png");
         }
 
     </style>
@@ -95,101 +95,100 @@
 </head>
 <body style="background-color: rgb(240, 134, 204)">
     <!-- 轉盤區域 -->
-    <div class="table" style="margin: 0px">
+    <div class="table" style="margin: 0px" id="runingArea">
         <table>
             <tr>
-                <td id="1"><img src="img/Marry/pic1.png"></td>
-                <td id="2"><img src="img/Marry/pic2.png"></td>
-                <td id="3"><img src="img/Marry/pic2.png"></td>
-                <td id="4"><img src="img/Marry/pic3.png"></td>
-                <td id="5"><img src="img/Marry/pic3.png"></td>
-                <td id="6"><img src="img/Marry/pic3.png"></td>
-                <td id="7"><img src="img/Marry/pic4.png"></td>
-                <td id="8"><img src="img/Marry/pic4.png"></td>
+                <td id="1"></td>
+                <td id="2"></td>
+                <td id="3"></td>
+                <td id="4"></td>
+                <td id="5"></td>
+                <td id="6"></td>
+                <td id="7"></td>
+                <td id="8"></td>
             </tr>
             <tr>
-                <td id="28"><img src="img/Marry/pic9.png"></td>
+                <td id="28"></td>
                 <td colspan="6" rowspan="6">
-                    <img src="img/Marry/pic1.png">X5.0
-                    <img src="img/Marry/pic2.png">X3.0
-                    <img src="img/Marry/pic3.png">X1.5
-                    <img src="img/Marry/pic4.png">X1.2<br>
-                    <img src="img/Marry/pic5.png">X1.0
-                    <img src="img/Marry/pic6.png">X0.8
-                    <img src="img/Marry/pic7.png">X0.7
-                    <img src="img/Marry/pic8.png">X0.6<br>
-                    <img src="img/Marry/pic9.png">X0.5
+                    X3.0
+                    X1.5
+                    X1.2<br>
+                    X1.0
+                    X0.8
+                    X0.7
+                    X0.6<br>
+                    X0.5
                 </td>
-                <td id="9"><img src="img/Marry/pic4.png"></td>
+                <td id="9"></td>
             </tr>
             <tr>
-                <td id="27"><img src="img/Marry/pic9.png"></td>
-                <td id="10"><img src="img/Marry/pic5.png"></td>
+                <td id="27"></td>
+                <td id="10"></td>
             </tr>
             <tr>
-                <td id="26"><img src="img/Marry/pic9.png"></td>
-                <td id="11"><img src="img/Marry/pic5.png"></td>
+                <td id="26"></td>
+                <td id="11"></td>
             </tr>
             <tr>
-                <td id="25"><img src="img/Marry/pic9.png"></td>
-                <td id="12"><img src="img/Marry/pic5.png"></td>
+                <td id="25"></td>
+                <td id="12"></td>
             </tr>
             <tr>
-                <td id="24"><img src="img/Marry/pic8.png"></td>
-                <td id="13"><img src="img/Marry/pic6.png"></td>
+                <td id="24"></td>
+                <td id="13"></td>
             </tr>
             <tr>
-                <td id="23"><img src="img/Marry/pic8.png"></td>
-                <td id="14"><img src="img/Marry/pic6.png"></td>
+                <td id="23"></td>
+                <td id="14"></td>
             </tr>
             <tr>
-                <td id="22"><img src="img/Marry/pic8.png"></td>
-                <td id="21"><img src="img/Marry/pic8.png"></td>
-                <td id="20"><img src="img/Marry/pic7.png"></td>
-                <td id="19"><img src="img/Marry/pic7.png"></td>
-                <td id="18"><img src="img/Marry/pic7.png"></td>
-                <td id="17"><img src="img/Marry/pic7.png"></td>
-                <td id="16"><img src="img/Marry/pic6.png"></td>
-                <td id="15"><img src="img/Marry/pic6.png"></td>
+                <td id="22"></td>
+                <td id="21"></td>
+                <td id="20"></td>
+                <td id="19"></td>
+                <td id="18"></td>
+                <td id="17"></td>
+                <td id="16"></td>
+                <td id="15"></td>
             </tr>
         </table>
     </div>
     <!-- 轉盤區域結束 -->
     <!-- 投注區域 -->
     <div class="setBoard" style="margin: 5px">
-        <li><img src="img/Marry/pic1.png">
+        <li><img src="img/Marry/pineapple.png">
             <p><button onclick="increse(1)">+</button><button onclick="decrese(1)">-</button></p>
             <p><input type="number" id="coinAdjust1" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/Marry/pic2.png">
+        <li><img src="img/Marry/watermelon.png">
             <p><button onclick="increse(2)">+</button><button onclick="decrese(2)">-</button></p>
             <p><input type="number" id="coinAdjust2" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/Marry/pic3.png">
+        <li><img src="img/Marry/grape.png">
             <p><button onclick="increse(3)">+</button><button onclick="decrese(3)">-</button></p>
             <p><input type="number" id="coinAdjust3" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/Marry/pic4.png">
+        <li><img src="img/Marry/strawberry.png">
             <p><button onclick="increse(4)">+</button><button onclick="decrese(4)">-</button></p>
             <p><input type="number" id="coinAdjust4" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/Marry/pic5.png">
+        <li><img src="img/Marry/orange.png">
             <p><button onclick="increse(5)">+</button><button onclick="decrese(5)">-</button></p>
             <p><input type="number" id="coinAdjust5" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/Marry/pic6.png">
+        <li><img src="img/Marry/cherry.png">
             <p><button onclick="increse(6)">+</button><button onclick="decrese(6)">-</button></p>
             <p><input type="number" id="coinAdjust6" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/Marry/pic7.png">
+        <li><img src="img/Marry/tomato.png">
             <p><button onclick="increse(7)">+</button><button onclick="decrese(7)">-</button></p>
             <p><input type="number" id="coinAdjust7" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/Marry/pic8.png">
+        <li><img src="img/Marry/cranberry.png">
             <p><button onclick="increse(8)">+</button><button onclick="decrese(8)">-</button></p>
             <p><input type="number" id="coinAdjust8" value="0" readonly="readonly" /></p>
         </li>
-        <li><img src="img/Marry/pic9.png">
+        <li><img src="img/Marry/carrot.png">
             <p><button onclick="increse(9)">+</button><button onclick="decrese(9)">-</button></p>
             <p><input type="number" id="coinAdjust9" value="0" readonly="readonly" /></p>
         </li>
