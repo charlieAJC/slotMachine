@@ -22,15 +22,16 @@ $(document).ready(function () {
         type: "POST",
         url: "/LittleMary",
         dataType: "json",
-        data: {'documentready':'ready'},
+        data: {
+            'documentready': 'ready'
+        },
         success: function (response) {
             typeOf = response["fruitarray"];
             odds = response["fruitodds"];
             console.log(odds);
-            console.log(typeOf);
-            // for (i = 1; i <= 28; i++) {
-            //     document.getElementById(i).style.backgroundImage = url("img/Marry/pic" + typeOf[i - 1] + ".png");
-            // }
+            for (i = 1; i <= 28; i++) {
+                document.getElementById(i).className = typeOf[i];
+            }
         },
         error: function () {
             alert("版面載入錯誤");
@@ -144,6 +145,7 @@ function clearAdjust() {
 
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
 var runEndNum = 0;
+
 function run() {
     var t = 50;
     var times = 1;
@@ -256,4 +258,13 @@ function btnFinish() {
         alert("遊戲繼續");
     }
 
+}
+
+window.onload = function () {
+    var oddsPic = new Vue({
+        el: '#runingArea',
+        data: {
+            messege: '123'
+        }
+    })
 }
