@@ -1,0 +1,36 @@
+td {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+.table {
+    background-color: rgb(120, 151, 236);
+}
+
+.setBoard {
+    background-color: rgb(240, 134, 204);
+}
+
+li {
+    border: 2px solid black;
+    width: 50px;
+    height: 124px;
+    display: inline-block;
+    background-color: aquamarine;
+    margin: 5px;
+}
+
+p>input {
+    width: 100px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.yellowLight {
+    background-color: yellow;
+}
+
+.normal {
+    background-color: rgb(120, 151, 236);
+}

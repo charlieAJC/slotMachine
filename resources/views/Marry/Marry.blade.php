@@ -10,79 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/Marry/vue.js"></script>
     <script src="js/Marry/Marry.js"></script>
-    <style>
-        td {
-            border: 2px solid black;
-            width: 50px;
-            height: 50px;
-        }
-
-        .table {
-            background-color: rgb(120, 151, 236);
-        }
-
-        .setBoard {
-            background-color: rgb(240, 134, 204);
-        }
-
-        li {
-            border: 2px solid black;
-            width: 54px;
-            height: 125px;
-            display: inline-block;
-            background-color: aquamarine;
-            margin: 5px;
-        }
-
-        p>input {
-            width: 100px;
-            padding: 0px;
-            margin: 0px;
-        }
-
-        .yellowLight {
-            background-color: yellow;
-            border: 1px solid black;
-            width: 50px;
-            height: 50px;
-        }
-
-        .normal {
-            background-color: rgb(120, 151, 236);
-            border: 1px solid black;
-            width: 50px;
-            height: 50px;
-        }
-
-        .pineapple{
-            background-image: url("img/Marry/pineapple.png");
-        }
-        .watermelon{
-            background-image: url("img/Marry/watermelon.png");
-        }
-        .grape{
-            background-image: url("img/Marry/grape.png");
-        }
-        .strawberry{
-            background-image: url("img/Marry/strawberry.png");
-        }
-        .orange{
-            background-image: url("img/Marry/orange.png");
-        }
-        .cherry{
-            background-image: url("img/Marry/cherry.png");
-        }
-        .tomato{
-            background-image: url("img/Marry/tomato.png");
-        }
-        .cranberry{
-            background-image: url("img/Marry/cranberry.png");
-        }
-        .carrot{
-            background-image: url("img/Marry/carrot.png");
-        }
-
-    </style>
     <!--bootstrap 4.3-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -92,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="css/Marry/Marry.css">
 </head>
 <body style="background-color: rgb(240, 134, 204)">
     <!-- 轉盤區域 -->
@@ -109,15 +37,7 @@
             </tr>
             <tr>
                 <td id="28"></td>
-                <td colspan="6" rowspan="6">
-                    X3.0
-                    X1.5
-                    X1.2<br>
-                    X1.0
-                    X0.8
-                    X0.7
-                    X0.6<br>
-                    X0.5
+                <td colspan="6" rowspan="6" id="oddsBoard">
                 </td>
                 <td id="9"></td>
             </tr>
@@ -195,7 +115,7 @@
         <p style="margin: 5px">
             <input type="number" id="coin" value="0" readonly="readonly">
             <button onclick="btnInsert()">insert coins</button>
-            <button onclick="ChangeMode()">Change Mode</button>
+            {{-- <button onclick="ChangeMode()">Change Mode</button> --}}
         </p>
         <p style="margin: 5px">
             <button type="submit" onclick="btnStart()" id="startButton">Start</button>
