@@ -44,18 +44,22 @@ body {
   margin-bottom: 30px;
 }
 /* footer */
-/* .py-1 {
-  position: fixed;
+.py-1 {
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #f2f2f2;
   color: #8c8c8c;
   text-align: center;
-}  */
+} 
 
 /* 首頁/? */
 .breadcrumb{
 margin-top: 20pt;
 }
 
+.d-block{
+  height: 350px;
+  object-fit: cover;
+  }

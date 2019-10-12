@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="zh-TW">
 
 <head>
@@ -16,12 +16,12 @@
     <link href="{{ asset('css/fronted/style.css')}}" rel="stylesheet">
     <link href="{{ asset('css/fronted/index.css')}}" rel="stylesheet">
     <link href="{{ asset('css/fronted/login.css')}}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/fronted/carousel.css')}}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/fronted/carousel.css')}}" rel="stylesheet">
 
 </head>
 
 <body>
-    {{-- @include('fronted.layouts.header') --}}
+    @include('fronted.layouts.header')
     @include('fronted.layouts.navbar')
     @yield('content')
     @include('fronted.layouts.footer')
@@ -44,4 +44,4 @@
 
 </body>
 
-</html>
+</html> --}}

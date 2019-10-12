@@ -1,6 +1,110 @@
-.slotmachine {
-  background-color: rgb(240, 150, 150);
+* {
+    box-sizing: border-box;
 }
+
+html {
+    background-size: cover;
+}
+
+body {
+    color: white;
+    /* 字 */
+    font-family: 'Microsoft JhengHei', Arial, Helvetica, sans-serif;
+
+}
+
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding: 0px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 615px;
+    /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+    width: 25%;
+    background-color: #94b8b8;
+
+}
+
+.none {
+    border-style: none;
+    margin: 120px 95px;
+}
+.none td{
+    border: 20px solid #94b8b8;
+}
+
+/* .......................... */
+
+/* Middle column */
+.column.middle {
+    width: 50%;
+    background: #94b8b8 url(../../img/slot/machine.png) no-repeat fixed 50% 35%;
+}
+
+/* Shuffle&Stop Btn*/
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position:absolute; */
+    bottom: -480px;
+    right: 32px;
+}
+
+.btn-group .button {
+    background-color: #737373;
+    /* Green */
+    border: 5px solid #737373;
+    color: #ffffff;
+    padding: 12px 28px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    float: left;
+}
+
+.btn-group .button:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+}
+
+.btn-group .button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+
+    .column.side,
+    .column.middle {
+        width: 100%;
+    }
+}
+
+/* .slotmachine {
+  background-color: rgb(240, 150, 150);
+} */
 
 /* #machine{
   　position:absolute;
@@ -10,26 +114,26 @@
   　height:150px;
   　z-index:1;
   } */
-  
 
-.btn-group-justified {
+
+/* .btn-group-justified {
   padding-top: 50%;
   padding-left: 9%;
-}
+} */
 
-h1 {
+/* h1 {
   text-align: center;
   padding-bottom: 25px;
-}
+} */
 
 
-.slotMachine .slot{
+/* .slotMachine .slot{
   height:100px;
   background-position-x: 55%;
   background-repeat: no-repeat;
-}
+} */
 
-.slot1 {
+/* .slot1 {
   background-image: url("../../img/slot/slot1.png");
 }
 
@@ -51,53 +155,53 @@ h1 {
 
 .slot6 {
   background-image: url("../../img/slot/slot6.png");
-}
+} */
 
 /*
  * Casino
  */
 
 
-#casino .content:nth-child(1) {
+/* #casino .content:nth-child(1) {
   text-align: center;
   background: url('../../img/slot/machine.png') no-repeat ;
   padding: 1px 0px 5px 0px;
   background-position-x: calc(50% + 16px);
   background-position-y: calc(10%);
   min-height: 515px;
-}
+} */
 
-#casino .content > div {
+/* #casino .content > div {
   padding-top: 165px;
   width: 300px;
   margin: 0 auto;
   transform: translateX(30px);
-}
+} */
 
-.machineContainer{
+/* .machineContainer{
   padding: 5px 1px 5px 1px;
   height: 135px;
-}
+} */
 
-.slotMachine{
+/* .slotMachine{
   width: 36.333333%;
   border: 5px solid #CF5178;
   height: 110px;
   display: inline-block;
-}
+} */
 
 /* #casino .btn-group {
   margin: 150px;
   transform: translateX(20%);
 } */
 
-#casino .btn-group .btn {
+/* #casino .btn-group .btn {
   border: none;
   background-color: rgb(209, 79, 119);
-}
+} */
 
-#casino .btn-group .btn:hover, .btn-group .btn:focus {
+/* #casino .btn-group .btn:hover, .btn-group .btn:focus {
   background-color: rgb(180, 75, 119);
-}
+} */
 
-.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
+/* .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}} */
