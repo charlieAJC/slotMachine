@@ -24,6 +24,24 @@ $.ajaxSetup({
     }
 });
 
+// window.onbeforeunload = function(){
+//     $.ajax({
+//         async: false,
+//         type: "POST",
+//         url: "/LittleMary",
+//         dataType: "json",
+//         data: {
+//             'closeGame': 'close'
+//         },
+//         success: function () {
+//             alert("close");
+//         },
+//         error: function () {
+//             alert("版面載入錯誤");
+//         }
+//     })
+// }
+
 //產生格子id list = [1,2,3,....,28]
 function listNumber() {
     for (i = 0; i <= 27; i++) {
@@ -45,14 +63,18 @@ $(document).ready(function () {
         success: function (response) {
             typeOf = response["fruitarray"];
             odds = response["fruitodds"];
+            fruitName = response["fruitType"];
             for (i = 1; i <= 28; i++) {
                 document.getElementById(i).style.backgroundImage = `url("img/Marry/${typeOf[i]}.png")`;
             }
-            const oddsList = document.querySelector('#oddsBoard');
-            for (let i = 0; i <= 8; i++) {
-                const oddsType = document.createElement('div');
-                oddsType.textContent = `X${odds[i]}`;
-                oddsList.appendChild(oddsType);
+            for (i = 1; i <= 9; i++) {
+                new Vue({
+                    el: `#odds${i}`,
+                    data: {
+                        messege: `X${odds[i-1]}`,
+                        pic:`img/Marry/${fruitName[i-1]}.png`
+                    }
+                })
             }
         },
         error: function () {
@@ -240,7 +262,7 @@ function btnFinish() {
         // alert("返還金額 :" + coin.value + ", 時間:" + d.getFullYear() + "年" + d.getMonth() + "月" +
         //     d.getDate() + "日" + d.getHours() + "時" + d.getMinutes() + "分" + d.getSeconds() + "秒");
         $.ajax({
-            async: true, //啟用同步請求
+            async: true,
             type: "POST",
             url: "Marry",
             dataType: "json",
@@ -254,9 +276,11 @@ function btnFinish() {
                 alert("發生錯誤finishButton");
             }
         })
-
     } else {
         alert("遊戲繼續");
     }
+
+}
+window.onload = function () {
 
 }
