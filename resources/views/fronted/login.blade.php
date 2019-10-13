@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<<<<<<< HEAD
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
@@ -69,6 +70,12 @@
 
     {{-- <div class="row">
     <div class="col-sm-6 carousel slide" id="demo" data-ride="carousel">
+=======
+@section('content')
+    
+<div class="row">
+    <div class="col-sm-7 carousel slide" id="demo" data-ride="carousel">
+>>>>>>> 5b3809691505d144183cffdf237e893e2c1c3024
         <div class="slideGrp">
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -106,6 +113,7 @@
         {{-- <div id="user_login" class="form-signin was-validated"> --}}
         <div id="user_login" class="form-signin">
             @csrf
+<<<<<<< HEAD
             <div class="text-center mb-1">
                 <img class="mb-4" src="img/fronted/gambler.png" alt="" width="72" height="72">
             </div>
@@ -155,3 +163,20 @@
 </body>
 
 </html>
+=======
+            <img class="mb-4" src="img/fronted/gambler.png" alt="" width="80" height="80">
+            <h1 class="h3 mb-3 font-weight-normal">登入</h1>
+            <label for="account" class="sr-only">帳號</label><input type="account" id="account" class="form-control"
+                placeholder="帳號" required><span class='error2'></span><br>
+            <label for="password" class="sr-only">密碼</label><input type="password" id="password" class="form-control"
+                placeholder="密碼" required><span class='error4'></span><br>
+            <button type="button" id="login" class="btn btn-info btn-primary btn-block">登入</button><br>
+            <button type="button" class="btn btn-light"><a href="register">註冊帳號</a></button>
+            <button type="button" class="btn btn-light"><a href="/">回首頁</a></button>
+            <div id="login_success" style="display:none;"></div>
+        </form>
+        <div id="errormsg" style="color: red"></div>
+    </div>
+</div>
+@endsection
+>>>>>>> 5b3809691505d144183cffdf237e893e2c1c3024

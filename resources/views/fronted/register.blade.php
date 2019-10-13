@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<<<<<<< HEAD
     <title>Register</title>
 
     <!-- Bootstrap core CSS -->
@@ -63,6 +64,27 @@
                     {{-- 登入成功才會顯示的下拉式選單 --}}
 
                 </ul>
+=======
+@section('content')
+<div class="row">
+    <div class="col-sm-7 carousel slide" id="demo" data-ride="carousel">
+        <div class="slideGrp">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1" class=""></li>
+                <li data-target="#demo" data-slide-to="2" class=""></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://fakeimg.pl/1920x1080" width="100%" height="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://fakeimg.pl/1920x1080" width="100%" height="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://fakeimg.pl/1920x1080" width="100%" height="100%">
+                </div>
+>>>>>>> 5b3809691505d144183cffdf237e893e2c1c3024
             </div>
         </div>
     </nav>
@@ -80,6 +102,7 @@
         {{-- <div id="user_register" class="form-signin was-validated"> --}}
         <div id="user_register" class="form-signin">
             @csrf
+<<<<<<< HEAD
             <div class="text-center mb-1">
                 <img class="mb-4" src="img/fronted/gambler.png" alt="" width="72" height="72">
             </div>
@@ -107,6 +130,14 @@
                 {{-- <div class="valid-feedback">符合規則</div>
                     <div class="invalid-feedback">請輸入6-12位英文或數字的密碼</div> --}}
             </div>
+=======
+            <img class="mb-4" src="img/fronted/gambler.png" alt="" width="80" height="80" style="align:left">
+            <h1 class="h3 mb-3 font-weight-normal">註冊帳號</h1>
+            <input type="name" id="name" class="form-control" placeholder="姓名" required autofocus><span
+                class='error1'></span><br>
+            <input type="account" id="account" class="form-control" placeholder="帳號" required><span
+                class='error2'></span><br>
+>>>>>>> 5b3809691505d144183cffdf237e893e2c1c3024
             {{-- <label for="email" class="sr-only">電子郵件地址</label><input type="text" id="inputEmail" class="form-control" placeholder="電子郵件地址" required><span class='error3'></span><br> --}}
             <button class="btn btn-info btn-primary btn-block" id="register" type="button">註冊</button>
             <hr>
@@ -117,6 +148,7 @@
             <div id="register_success" style="display:none;"></div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <footer class="py-1 bg-dark fixed-bottom">
         <div class="container">
@@ -134,3 +166,7 @@
 </body>
 
 </html>
+=======
+</div>
+@endsection
+>>>>>>> 5b3809691505d144183cffdf237e893e2c1c3024
