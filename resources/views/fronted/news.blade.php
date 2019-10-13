@@ -79,7 +79,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <a href="#">
-                            <img class="img-fluid rounded d-block w-100" src="img/fronted/c1.png" alt="">
+                            <img class="img-fluid rounded d-block w-100" src="img/fronted/news_1.png" alt="">
                         </a>
                     </div>
                     <div class="col-lg-6">
@@ -101,7 +101,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <a href="#">
-                            <img class="img-fluid rounded" src="img/fronted/c2.jpg" alt="">
+                            <img class="img-fluid rounded d-block w-100" src="img/fronted/news_2.jpg" alt="">
                         </a>
                     </div>
                     <div class="col-lg-6">
@@ -122,7 +122,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <a href="#">
-                            <img class="img-fluid rounded d-block w-100" src="img/fronted/c3.jpg" alt="">
+                            <img class="img-fluid rounded d-block w-100" src="img/fronted/news_3.jpg" alt="">
                         </a>
                     </div>
                     <div class="col-lg-6">

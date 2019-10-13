@@ -14,9 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/slot/style.css" rel="stylesheet">
-    <link href="css/fronted/style.css" rel="stylesheet">
-
+    <link href="css/slot/style copy.css" rel="stylesheet">
 
 </head>
 
@@ -70,33 +68,40 @@
             </div>
         </div>
     </nav>
-
-    <div id="casino">
-        <div class="content">
-
-            <h1>SLOT!</h1>
-            <div>
-                <div>
-
-                </div>
-                <div id="casino1" class="slotMachine" style="margin-left: -65px;">
+    <div class="header">
+        <h2>Header</h2>
+    </div>
+    <div class="row">
+        <div class="column side">
+            <table class="none">
+                <tr>
+                    <td><img alt="" src="../../img/slot/chip100.png" height="120" width="120"></td>
+                    <td><img alt="" src="../../img/slot/chip50.png" height="120" width="120"></td>
+                </tr>
+                <tr>
+                    <td><img alt="" src="../../img/slot/chip10.png" height="120" width="120"></td>
+                    <td><img alt="" src="../../img/slot/chip5.png" height="120" width="120"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="column middle">
+            <div class="btn-group">
+                <button id="casinoShuffle" class="button btn-light">Shuffle!</button>
+                <button id="casinoStop" class="button btn-light">Stop!</button>
+            </div>
+            <div class="casino">
+                <div id="casino1" class="slotMachine">
                     <div id="img1" class="slot slot1"></div>
                 </div>
-
                 <div id="casino2" class="slotMachine">
                     <div id="img2" class="slot slot2"></div>
-                </div>
-
+                </div>    
                 <div id="casino3" class="slotMachine">
                     <div id="img3" class="slot slot3"></div>
                 </div>
-
-                <div class="btn-group btn-group-justified" role="group">
-                    <button id="casinoShuffle" type="button" class="btn btn-primary btn-lg">Shuffle!</button>
-                    <button id="casinoStop" type="button" class="btn btn-primary btn-lg">Stop!</button>
-                </div>
-            </div>
+            </div>            
         </div>
+        <div class="column side"></div>
     </div>
 
     <footer class="py-1 bg-dark fixed-bottom">

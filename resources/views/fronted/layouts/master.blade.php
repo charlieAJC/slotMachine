@@ -12,21 +12,12 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">  
-<<<<<<< HEAD
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/fronted/style.css')}}" rel="stylesheet">
     <link href="{{ asset('css/fronted/index.css')}}" rel="stylesheet">
     <link href="{{ asset('css/fronted/login.css')}}" rel="stylesheet">
     <link href="{{ asset('css/fronted/carousel.css')}}" rel="stylesheet">
 
-=======
-    <link href="{{ asset('fontawesome/css/fontawesome.min.css') }}" rel="stylesheet">  
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('css/fronted/style.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/fronted/index.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/fronted/carousel.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/fronted/form.css')}}" rel="stylesheet">
->>>>>>> 5b3809691505d144183cffdf237e893e2c1c3024
 </head>
 
 <body>
@@ -42,16 +33,13 @@
     <script src="{{ asset('js/fronted/index.js') }}"></script>
     <script src="{{ asset('js/fronted/register.js') }}"></script>
     <script src="{{ asset('js/fronted/login.js') }}"></script>
-<<<<<<< HEAD
     <script src="{{ asset('js/fronted/logout.js') }}"></script>
     <script src="{{ asset('js/fronted/buy.js') }}"></script>
     <script src="{{ asset('js/fronted/update.js') }}"></script>
     
     {{-- <link href="{{ asset('css/slot/style.css')}}" rel="stylesheet"> --}}
-    <script src="{{ asset('js/slot/slotmachine.js') }}"></script>    
+    {{-- <script src="{{ asset('js/slot/slotmachine.js') }}"></script>    
     <link href="{{ asset('css/slot/style copy.css')}}" rel="stylesheet">
-=======
->>>>>>> 5b3809691505d144183cffdf237e893e2c1c3024
 
 </body>
 

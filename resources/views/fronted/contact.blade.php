@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Buy</title>
+    <title>Contact</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-lg-8 mb-4">
                 <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                    src="http://placehold.it/700x400"></iframe>
+                    src="https://www.google.com.tw/maps/place/%E5%9C%8B%E6%B3%B0%E4%BA%BA%E5%A3%BD%E5%85%AC%E7%9B%8A%E5%A4%A7%E6%A8%93/@24.1505295,120.6489039,17z/data=!3m1!4b1!4m5!3m4!1s0x34693d9651ad5dbf:0x6762069c31f45f09!8m2!3d24.1505295!4d120.6510926?hl=zh-TW"></iframe>
             </div>
             <div class="col-lg-4 mb-4">
                 <h3>聯絡方式</h3>
