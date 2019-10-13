@@ -1,4 +1,4 @@
-<!-- Navigation -->
+{{-- <!-- Navigation -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">Slot Machine</a>
@@ -28,7 +28,7 @@
                     <a class="nav-link" href="register" id="navRegister" style="display:none">註冊帳號</a>
                 </li>
 
-                {{-- 登入成功才會顯示的下拉式選單 --}}
+                登入成功才會顯示的下拉式選單
                 <li class="nav-item dropdown" id="navAccount" style="display:none">
                     <a class="nav-link dropdown-toggle" href=".dropdown-menu" id="navbardrop" data-toggle="dropdown">
                         使用者帳號
@@ -38,9 +38,9 @@
                         <a class="dropdown-item" href="#" id="navLogout">登出</a>
                     </div>
                 </li>
-                {{-- 登入成功才會顯示的下拉式選單 --}}
+                登入成功才會顯示的下拉式選單
 
             </ul>
         </div>
     </div>
-</nav>
+</nav> --}}

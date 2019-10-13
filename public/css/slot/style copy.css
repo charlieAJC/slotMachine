@@ -1,103 +1,146 @@
-.slotmachine {
-  background-color: rgb(240, 150, 150);
+* {
+    box-sizing: border-box;
 }
 
-/* #machine{
-  　position:absolute;
-  　top:10px;
-  　left:10px;
-  　width:150px;
-  　height:150px;
-  　z-index:1;
-  } */
-  
-
-.btn-group-justified {
-  padding-top: 50%;
-  padding-left: 9%;
+html {
+    background-size: cover;
 }
 
-h1 {
-  text-align: center;
-  padding-bottom: 25px;
+body {
+    color: white;
+    /* 字 */
+    font-family: 'Microsoft JhengHei', Arial, Helvetica, sans-serif;
 }
 
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding: 0px;
+}
 
-.slotMachine .slot{
-  height:100px;
-  background-position-x: 55%;
-  background-repeat: no-repeat;
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 615px;
+    /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+    width: 25%;
+    background-color: #94b8b8;
+
+}
+
+.none {
+    border-style: none;
+    margin: 120px 95px;
+}
+
+.none td {
+    border: 20px solid #94b8b8;
+}
+
+/* .......................... */
+
+/* Middle column */
+.column.middle {
+    width: 50%;
+    background: #94b8b8 url(../../img/slot/machine.png) no-repeat fixed 50% 35%;
+}
+
+/* Shuffle&Stop Btn*/
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position:absolute; */
+    bottom: -480px;
+    right: 32px;
+}
+
+.btn-group .button {
+    border: 5px solid #333333;
+    color: #000000;
+    padding: 12px 28px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    /* float: left; */
+}
+
+.btn-group .button:hover {
+    background-color: #ff6600;
+    color: #000000;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+
+    .column.side,
+    .column.middle {
+        width: 100%;
+    }
+}
+
+/* .......................... */
+
+/* fruit Btn */
+.casino {
+    width: 350px;
+    margin-right: 100px;
+    margin-left: 180px;
+    padding-top: 148px;
+}
+
+.casino .slotMachine .slot {
+    height: 100px;
+    background-repeat: no-repeat;
+}
+
+.casino .slotMachine {
+    width: 110px;
+    height: 110px;
+    border: 5px solid #CF5178;
+    display: inline-block;
 }
 
 .slot1 {
-  background-image: url("../../img/slot/slot1.png");
+    background-image: url("../../img/slot/slot1.png");
+    /* background-position:left center; */
 }
 
 .slot2 {
-  background-image: url("../../img/slot/slot2.png");
+    background-image: url("../../img/slot/slot2.png");
+    /* background-position:center center; */
 }
 
 .slot3 {
-  background-image: url("../../img/slot/slot3.png");
+    background-image: url("../../img/slot/slot3.png");
+    /* background-position:right center; */
 }
 
 .slot4 {
-  background-image: url("../../img/slot/slot4.png");
+    background-image: url("../../img/slot/slot4.png");
 }
 
 .slot5 {
-  background-image: url("../../img/slot/slot5.png");
+    background-image: url("../../img/slot/slot5.png");
 }
 
 .slot6 {
-  background-image: url("../../img/slot/slot6.png");
+    background-image: url("../../img/slot/slot6.png");
 }
-
-/*
- * Casino
- */
-
-
-#casino .content:nth-child(1) {
-  text-align: center;
-  background: url('../../img/slot/machine.png') no-repeat ;
-  padding: 1px 0px 5px 0px;
-  background-position-x: calc(50% + 16px);
-  background-position-y: calc(10%);
-  min-height: 515px;
-}
-
-#casino .content > div {
-  padding-top: 165px;
-  width: 300px;
-  margin: 0 auto;
-  transform: translateX(30px);
-}
-
-.machineContainer{
-  padding: 5px 1px 5px 1px;
-  height: 135px;
-}
-
-.slotMachine{
-  width: 36.333333%;
-  border: 5px solid #CF5178;
-  height: 110px;
-  display: inline-block;
-}
-
-/* #casino .btn-group {
-  margin: 150px;
-  transform: translateX(20%);
-} */
-
-#casino .btn-group .btn {
-  border: none;
-  background-color: rgb(209, 79, 119);
-}
-
-#casino .btn-group .btn:hover, .btn-group .btn:focus {
-  background-color: rgb(180, 75, 119);
-}
-
-.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
