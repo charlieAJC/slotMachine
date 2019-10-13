@@ -106,6 +106,7 @@ class MaryController extends Controller
                 );
             //水果種類賠率 [$pineapple,$watermelon,$grape,$strawberry,$orange,$cherry,$tomato,$cranberry,$carrot]
             $fruitodds=[10,5,4,3,2,1,0.4,0.25,0.2];
+            $fruitname=["pineapple","watermelon","grape","strawberry","orange","cherry","tomato","cranberry","carrot"];
             $fruittype=array();
             $fruitarray=array();
             foreach($fruit as $u=>$k){
@@ -117,7 +118,7 @@ class MaryController extends Controller
             } 
             $Account=Session::get('account');
             $GameCoin=User::where('Account', '=', $Account)->pluck('GameCoin');
-            echo json_encode(array('fruitarray'=>$fruitarray,'fruitodds'=>$fruitodds,'GameCoin'=>$GameCoin[0]));
+            echo json_encode(array('fruitarray'=>$fruitarray,'fruitodds'=>$fruitodds,'GameCoin'=>$GameCoin[0],'fruitType'=>$fruitname));
         }else{
             if (isset($request->bet)) {
                 // $name=$request->bet;
