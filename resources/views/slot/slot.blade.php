@@ -75,12 +75,12 @@
         <div class="column side">
             <table class="none">
                 <tr>
-                    <td><img alt="" src="../../img/slot/chip100.png" height="120" width="120"></td>
-                    <td><img alt="" src="../../img/slot/chip50.png" height="120" width="120"></td>
+                    <td><img alt="" src="../../img/slot/chip5.png" height="120" width="120"></td>
+                    <td><img alt="" src="../../img/slot/chip10.png" height="120" width="120"></td>
                 </tr>
                 <tr>
-                    <td><img alt="" src="../../img/slot/chip10.png" height="120" width="120"></td>
-                    <td><img alt="" src="../../img/slot/chip5.png" height="120" width="120"></td>
+                    <td><img alt="" src="../../img/slot/chip50.png" height="120" width="120"></td>
+                    <td><img alt="" src="../../img/slot/chip100.png" height="120" width="120"></td>
                 </tr>
             </table>
         </div>
