@@ -77,10 +77,10 @@
         <div class="row">
             <div class="col-lg-6 portfolio-item">
                 <div class="card h-100">
-                    <a href="slot"><img class="image card-img-top d-block w-100" src="img/fronted/game_1.jpg" alt="Avatar"></a>
-                    <div class="middle">
+                    <a href="slot"><img class="card-img-top d-block w-100" src="img/fronted/game_1.jpg" alt="Avatar"></a>
+                    {{-- <div class="middle">
                         <div class="centered">Centered</div>
-                    </div>
+                    </div> --}}
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="slot">拉霸機</a>

@@ -14,7 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/slot/style copy.css" rel="stylesheet">
+    <link href="css/slot/style.css" rel="stylesheet">
 
 </head>
 

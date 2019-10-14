@@ -15,6 +15,8 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
     <link href="css/fronted/top.css" rel="stylesheet">
+    <link href="css/fronted/login.css" rel="stylesheet">
+
 
 </head>
 
@@ -68,20 +70,25 @@
     </nav>
 
     <div class="container">
-        <h2 class="mt-4 mb-3">Update</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/">首頁</a>
             </li>
-            <li class="breadcrumb-item active">Update</li>
+            <li class="breadcrumb-item active">更改個人資料</li>
         </ol>
-        <div>
-            phone:<input type="text" id="phone">
-            <br><br>
-            address:<input type="text" id="address">
-            <br><br>
-            <button id="send">send</button>
-        </div>
+        <div id="user_login" class="form-signin">
+                @csrf
+                <div class="text-center mb-1">
+                    <img class="mb-4" src="img/fronted/member.png" alt="" width="72" height="72">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="phone" class="form-control" placeholder="電話" required autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="address" class="form-control" placeholder="地址" required>
+                </div>
+                <button class="btn btn-info btn-primary btn-block" id="send" type="submit">送出</button>
+            </div>
 
     </div>
     <br><br>
