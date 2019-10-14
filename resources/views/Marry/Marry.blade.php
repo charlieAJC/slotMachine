@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="css/Marry/Marry.css">
 </head>
 <body style="background-color: rgb(120, 151, 236)">
+    <div style="position:absolute;top:80px;right:15px">
+        <p>帳戶餘額:<input type="text" id="gameCoin" readonly="readonly"></p>
+    </div>
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="position:relative">
         <div class="container">
@@ -186,7 +189,7 @@
         </p>
     </div>
     <!-- 投注區域結束 -->
-    <footer class="py-1 bg-dark fixed-bottom">
+    <footer class="py-1 bg-dark fixed-bottom" style="position:relative">
         <div class="container">
             <div class="m-0 text-center text-white align-middle" style="height:40px;font-size: 1.5rem">Copyright
                 &copy;Slot Machine 2019</div>

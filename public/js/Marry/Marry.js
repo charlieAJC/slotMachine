@@ -7,6 +7,7 @@ var totallCoin = 0; // 盤面上未使用總金額
 var runEndNum = 0; // 停止位置
 var result = 0; // 獎金
 var randNum = 0; // 中獎號碼
+var GameCoin = 0; //帳戶餘額
 var insertMoney = 1000;
 var increseMoney = 100;
 var decreseMoney = 100;
@@ -18,29 +19,12 @@ var isMode = true;
 //     increseMoney = isMode ? 100 : 1000;
 //     decreseMoney = isMode ? 100 : 1000;
 // }
+
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-
-// window.onbeforeunload = function(){
-//     $.ajax({
-//         async: false,
-//         type: "POST",
-//         url: "/LittleMary",
-//         dataType: "json",
-//         data: {
-//             'closeGame': 'close'
-//         },
-//         success: function () {
-//             alert("close");
-//         },
-//         error: function () {
-//             alert("版面載入錯誤");
-//         }
-//     })
-// }
 
 //產生格子id list = [1,2,3,....,28]
 function listNumber() {
@@ -64,15 +48,17 @@ $(document).ready(function () {
             typeOf = response["fruitarray"];
             odds = response["fruitodds"];
             fruitName = response["fruitType"];
+            GameCoin = response["GameCoin"];
             for (i = 1; i <= 28; i++) {
                 document.getElementById(i).style.backgroundImage = `url("img/Marry/${typeOf[i]}.png")`;
             }
+            gameCoin.value = parseInt(GameCoin);
             for (i = 1; i <= 9; i++) {
                 new Vue({
                     el: `#odds${i}`,
                     data: {
                         messege: `X${odds[i-1]}`,
-                        pic:`img/Marry/${fruitName[i-1]}.png`
+                        pic: `img/Marry/${fruitName[i-1]}.png`
                     }
                 })
             }
@@ -132,42 +118,23 @@ function btnInsert() {
         coinAdjust();
         totall();
         totallCoin = parseInt(totallInsert) + parseInt(coin.value);
-        if (isMode == true) {
-            $.ajax({
-                async: true,
-                type: "POST",
-                url: "/LittleMary",
-                dataType: "json",
-                data: {
-                    'total': totallCoin,
-                    'need': insertMoney
-                },
-                success: function (response) {
-                    coin.value = parseInt(coin.value) + insertMoney;
-                },
-                error: function () {
-                    alert("帳戶餘額不足請儲值");
-                }
-            })
-        }
-        // else {
-        //     $.ajax({
-        //         async: true, //啟用同步請求
-        //         type: "POST",
-        //         url: "/LittleMary",
-        //         dataType: "json",
-        //         data: {
-        //             'total': totallCoin,
-        //             'need': insertMoney
-        //         },
-        //         success: function (response) {
-        //             coin.value = parseInt(coin.value) + insertMoney;
-        //         },
-        //         error: function () {
-        //             alert("請儲值");
-        //         }
-        //     })
-        // }
+        $.ajax({
+            async: true,
+            type: "POST",
+            url: "/LittleMary",
+            dataType: "json",
+            data: {
+                'total': totallCoin,
+                'need': insertMoney
+            },
+            success: function (response) {
+                coin.value = parseInt(coin.value) + insertMoney;
+                gameCoin.value = parseInt(GameCoin) - parseInt(insertMoney);
+            },
+            error: function () {
+                alert("帳戶餘額不足請儲值");
+            }
+        })
         totallCoin = 0;
         clearAdjust();
     }, 100);
@@ -197,7 +164,7 @@ function run() {
         startGame = setTimeout(go, t);
         if (t == 500 && randNum == runEndNum) {
             clearTimeout(startGame);
-            coin.value = parseInt(coin.value) + result;
+            gameCoin.value = parseInt(GameCoin);
             lockClick();
         }
     }, 20)
@@ -205,7 +172,6 @@ function run() {
 
 // 鎖定/解鎖 開始&結束
 var isClick = false;
-
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
@@ -230,8 +196,10 @@ function btnStart() {
             success: function (response) {
                 randNum = response["number"];
                 result = response["coin"];
+                GameCoin = response["GameCoin"] - coin.value;
                 console.log("中獎數字:" + randNum);
                 console.log("獎金:" + result);
+                gameCoin.value = GameCoin;
             },
             error: function () {
                 alert("發生錯誤startButton");
@@ -267,7 +235,7 @@ function btnFinish() {
             url: "Marry",
             dataType: "json",
             data: {
-                'backMoney': coin.value
+                'backMoney': 'backMoney'
             },
             success: function () {
                 alert("OKfinishButton")
