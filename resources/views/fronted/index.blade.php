@@ -58,7 +58,7 @@
                             使用者帳號
                         </a>
                         <div class="dropdown-menu">
-                                @csrf
+                            @csrf
 
                             <a class="dropdown-item" href="update">更改個人資料</a>
                             <a class="dropdown-item" href="#" id="navLogout">登出</a>
@@ -92,6 +92,37 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
+        {{-- <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner d-block w-100">
+                <div class="carousel-item active">
+                    <img src="img/fronted/carousel_1.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/fronted/carousel_2.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/fronted/carousel_3.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div> --}}
     </header>
 
     <div class="container">
@@ -163,7 +194,8 @@
             </div>
             <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    <a href="LittleMary"><img class="card-img-top d-block w-100" src="img/fronted/game_2.jpg" alt=""></a>
+                    <a href="LittleMary"><img class="card-img-top d-block w-100" src="img/fronted/game_2.jpg"
+                            alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="LittleMary">小瑪莉</a>

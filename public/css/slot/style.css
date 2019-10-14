@@ -23,6 +23,10 @@ body {
   float: left;
   padding: 10px;
   height: 615px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
   /* Should be removed. Only for demonstration */
 }
 
@@ -30,6 +34,10 @@ body {
 .column.side {
   width: 25%;
   background-color: #94b8b8;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
 
 }
 
@@ -48,6 +56,7 @@ body {
 .column.middle {
   width: 50%;
   background: #94b8b8 url(../../img/slot/machine.png) no-repeat fixed 50% 35%;
+  /* position:relative; */
 }
 
 /* Shuffle&Stop Btn*/
