@@ -72,19 +72,30 @@
         <h2>Header</h2>
     </div>
     <div class="row">
-        <div class="column side">
-            <table class="none">
-                <tr>
-                    <td><img alt="" src="../../img/slot/chip100.png" height="120" width="120"></td>
-                    <td><img alt="" src="../../img/slot/chip50.png" height="120" width="120"></td>
-                </tr>
-                <tr>
-                    <td><img alt="" src="../../img/slot/chip10.png" height="120" width="120"></td>
-                    <td><img alt="" src="../../img/slot/chip5.png" height="120" width="120"></td>
-                </tr>
-            </table>
-        </div>
-        <div class="column middle">
+        {{-- <div class="col-12 col-md-3 column side">
+            <div class="money">
+                <img alt="" src="../../img/slot/chip5.png" height="20%" width="20%">
+                <img alt="" src="../../img/slot/chip10.png" height="20%" width="20%">
+            </div>
+            <div>
+                <img alt="" src="../../img/slot/chip50.png" height="20%" width="20%">
+                <img alt="" src="../../img/slot/chip100.png" height="20%" width="20%">
+            </div>
+        </div> --}}
+        <div class="col-12 column middle">
+            <div class="money">            
+                <div>
+                    <img alt="" src="../../img/slot/chip5.png" >
+                    <img alt="" src="../../img/slot/chip10.png">
+                </div>
+                <div>
+                    <img alt="" src="../../img/slot/chip50.png">
+                    <img alt="" src="../../img/slot/chip100.png">
+                </div>
+            </div>
+            <div class="machine">
+                <img alt="" src="../../img/slot/machine.png">
+            </div>
             <div class="btn-group">
                 <button id="casinoShuffle" class="button btn-light">Shuffle!</button>
                 <button id="casinoStop" class="button btn-light">Stop!</button>
@@ -101,7 +112,7 @@
                 </div>
             </div>            
         </div>
-        <div class="column side"></div>
+        {{-- <div class="col-12 col-md-3 column side"></div> --}}
     </div>
 
     <footer class="py-1 bg-dark fixed-bottom">

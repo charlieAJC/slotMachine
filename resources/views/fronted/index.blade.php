@@ -103,15 +103,15 @@
             </ul>
 
             <!-- The slideshow -->
-            <div class="carousel-inner d-block w-100">
+            <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/fronted/carousel_1.jpg" alt="">
+                    <img class="d-block w-100" src="img/fronted/carousel_1.jpg" alt="First Side">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/fronted/carousel_2.jpg" alt="">
+                    <img class="d-block w-100" src="img/fronted/carousel_2.jpg" alt="Second Side">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/fronted/carousel_3.jpg" alt="">
+                    <img class="d-block w-100" src="img/fronted/carousel_3.jpg" alt="Third Side">
                 </div>
             </div>
 

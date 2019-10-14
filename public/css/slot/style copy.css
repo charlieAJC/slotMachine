@@ -1,66 +1,92 @@
 * {
     box-sizing: border-box;
-}
-
-html {
+  }
+  
+  html {
     background-size: cover;
-}
-
-body {
+  }
+  
+  body {
     color: white;
     /* 字 */
     font-family: 'Microsoft JhengHei', Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-.header {
+  }
+  
+  /* Style the header */
+  .header {
     background-color: #f1f1f1;
     padding: 0px;
-}
-
-/* Create three unequal columns that floats next to each other */
-.column {
+  }
+  
+  /* Create three unequal columns that floats next to each other */
+  .column {
     float: left;
     padding: 10px;
     height: 615px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  
     /* Should be removed. Only for demonstration */
-}
-
-/* Left and right column */
-.column.side {
-    width: 25%;
-    background-color: #94b8b8;
-
-}
-
-.none {
+  }
+  
+  /* Left and right column */
+  /* .column.side { */
+    /* width: 25%; */
+    /* background-color: #94b8b8; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  /* } */
+  
+  /* .none {
     border-style: none;
     margin: 120px 95px;
-}
-
-.none td {
+  }
+  
+  .none td {
     border: 20px solid #94b8b8;
-}
-
-/* .......................... */
-
-/* Middle column */
-.column.middle {
-    width: 50%;
-    background: #94b8b8 url(../../img/slot/machine.png) no-repeat fixed 50% 35%;
-}
-
-/* Shuffle&Stop Btn*/
-.btn-group {
+  } */
+  
+  /* .......................... */
+  
+  /* Middle column */
+  .column.middle {
+    /* width: 50%; */
+    /* background: #94b8b8 url(../../img/slot/machine.png) no-repeat fixed 50% 35%; */
+    background: #94b8b8;
+    /* position:relative; */
+  }
+  
+  .money img{
+      display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 10%;
+    /* z-index: -1; */
+  }
+  
+  .machine{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    /* top: 50%; */
+    /* z-index: 0; */
+  
+  }
+  
+  /* Shuffle&Stop Btn*/
+  .btn-group {
     display: flex;
     align-items: center;
     justify-content: center;
     /* position:absolute; */
-    bottom: -480px;
-    right: 32px;
-}
-
-.btn-group .button {
+    /* bottom: -480px;
+    right: 32px; */
+  }
+  
+  .btn-group .button {
     border: 5px solid #333333;
     color: #000000;
     padding: 12px 28px;
@@ -73,74 +99,74 @@ body {
     border-radius: 50px;
     cursor: pointer;
     /* float: left; */
-}
-
-.btn-group .button:hover {
+  }
+  
+  .btn-group .button:hover {
     background-color: #ff6600;
     color: #000000;
-}
-
-/* Clear floats after the columns */
-.row:after {
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
     content: "";
     display: table;
     clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+  
     .column.side,
     .column.middle {
         width: 100%;
     }
-}
-
-/* .......................... */
-
-/* fruit Btn */
-.casino {
+  }
+  
+  /* .......................... */
+  
+  /* fruit Btn */
+  .casino {
     width: 350px;
     margin-right: 100px;
     margin-left: 180px;
     padding-top: 148px;
-}
-
-.casino .slotMachine .slot {
+  }
+  
+  .casino .slotMachine .slot {
     height: 100px;
     background-repeat: no-repeat;
-}
-
-.casino .slotMachine {
+  }
+  
+  .casino .slotMachine {
     width: 110px;
     height: 110px;
     border: 5px solid #CF5178;
     display: inline-block;
-}
-
-.slot1 {
+  }
+  
+  .slot1 {
     background-image: url("../../img/slot/slot1.png");
     /* background-position:left center; */
-}
-
-.slot2 {
+  }
+  
+  .slot2 {
     background-image: url("../../img/slot/slot2.png");
     /* background-position:center center; */
-}
-
-.slot3 {
+  }
+  
+  .slot3 {
     background-image: url("../../img/slot/slot3.png");
     /* background-position:right center; */
-}
-
-.slot4 {
+  }
+  
+  .slot4 {
     background-image: url("../../img/slot/slot4.png");
-}
-
-.slot5 {
+  }
+  
+  .slot5 {
     background-image: url("../../img/slot/slot5.png");
-}
-
-.slot6 {
+  }
+  
+  .slot6 {
     background-image: url("../../img/slot/slot6.png");
-}
+  }
