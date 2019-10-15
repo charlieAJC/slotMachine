@@ -20,58 +20,22 @@
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="css/Marry/Marry.css">
+
+    {{-- navbar --}}
+    <script src="js/fronted/index.js"></script>
+    <script src="js/fronted/logout.js"></script>
+    {{-- navbar --}}
+
 </head>
 <body style="background-color: rgb(120, 151, 236)">
     <div style="position:absolute;top:80px;right:15px">
         <p>帳戶餘額:<input type="text" id="gameCoin" readonly="readonly"></p>
     </div>
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="position:relative">
-        <div class="container">
-            <a class="navbar-brand" href="/" style="font-size:1.5rem">Slot Machine</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="game">遊戲介紹</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="news">最新消息</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="buy" id="navBuy" style="display:none">購點 / 儲值</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact">客服中心</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login" id="navLogin" style="display:none">登入會員</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register" id="navRegister" style="display:none">註冊帳號</a>
-                    </li>
 
-                    {{-- 登入成功才會顯示的下拉式選單 --}}
-                    <li class="nav-item dropdown" id="navAccount" style="display:none">
-                        <a class="nav-link dropdown-toggle" href=".dropdown-menu" id="navbardrop"
-                            data-toggle="dropdown">
-                            使用者帳號
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="update">更改個人資料</a>
-                            <a class="dropdown-item" href="#" id="navLogout">登出</a>
-                        </div>
-                    </li>
-                    {{-- 登入成功才會顯示的下拉式選單 --}}
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {{-- navbar --}}
+    @include('fronted.layouts.navbar')
+    {{-- navbar --}}
+    
     <!-- 轉盤區域 -->
     <div id="runningArea">
         <table>
