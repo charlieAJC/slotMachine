@@ -21,10 +21,10 @@
     </script>
     <link rel="stylesheet" href="css/Marry/Marry.css">
 </head>
-<body style="background-color: rgb(120, 151, 236)">
-    <div style="position:absolute;top:80px;right:15px">
+<body style="background-color: rgb(120, 151, 236);width:100%;height:100%">
+    {{-- <div style="position:absolute;top:80px;right:15px">
         <p>帳戶餘額:<input type="text" id="gameCoin" readonly="readonly"></p>
-    </div>
+    </div> --}}
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="position:relative">
         <div class="container">

@@ -1,4 +1,5 @@
 var list = new Array(28);
+var oddsList = new Array(9);
 var odds = new Array(9);
 var typeOf = new Array(28);
 var coinAdjustList = new Array(9);
@@ -7,7 +8,7 @@ var totallCoin = 0; // 盤面上未使用總金額
 var runEndNum = 0; // 停止位置
 var result = 0; // 獎金
 var randNum = 0; // 中獎號碼
-var GameCoin = 0; //帳戶餘額
+// var GameCoin = 0;
 var insertMoney = 1000;
 var increseMoney = 100;
 var decreseMoney = 100;
@@ -26,13 +27,16 @@ $.ajaxSetup({
     }
 });
 
-//產生格子id list = [1,2,3,....,28]
-function listNumber() {
+//產生序號[1,2,3,....,28],[1,2,3,....,9]
+function addNumber() {
     for (i = 0; i <= 27; i++) {
         list[i] = i + 1;
     }
+    for (i = 0; i <= 8; i++) {
+        oddsList[i] = i + 1;
+    }
 }
-listNumber();
+addNumber();
 
 // 接收賠率及輪盤種類配置
 $(document).ready(function () {
@@ -48,11 +52,11 @@ $(document).ready(function () {
             typeOf = response["fruitarray"];
             odds = response["fruitodds"];
             fruitName = response["fruitType"];
-            GameCoin = response["GameCoin"];
+            // GameCoin = response["GameCoin"];
             for (i = 1; i <= 28; i++) {
                 document.getElementById(i).style.backgroundImage = `url("img/Marry/${typeOf[i]}.png")`;
             }
-            gameCoin.value = parseInt(GameCoin);
+            // gameCoin.value = parseInt(GameCoin);
             for (i = 1; i <= 9; i++) {
                 new Vue({
                     el: `#odds${i}`,
@@ -128,12 +132,13 @@ function btnInsert() {
                 'need': insertMoney
             },
             success: function (response) {
+                insertMoney = parseInt(response["need"]);
+                if (insertMoney == 0) {
+                    alert("帳戶餘額不足請儲值");
+                }
                 coin.value = parseInt(coin.value) + insertMoney;
-                gameCoin.value = parseInt(GameCoin) - parseInt(insertMoney);
+                // gameCoin.value = parseInt(GameCoin) - parseInt(insertMoney);
             },
-            error: function () {
-                alert("帳戶餘額不足請儲值");
-            }
         })
         totallCoin = 0;
         clearAdjust();
@@ -141,7 +146,10 @@ function btnInsert() {
 }
 
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
+var lightClean = 0;
+
 function run() {
+    document.getElementById("odds" + oddsList[lightClean]).className = "normal";
     var t = 40;
     var times = 1;
     let startGame = setTimeout(function go() {
@@ -164,7 +172,13 @@ function run() {
         startGame = setTimeout(go, t);
         if (t == 500 && randNum == runEndNum) {
             clearTimeout(startGame);
-            gameCoin.value = parseInt(GameCoin);
+            for (i = 0; i <= 8; i++) {
+                if (fruitName[i] == typeOf[randNum]) {
+                    lightClean = i;
+                }
+            }
+            document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
+            // gameCoin.value = parseInt(GameCoin);
             lockClick();
         }
     }, 20)
@@ -172,6 +186,7 @@ function run() {
 
 // 鎖定/解鎖 開始&結束
 var isClick = false;
+
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
@@ -196,20 +211,22 @@ function btnStart() {
             success: function (response) {
                 randNum = response["number"];
                 result = response["coin"];
-                GameCoin = response["GameCoin"] - coin.value;
+                // GameCoin = response["GameCoin"] - coin.value;
                 console.log("中獎數字:" + randNum);
                 console.log("獎金:" + result);
-                gameCoin.value = GameCoin;
+                // gameCoin.value = GameCoin;
+                run();
+                if (coin.value <= totallInsert) {
+                    for (i = 0; i <= 8; i++) {
+                        document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
+                    }
+                }
+                clearAdjust();
             },
             error: function () {
                 alert("發生錯誤startButton");
             }
         })
-        clearAdjust();
-        for (i = 0; i <= 8; i++) {
-            document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
-        }
-        run();
     } else {
         lockClick();
         alert("請下注");
