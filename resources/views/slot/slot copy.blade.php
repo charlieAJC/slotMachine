@@ -68,52 +68,48 @@
             </div>
         </div>
     </nav>
-    <div class="header">
-        <h2>Header</h2>
-    </div>
-    <div class="row">
-        {{-- <div class="col-12 col-md-3 column side">
-            <div class="money">
-                <img alt="" src="../../img/slot/chip5.png" height="20%" width="20%">
-                <img alt="" src="../../img/slot/chip10.png" height="20%" width="20%">
-            </div>
-            <div>
-                <img alt="" src="../../img/slot/chip50.png" height="20%" width="20%">
-                <img alt="" src="../../img/slot/chip100.png" height="20%" width="20%">
-            </div>
-        </div> --}}
-        <div class="col-12 column middle">
-            <div class="money">            
-                <div>
-                    <img alt="" src="../../img/slot/chip5.png" >
-                    <img alt="" src="../../img/slot/chip10.png">
+    
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="money">
+                        <img alt="" src="../../img/slot/chip5.png">
+                        <img alt="" src="../../img/slot/chip10.png">   
+                        <img alt="" src="../../img/slot/chip50.png">
+                        <img alt="" src="../../img/slot/chip100.png">
+                    </div>
                 </div>
-                <div>
-                    <img alt="" src="../../img/slot/chip50.png">
-                    <img alt="" src="../../img/slot/chip100.png">
+                <div class="col-sm-6 col-md-6" >
+                    <div class="machine">
+                        <img alt="" src="../../img/slot/machine.png">
+                    </div>                     
+                    {{-- <div class="casino">
+                        <div id="casino1" class="slotMachine">
+                            <div id="img1" class="slot slot1"></div>
+                        </div>
+                        <div id="casino2" class="slotMachine">
+                            <div id="img2" class="slot slot2"></div>
+                        </div>    
+                        <div id="casino3" class="slotMachine">
+                            <div id="img3" class="slot slot3"></div>
+                        </div>
+                    </div>  --}}
+                    <div class="btn-group">
+                        <button id="casinoShuffle" class="button btn-light col-sm-4">Shuffle!</button>
+                        <button id="casinoStop" class="button btn-light col-sm-4">Stop!</button>
+                    </div>                            
+                </div>   
+                <div class="col-sm-6 col-md-3">
+                    <div class="money">
+                        <img alt="" src="../../img/slot/chip5.png">
+                        <img alt="" src="../../img/slot/chip10.png">   
+                        <img alt="" src="../../img/slot/chip50.png">
+                        <img alt="" src="../../img/slot/chip100.png">
+                    </div>
                 </div>
-            </div>
-            <div class="machine">
-                <img alt="" src="../../img/slot/machine.png">
-            </div>
-            <div class="btn-group">
-                <button id="casinoShuffle" class="button btn-light">Shuffle!</button>
-                <button id="casinoStop" class="button btn-light">Stop!</button>
-            </div>
-            <div class="casino">
-                <div id="casino1" class="slotMachine">
-                    <div id="img1" class="slot slot1"></div>
-                </div>
-                <div id="casino2" class="slotMachine">
-                    <div id="img2" class="slot slot2"></div>
-                </div>    
-                <div id="casino3" class="slotMachine">
-                    <div id="img3" class="slot slot3"></div>
-                </div>
-            </div>            
-        </div>
-        {{-- <div class="col-12 col-md-3 column side"></div> --}}
-    </div>
+            </div> 
+        </div>   
+            
 
     <footer class="py-1 bg-dark fixed-bottom">
         <div class="container">
