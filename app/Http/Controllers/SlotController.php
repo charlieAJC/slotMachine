@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Stamp;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Session;
 
@@ -78,11 +79,36 @@ class SlotController extends Controller
                 $arr["coin"]=$coin[0]+$win;
                 User::where('Account', $memberAccount)->update(array('GameCoin' => $arr["coin"]));
                 
+                $Account=Session::get('account');
+                $UserID=User::where('Account', $Account)->pluck('UserID');
+                
+                Stamp::insert([
+                    'UserID'=>$UserID[0],
+                    'GetWay'=>'Play',
+                    'GameName'=>'SlotMachine',
+                    'BetCoin'=>$cost,
+                    'ChangeCoin'=>$win,
+                    'GameCoin'=>$coin[0]-$cost+$win
+                ]);
+
             }else{
                 $arr["game"]="L";
                 $coin = User::where('Account', $memberAccount)->pluck('GameCoin');
                 $arr["coin"]=$coin[0]-$cost;
                 User::where('Account', $memberAccount)->update(array('GameCoin' => $arr["coin"]));
+            
+                $Account=Session::get('account');
+                $UserID=User::where('Account', $Account)->pluck('UserID');
+
+                Stamp::insert([
+                    'UserID'=>$UserID[0],
+                    'GetWay'=>'Play',
+                    'GameName'=>'SlotMachine',
+                    'BetCoin'=>$cost,
+                    'ChangeCoin'=>0,
+                    'GameCoin'=>$arr["coin"]
+                ]);
+
             }
             echo json_encode($arr);
             // echo var_dump($arr);
