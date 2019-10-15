@@ -8,18 +8,14 @@ var totallCoin = 0; // 盤面上未使用總金額
 var runEndNum = 0; // 停止位置
 var result = 0; // 獎金
 var randNum = 0; // 中獎號碼
-// var GameCoin = 0;
+var GameCoin = 0;
 var insertMoney = 1000;
 var increseMoney = 100;
 var decreseMoney = 100;
-var isMode = true;
-// 切換 小賭/豪賭 模式
-// function ChangeMode() {
-//     isMode = !isMode;
-//     insertMoney = isMode ? 1000 : 10000;
-//     increseMoney = isMode ? 100 : 1000;
-//     decreseMoney = isMode ? 100 : 1000;
-// }
+function changeMode(setCoin) {
+    increseMoney = parseInt(setCoin);
+    decreseMoney = parseInt(setCoin);
+}
 
 $.ajaxSetup({
     headers: {
@@ -52,11 +48,9 @@ $(document).ready(function () {
             typeOf = response["fruitarray"];
             odds = response["fruitodds"];
             fruitName = response["fruitType"];
-            // GameCoin = response["GameCoin"];
             for (i = 1; i <= 28; i++) {
                 document.getElementById(i).style.backgroundImage = `url("img/Marry/${typeOf[i]}.png")`;
             }
-            // gameCoin.value = parseInt(GameCoin);
             for (i = 1; i <= 9; i++) {
                 new Vue({
                     el: `#odds${i}`,
@@ -76,10 +70,7 @@ $(document).ready(function () {
 // 增加下注金額
 function increse(i) {
     var Id = ("coinAdjust" + i);
-    if (coin.value >= increseMoney && isMode == true) {
-        document.getElementById(Id).value = parseInt(document.getElementById(Id).value) + increseMoney;
-        coin.value = coin.value - increseMoney;
-    } else if (coin.value >= increseMoney && isMode == false) {
+    if (coin.value >= increseMoney) {
         document.getElementById(Id).value = parseInt(document.getElementById(Id).value) + increseMoney;
         coin.value = coin.value - increseMoney;
     } else {
@@ -118,82 +109,86 @@ function clearAdjust() {
 
 // 預儲遊戲機台,扣玩家儲值金
 function btnInsert() {
-    var putMoney = setTimeout(function () {
-        coinAdjust();
-        totall();
-        totallCoin = parseInt(totallInsert) + parseInt(coin.value);
-        $.ajax({
-            async: true,
-            type: "POST",
-            url: "/LittleMary",
-            dataType: "json",
-            data: {
-                'total': totallCoin,
-                'need': insertMoney
-            },
-            success: function (response) {
-                insertMoney = parseInt(response["need"]);
-                if (insertMoney == 0) {
-                    alert("帳戶餘額不足請儲值");
-                }
-                coin.value = parseInt(coin.value) + insertMoney;
-                // gameCoin.value = parseInt(GameCoin) - parseInt(insertMoney);
-            },
-        })
-        totallCoin = 0;
-        clearAdjust();
-    }, 100);
+    lockInsert();
+    coinAdjust();
+    totall();
+    totallCoin = parseInt(totallInsert) + parseInt(coin.value);
+    $.ajax({
+        async: true,
+        type: "POST",
+        url: "/LittleMary",
+        dataType: "json",
+        data: {
+            'total': totallCoin,
+            'need': insertMoney
+        },
+        success: function (response) {
+            insertMoney = parseInt(response["need"]);
+            if (insertMoney == 0) {
+                alert("帳戶餘額不足請儲值");
+            }
+            coin.value = parseInt(coin.value) + insertMoney;
+            lockInsert();
+            totallCoin = 0;
+            clearAdjust();
+            insertMoney = 1000;
+        },
+    })
 }
 
 // 轉動畫面,靜止後返還中獎金額並清除下注金額
-var lightClean = 0;
-
-function run() {
-    document.getElementById("odds" + oddsList[lightClean]).className = "normal";
-    var t = 40;
-    var times = 1;
-    let startGame = setTimeout(function go() {
-        for (j = 1; j <= 28; j++) { //把所有格子改成白底
-            document.getElementById(j).className = "normal";
-        }
-        document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成黃底
-        runEndNum++;
-        times++;
-        if (runEndNum >= 28) {
-            runEndNum = 0;
-        }
-        if (times >= 28) {
-            if (randNum - 14 > 0 && randNum - 14 == runEndNum) {
-                t = 500;
-            } else if (randNum - 14 <= 0 && randNum + 14 == runEndNum) {
-                t = 500;
-            }
-        }
-        startGame = setTimeout(go, t);
-        if (t == 500 && randNum == runEndNum) {
-            clearTimeout(startGame);
-            for (i = 0; i <= 8; i++) {
-                if (fruitName[i] == typeOf[randNum]) {
-                    lightClean = i;
-                }
-            }
-            document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
-            // gameCoin.value = parseInt(GameCoin);
-            lockClick();
-        }
-    }, 20)
-}
+// function run() {
+//     document.getElementById("odds" + oddsList[lightClean]).className = "normal";
+//     var t = 40;
+//     var times = 1;
+//     let startGame = setTimeout(function go() {
+//         for (j = 1; j <= 28; j++) { //把所有格子改成白底
+//             document.getElementById(j).className = "normal";
+//         }
+//         document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成黃底
+//         runEndNum++;
+//         times++;
+//         if (runEndNum >= 28) {
+//             runEndNum = 0;
+//         }
+//         if (times >= 28) {
+//             if (randNum - 14 > 0 && randNum - 14 == runEndNum) {
+//                 t = 500;
+//             } else if (randNum - 14 <= 0 && randNum + 14 == runEndNum) {
+//                 t = 500;
+//             }
+//         }
+//         startGame = setTimeout(go, t);
+//         if (t == 500 && randNum == runEndNum) {
+//             clearTimeout(startGame);
+//             for (i = 0; i <= 8; i++) {
+//                 if (fruitName[i] == typeOf[randNum]) {
+//                     lightClean = i;
+//                 }
+//             }
+//             document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
+//             // gameCoin.value = parseInt(GameCoin);
+//             lockClick();
+//         }
+//     }, 20)
+// }
 
 // 鎖定/解鎖 開始&結束
 var isClick = false;
-
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
     document.getElementById("finishButton").disabled = isClick ? true : false;
 }
+// 鎖定/解鎖 
+var isInsert = false;
+function lockInsert() {
+    isInsert = !isInsert;
+    document.getElementById("insertButton").disabled = isInsert ? true : false;
+}
 
 // 遊戲開始
+var lightClean = 0;
 function btnStart() {
     lockClick();
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
@@ -211,21 +206,56 @@ function btnStart() {
             success: function (response) {
                 randNum = response["number"];
                 result = response["coin"];
-                // GameCoin = response["GameCoin"] - coin.value;
+                GameCoin = response["GameCoin"];
                 console.log("中獎數字:" + randNum);
                 console.log("獎金:" + result);
-                // gameCoin.value = GameCoin;
-                run();
+                console.log("帳戶餘額:" + GameCoin);
+                // run();
+                document.getElementById("odds" + oddsList[lightClean]).className = "normal";
+                var t = 40;
+                var times = 1;
+                let startGame = setTimeout(function go() {
+                    for (j = 1; j <= 28; j++) { //把所有格子改成白底
+                        document.getElementById(j).className = "normal";
+                    }
+                    console.log("2");
+                    document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成黃底
+                    runEndNum++;
+                    times++;
+                    if (runEndNum >= 28) {
+                        runEndNum = 0;
+                    }
+                    console.log("3");
+                    if (times >= 28) {
+                        if (randNum - 14 > 0 && randNum - 14 == runEndNum) {
+                            t = 500;
+                        } else if (randNum - 14 <= 0 && randNum + 14 == runEndNum) {
+                            t = 500;
+                        }
+                    }
+                    console.log("4");
+                    startGame = setTimeout(go, t);
+                    console.log("5");
+                    if (t == 500 && randNum == runEndNum) {
+                        clearTimeout(startGame);
+                        for (i = 0; i <= 8; i++) {
+                            if (fruitName[i] == typeOf[randNum]) {
+                                lightClean = i;
+                            }
+                        }
+                        document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
+                        lockClick();
+                    }
+                }, 20);
                 if (coin.value <= totallInsert) {
                     for (i = 0; i <= 8; i++) {
                         document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
                     }
+                } else {
+                    coin.value = coin.value - totallInsert;
                 }
                 clearAdjust();
             },
-            error: function () {
-                alert("發生錯誤startButton");
-            }
         })
     } else {
         lockClick();
@@ -264,8 +294,4 @@ function btnFinish() {
     } else {
         alert("遊戲繼續");
     }
-
-}
-window.onload = function () {
-
 }
