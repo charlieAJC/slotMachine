@@ -51,7 +51,10 @@
             </tr>
             <tr>
                 <td id="28"></td>
-                <td colspan="6" rowspan="6" id="oddsBoard">
+                <td colspan="6" rowspan="6" id="central">
+                    <button onclick="changeMode(100)" class="btn btn-info">100</button>
+                    <button onclick="changeMode(200)" class="btn btn-warning">200</button>
+                    <button onclick="changeMode(500)" class="btn btn-danger">500</button>
                 </td>
                 <td id="9"></td>
             </tr>
@@ -93,60 +96,87 @@
         <div id="odds1">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(1)">+</button><button onclick="decrese(1)">-</button></p>
-            <p><input type="number" id="coinAdjust1" value="0" readonly="readonly" /></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button onclick="increse(1)" class="btn btn-success">+</button>
+                <button onclick="decrese(1)" class="btn btn-success">-</button>
+            </div>
+            <p><input type="number" id="coinAdjust1" value="0" readonly="readonly"/></p>
         </div>
         <div id="odds2">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(2)">+</button><button onclick="decrese(2)">-</button></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="increse(2)" class="btn btn-success">+</button>
+                    <button onclick="decrese(2)" class="btn btn-success">-</button>
+            </div>
             <p><input type="number" id="coinAdjust2" value="0" readonly="readonly" /></p>
         </div>
         <div id="odds3">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(3)">+</button><button onclick="decrese(3)">-</button></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="increse(3)" class="btn btn-success">+</button>
+                    <button onclick="decrese(3)" class="btn btn-success">-</button>
+            </div>
             <p><input type="number" id="coinAdjust3" value="0" readonly="readonly" /></p>
         </div>
         <div id="odds4">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(4)">+</button><button onclick="decrese(4)">-</button></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="increse(4)" class="btn btn-success">+</button>
+                    <button onclick="decrese(4)" class="btn btn-success">-</button>
+            </div>
             <p><input type="number" id="coinAdjust4" value="0" readonly="readonly" /></p>
         </div>
         <div id="odds5">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(5)">+</button><button onclick="decrese(5)">-</button></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="increse(5)" class="btn btn-success">+</button>
+                    <button onclick="decrese(5)" class="btn btn-success">-</button>
+            </div>
             <p><input type="number" id="coinAdjust5" value="0" readonly="readonly" /></p>
         </div>
         <div id="odds6">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(6)">+</button><button onclick="decrese(6)">-</button></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="increse(6)" class="btn btn-success">+</button>
+                    <button onclick="decrese(6)" class="btn btn-success">-</button>
+            </div>
             <p><input type="number" id="coinAdjust6" value="0" readonly="readonly" /></p>
         </div>
         <div id="odds7">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(7)">+</button><button onclick="decrese(7)">-</button></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="increse(7)" class="btn btn-success">+</button>
+                    <button onclick="decrese(7)" class="btn btn-success">-</button>
+            </div>
             <p><input type="number" id="coinAdjust7" value="0" readonly="readonly" /></p>
         </div>
         <div id="odds8">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(8)">+</button><button onclick="decrese(8)">-</button></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="increse(8)" class="btn btn-success">+</button>
+                    <button onclick="decrese(8)" class="btn btn-success">-</button>
+            </div>
             <p><input type="number" id="coinAdjust8" value="0" readonly="readonly" /></p>
         </div>
         <div id="odds9">
             @{{messege}}
             <img v-bind:src='pic'>
-            <p><button onclick="increse(9)">+</button><button onclick="decrese(9)">-</button></p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="increse(9)" class="btn btn-success">+</button>
+                    <button onclick="decrese(9)" class="btn btn-success">-</button>
+            </div>
             <p><input type="number" id="coinAdjust9" value="0" readonly="readonly" /></p>
         </div>
         <p style="margin: 5px">
             <input type="number" id="coin" value="0" readonly="readonly">
-            <button onclick="btnInsert()">insert coins</button>
+            <button onclick="btnInsert()" id="insertButton">insert coins</button>
             {{-- <button onclick="ChangeMode()">Change Mode</button> --}}
             <button type="submit" onclick="btnStart()" id="startButton">Start</button>
             <button type="submit" onclick="btnFinish()" id="finishButton">Finish</button>
