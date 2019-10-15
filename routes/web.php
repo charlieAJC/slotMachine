@@ -57,9 +57,12 @@ Route::post('/contact',"memberController@contact");
 
 //--------------會員頁面---------------
 Route::group(['middleware'=>'Permission'],function(){
-//-----------------會員資料修改-----------------
+    //-----------------會員資料修改-----------------
     Route::get('/update', function () {return view('fronted.Update');});
     Route::post('/update', "memberController@Update");
+
+    // navbar顯示使用者有多少代幣
+    Route::post('/navbar', "memberController@navbar");
 
     //---------------管理者頁面--------------
     Route::group(['middleware'=>'Manager'],function(){

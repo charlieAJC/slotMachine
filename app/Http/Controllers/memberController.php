@@ -78,6 +78,8 @@ class memberController extends Controller
                 // echo $Per;
                 $arr["status"] = 1;
                 $arr["account"] = $memberAccount;
+                $arr["permission"] = $user->Permission;
+                $arr["gameCoin"] = $user->GameCoin;
                 echo json_encode($arr);
                 // Session::put("account",$memberAccount);
             }else{
@@ -182,5 +184,13 @@ class memberController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    // navbar顯示使用者有多少代幣
+    public function navbar(Request $request)
+    {
+        $user = User::where('Account', '=', Session::get("account"))->firstOrFail();
+        echo $user->GameCoin;
     }
 }

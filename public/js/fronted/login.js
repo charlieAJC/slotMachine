@@ -61,7 +61,8 @@ $(document).ready(function () {
                     let msg = JSON.parse(e);
                     if (msg.status === 1) {
                         alert("登入成功！");
-                        localStorage.setItem('account', msg.account);
+                        sessionStorage.setItem('account', msg.account);
+                        sessionStorage.setItem('permission', msg.permission);
                         window.location.href = "/";
                     } else {
                         alert("帳號或密碼錯誤");

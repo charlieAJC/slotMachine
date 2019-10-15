@@ -19,16 +19,34 @@
 // }
 
 $(document).ready(function(){
-    if (localStorage.getItem('account') == null || localStorage.getItem('account') == '') {
+    if (sessionStorage.getItem('account') == null || sessionStorage.getItem('account') == '') {
         // alert('第一次訪問頁面沒session');
-        localStorage.setItem('account', '');
+        sessionStorage.setItem('account', '');
         $("#navLogin").show();
         $("#navRegister").show();
     } else {
-        account = localStorage.getItem('account');
+        account = sessionStorage.getItem('account');
         $("#navbardrop").text(account + " ");
         $("#navBuy").show();
         $("#navAccount").show();
+        if (sessionStorage.getItem('permission') == 2) {
+            $("#manager").show();
+        }
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "post",
+            url: "navbar",
+            success: function (e) {
+                // console.log(e);
+                $("#navCoin").text("現有: " + e + "代幣");
+                $("#navCoin").show();
+            }
+        });
     }
-  // console.log(localStorage.getItem('userName'));
+  // console.log(sessionStorage.getItem('userName'));
 })

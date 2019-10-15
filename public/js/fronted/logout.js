@@ -17,7 +17,8 @@ $(document).ready(function () {
                 },
                 success: function (e) {
                     if (e == 1) {
-                        localStorage.removeItem('account');
+                        sessionStorage.removeItem('account');
+                        sessionStorage.removeItem('permission');
                         window.location.href = "/";
                     }
                 }
