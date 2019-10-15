@@ -65,6 +65,7 @@ Route::group(['middleware'=>'Permission'],function(){
     Route::group(['middleware'=>'Manager'],function(){
         //---------------------測試用
         Route::get('/manager', function () {return view('fronted.Manager');});
+        Route::post('/manager', "ManagerController@manager");
     });
     //儲值
     Route::get('/buy', function () {return view('fronted.buy');});
