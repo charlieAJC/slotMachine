@@ -10,10 +10,49 @@ $(document).ready(function(){
     //     });
     // }
 
+    // 為intervel的名稱，以便關閉時可以呼叫
+    var timerFlag;
+    // 確認拉霸機畫面是否在轉動
+    var rollFlag = 0;
+    var endImg;
     // 設定起始圖案組合
     var setFlag;
+    // 籌碼id對應籌碼的值
+    var chipArr = [5, 10, 50, 100];
+
+    for(let i=0;i<4;i++){
+        // 游標 移動/離開 籌碼圖案的變化
+        $("#chip"+i).mouseover(function(){
+            if(rollFlag === 0){
+                $("#chip"+i).css("opacity","1.0");
+            }
+        });
+
+        $("#chip"+i).mouseout(function(){
+            if(rollFlag === 0){
+                $("#chip"+i).css("opacity","0.5");
+            }
+        });
+
+        // 點選籌碼增加總值
+        $("#chip"+i).click(function(){
+            if(rollFlag === 0){
+                chip = $("#totalChip").text();
+                chip = parseInt(chip) + chipArr[i];
+                $("#totalChip").text(chip);
+            }
+        });
+    }
+
+    // 籌碼歸零
+    $("#resetChip").click(function(){
+        if(rollFlag === 0){
+            $("#totalChip").text(0);
+        }
+    })
+
+    // 切換拉霸機圖片
     function rollImg(){
-        
         if(setFlag == 0){
             $("#img1").removeClass();
             $("#img1").addClass("slot slot1");
@@ -35,15 +74,8 @@ $(document).ready(function(){
                 
             }
         }
-        
     };
-
-    // 為intervel的名稱，以便關閉時可以呼叫
-    var timerFlag;
-    // 確認拉霸機畫面是否在轉動
-    var rollFlag = 0;
-    var endImg;
-
+    
     $("#casinoShuffle").click(function(){
         // 注意函數名稱不用括弧!
         if(rollFlag === 0){
@@ -58,7 +90,10 @@ $(document).ready(function(){
             $.ajax({
                 method: "POST",
                 url: "slot",
-                data: {"slot" : "1"},
+                data: {
+                    "slot" : "1",
+                    "chip" : $("#totalChip").text()
+                },
                 success: function(e){
                     var data = JSON.parse(e);
                     endImg = data;
