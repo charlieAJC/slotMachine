@@ -27,15 +27,13 @@
     {{-- navbar --}}
 
 </head>
-<body style="background-color: rgb(120, 151, 236);width:100%;height:100%">
-    {{-- <div style="position:absolute;top:80px;right:15px">
-        <p>帳戶餘額:<input type="text" id="gameCoin" readonly="readonly"></p>
-    </div>
-
+<body style="background-image: url('img/Marry/1120.jpg');width:100%;height:100%">
     {{-- navbar --}}
     @include('fronted.layouts.navbar')
     {{-- navbar --}}
-    
+    <br>
+    <br>
+    <br>
     <!-- 轉盤區域 -->
     <div id="runningArea">
         <table>
@@ -55,6 +53,7 @@
                     <button onclick="changeMode(100)" class="btn btn-info">100</button>
                     <button onclick="changeMode(200)" class="btn btn-warning">200</button>
                     <button onclick="changeMode(500)" class="btn btn-danger">500</button>
+                    <div><h1 id="Gold" style="color:yellow"></h1></div>
                 </td>
                 <td id="9"></td>
             </tr>
@@ -177,7 +176,6 @@
         <p style="margin: 5px">
             <input type="number" id="coin" value="0" readonly="readonly">
             <button onclick="btnInsert()" id="insertButton">insert coins</button>
-            {{-- <button onclick="ChangeMode()">Change Mode</button> --}}
             <button type="submit" onclick="btnStart()" id="startButton">Start</button>
             <button type="submit" onclick="btnFinish()" id="finishButton">Finish</button>
         </p>
@@ -185,7 +183,7 @@
     <!-- 投注區域結束 -->
     <footer class="py-1 bg-dark fixed-bottom" style="position:relative">
         <div class="container">
-            <div class="m-0 text-center text-white align-middle" style="height:40px;font-size: 1.5rem">Copyright
+            <div class="m-0 text-center text-white align-middle" style="height:30px;font-size: 1.2rem">Copyright
                 &copy;Slot Machine 2019</div>
         </div>
     </footer>
