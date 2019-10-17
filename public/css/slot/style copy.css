@@ -1,73 +1,86 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
 html {
     background-size: cover;
-}
+    height:100%
+} */
 
 body {
     font-family: 'Microsoft JhengHei', Arial, Helvetica, sans-serif;
     background-color: #94b8b8;
+    /* height:100% */
 }
 
 .row {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .money img {
     width: 40%;
     margin: 10px;
     display: inline-block;
+    position: relative;
+
 }
 
 .machine img {
+    /* width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -193px; */
+
+    position: relative;
     width: 90%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: -1;
+    margin: auto;
 }
 
 /* .......................... */
 
 /* fruit Btn */
 .casino {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
     position: absolute;
-    z-index: 1;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-60%, -70%);
 }
 
+/* 圖 */
 .casino .slotMachine .slot {
-    height: 100px;
+    height: 100px;    
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
+/* 框 */
 .casino .slotMachine {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
     border: 5px solid #CF5178;
     display: inline-block;
 }
 
 .slot1 {
     background-image: url("../../img/slot/slot1.png");
-    /* background-position:left center; */
 }
 
 .slot2 {
     background-image: url("../../img/slot/slot2.png");
-    /* background-position:center center; */
 }
 
 .slot3 {
     background-image: url("../../img/slot/slot3.png");
-    /* background-position:right center; */
 }
 
 .slot4 {
@@ -85,15 +98,7 @@ body {
 /* Shuffle&Stop Btn*/
 .btn-group {
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
-    z-index: 0;
-
 }
 
 .btn-group .button {
@@ -103,12 +108,12 @@ body {
     width: 180px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
-    /* float: left; */
+    /* bottom: -220px; */
+    right: 35px;
 }
 
 .btn-group .button:hover {
