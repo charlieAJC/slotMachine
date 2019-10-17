@@ -61,9 +61,6 @@ $(document).ready(function () {
                 })
             }
         },
-        error: function () {
-            alert("版面載入錯誤");
-        }
     })
 });
 
@@ -103,7 +100,7 @@ function totall() {
 
 // 清空投注金額
 function clearAdjust() {
-    coinAdjustList = [0, 0, 0, 0, 0, , 0, 0, 0, 0];
+    coinAdjustList = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     totallInsert = 0;
 }
 
@@ -136,43 +133,6 @@ function btnInsert() {
     })
 }
 
-// 轉動畫面,靜止後返還中獎金額並清除下注金額
-// function run() {
-//     document.getElementById("odds" + oddsList[lightClean]).className = "normal";
-//     var t = 40;
-//     var times = 1;
-//     let startGame = setTimeout(function go() {
-//         for (j = 1; j <= 28; j++) { //把所有格子改成白底
-//             document.getElementById(j).className = "normal";
-//         }
-//         document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成黃底
-//         runEndNum++;
-//         times++;
-//         if (runEndNum >= 28) {
-//             runEndNum = 0;
-//         }
-//         if (times >= 28) {
-//             if (randNum - 14 > 0 && randNum - 14 == runEndNum) {
-//                 t = 500;
-//             } else if (randNum - 14 <= 0 && randNum + 14 == runEndNum) {
-//                 t = 500;
-//             }
-//         }
-//         startGame = setTimeout(go, t);
-//         if (t == 500 && randNum == runEndNum) {
-//             clearTimeout(startGame);
-//             for (i = 0; i <= 8; i++) {
-//                 if (fruitName[i] == typeOf[randNum]) {
-//                     lightClean = i;
-//                 }
-//             }
-//             document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
-//             // gameCoin.value = parseInt(GameCoin);
-//             lockClick();
-//         }
-//     }, 20)
-// }
-
 // 鎖定/解鎖 開始&結束
 var isClick = false;
 function lockClick() {
@@ -193,6 +153,7 @@ function btnStart() {
     lockClick();
     coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
     totall(); // 輸出 下注金額總計 totallInsert
+    document.getElementById("Gold").innerHTML = "" ;
     if (totallInsert != 0) { //未下注則不執行
         $.ajax({
             async: true, //啟用同步請求
@@ -238,6 +199,7 @@ function btnStart() {
                     console.log("5");
                     if (t == 500 && randNum == runEndNum) {
                         clearTimeout(startGame);
+                        document.getElementById("Gold").innerHTML = "中獎了~" + result ;
                         for (i = 0; i <= 8; i++) {
                             if (fruitName[i] == typeOf[randNum]) {
                                 lightClean = i;
