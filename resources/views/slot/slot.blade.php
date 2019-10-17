@@ -16,6 +16,13 @@
     <!-- Custom styles for this template -->
     <link href="css/slot/style.css" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="js/slot/slotmachine.js"></script>
+
 </head>
 
 <body>
@@ -75,12 +82,23 @@
         <div class="column side">
             <table class="none">
                 <tr>
-                    <td><img alt="" src="../../img/slot/chip5.png" height="120" width="120"></td>
-                    <td><img alt="" src="../../img/slot/chip10.png" height="120" width="120"></td>
+                    <td><img id="chip0" alt="" src="../../img/slot/chip5.png" height="120" width="120" style="opacity:0.5"></td>
+                    <td><img id="chip1" alt="" src="../../img/slot/chip10.png" height="120" width="120" style="opacity:0.5"></td>
                 </tr>
                 <tr>
-                    <td><img alt="" src="../../img/slot/chip50.png" height="120" width="120"></td>
-                    <td><img alt="" src="../../img/slot/chip100.png" height="120" width="120"></td>
+                    <td><img id="chip2" alt="" src="../../img/slot/chip50.png" height="120" width="120" style="opacity:0.5"></td>
+                    <td><img id="chip3" alt="" src="../../img/slot/chip100.png" height="120" width="120" style="opacity:0.5"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="display:flex;justify-content:center">
+                            <h3 style="display:inline">chip:</h3>
+                            <h3 style="display:inline" id="totalChip">0</h3>
+                        </span>
+                    </td>
+                    <td>
+                        <button id="resetChip" class="btn btn-light">Reset</button>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -110,13 +128,6 @@
             {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
         </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
-    <script src="js/slot/slotmachine.js"></script>
 
 </body>
 
