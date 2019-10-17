@@ -17,12 +17,12 @@ class MaryController extends Controller
      */
     public function index()
     {
-        if (Session::has('account')) {
+        // if (Session::has('account')) {
             
-            return view("Marry.Marry");
-        }else{
-            return redirect("/login");
-        }
+        //     return view("Marry.Marry");
+        // }else{
+        //     return redirect("/login");
+        // }
     }
 
     /**
@@ -105,7 +105,7 @@ class MaryController extends Controller
                 'carrot'=>[1,12,15,24,26],
                 );
             //水果種類賠率 [$pineapple,$watermelon,$grape,$strawberry,$orange,$cherry,$tomato,$cranberry,$carrot]
-            $fruitodds=[10,5,4,3,2,1,0.4,0.25,0.2];
+            $fruitodds=[10,6,5,4,3.5,3,2.5,2,1.5];
             $fruitname=["pineapple","watermelon","grape","strawberry","orange","cherry","tomato","cranberry","carrot"];
             $fruittype=array();
             $fruitarray=array();

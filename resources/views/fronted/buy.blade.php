@@ -14,7 +14,10 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
     <link href="css/fronted/top.css" rel="stylesheet">
+    <script src="jquery/jquery.min.js"></script>
+<style>
 
+</style>
 </head>
 
 <body>
@@ -118,36 +121,36 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: center">價格</th>
-                                    <th style="text-align: center">點數</th>
+                                    <th >價格</th>
+                                    <th >點數</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko100"><label for="jko100">NT$ 100</label></td>
-                                    <td><label for="jko100">貝殼幣 × 140</label></td>
+                                    <td><input type="radio" name="price" id="jko100" checked value="NT$ 100"><label for="jko100">NT$ 100</label></td>
+                                    <td><label for="jko100">貝殼幣 × 300</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko250"><label for="jko250">NT$ 250</label></td>
-                                    <td><label for="jko250">貝殼幣 × 350</label></td>
+                                    <td><input type="radio" name="price" id="jko250" value="NT$ 250"><label for="jko250">NT$ 250</label></td>
+                                    <td><label for="jko250">貝殼幣 × 800</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko500"><label for="jko500">NT$ 500</label></td>
-                                    <td><label for="jko500">貝殼幣 × 700</label></td>
+                                    <td><input type="radio" name="price" id="jko500" value="NT$ 500"><label for="jko500">NT$ 500</label></td>
+                                    <td><label for="jko500">貝殼幣 × 1700</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko1000"><label for="jko1000">NT$ 1000</label></td>
-                                    <td><label for="jko1000">貝殼幣 × 1400</label></td>
+                                    <td><input type="radio" name="price" id="jko1000" value="NT$ 1000"><label for="jko1000">NT$ 1000</label></td>
+                                    <td><label for="jko1000">貝殼幣 × 3500</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko2500"><label for="jko2500">NT$ 2500</label></td>
-                                    <td><label for="jko2500">貝殼幣 × 3500</label></td>
+                                    <td><input type="radio" name="price" id="jko2500" value="NT$ 2500"><label for="jko2500">NT$ 2500</label></td>
+                                    <td><label for="jko2500">貝殼幣 × 8000</label></td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
     
-                        <div style="width:50%;float:left">
+                        <div style="width:50%;float:left" id="buycontent">
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -157,11 +160,11 @@
                                  <tbody>
                                 <tr>
                                     <td>商品</td>
-                                    <td>貝殼幣 × 140</td>
+                                    <td>遊戲幣 × 300</td>
                                 </tr>
                                 <tr>
                                     <td>價格</td>
-                                    <td>NT$ 100</td>
+                                    <td id="pricetable">NT$ 100</td>
                                 </tr>
                                 <tr>
                                     <td>付費方式</td>
@@ -171,27 +174,34 @@
                                 <td colspan="2">
                                 
                                     <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="agree" onclick="asd()">
+                                        <input type="checkbox" class="form-check-input" id="agree">
                                         <label class="form-check-label" for="agree">
                                             我同意會員系統服務合約、個人資料隱私權保護政策未滿20歲之消費者，應由法定代理人閱讀並同意上述合約後，方得使用本儲值服務。
                                         </label>
                                     </div>  
-                                <button class="btn btn-primary btn-lg btn-block " disabled>同意</button>
+                                <button class="btn btn-primary btn-lg btn-block  "data-toggle="button" id="confirm" disabled>確認</button>
                                 </td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
-                        {{-- <div style="width:50%;float:left">
-                            <img src="img\fronted\buy\jkoQR.png" alt="">
-                        </div> --}}
+                        <div style="width:50%;float:left;text-align: center;display:none" id="QRdiv">
+                        <div style="text-align: center">請開啟「街口支付App」，點選「掃描條碼」功能，掃描下方</div>
+                        <div style="text-align: center"> QRCode</div>
+                        <div>
+                            <img src="img\fronted\buy\jkoQR.png" alt="" id="QRcode" style="width:200px;height:200px;text-align: center ">
+                        </div>
+                        <div style="text-align: center;color:gray">付款完成後，請點選下方按鈕</div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block">付款完成</button>
+                    </div>
+                        
                     </div>
                 </form>
             </div>
     
     
             {{-- VISA --}}
-            <div id="visa" class="tab-pane fade">
+            {{-- <div id="visa" class="tab-pane fade">
                 <div>
                     <div>
                         <p id="buyDesc">使用VISA或MASTER 3D驗證信用卡，享受最便利又安全的儲值體驗。</p>
@@ -255,7 +265,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+
             <div style="clear:both"></div>
         </div>
 
@@ -272,14 +283,36 @@
         </div>
     </footer>
     <script>
-    function asd(){
-        $("#zxcv").button('toggle')
-    }
-        
+      $('#agree').click(function () {
+        if($('#agree').is(':checked')){
+            $("#confirm").attr('disabled',false);         
+        }else{
+            $("#confirm").attr('disabled',true);      
+        } 
+      })
+
+      $("#confirm").click(function(){
+          $("#buycontent").hide();
+          $("#QRdiv").show();
+      })
+
+      $('input[type=radio][name="price"]').change(function() {
+       document.getElementById("pricetable").innerHTML = this.value ;
+        // var aaa=$('input[name="price"]:checked').val();
+        // $("#pricetable").val(aaa)
+        // alert(aaa);
+
+      })
+
+    //   $("input[type=radio][name='price']").on('ifChecked', function(event){
+    //     alert(this.value); 
+	// //    $("#pricetable").val($('input[name="radioName"]:checked').val());
+    //   })
+
     </script>
     <!-- Bootstrap core JavaScript -->
-    <script src="jquery/jquery.min.js">
-    {{-- <script src="bootstrap/js/bootstrap.bundle.min.js"></script> --}}
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <script src="js/fronted/top.js"></script>
