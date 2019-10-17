@@ -54,18 +54,9 @@
                 </div>
     </div>
 
-
-
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-    <footer class="py-1 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br>
-            {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
-        </div>
-    </footer>
-
-
+    @include('fronted.layouts.footer')  
 
 </body>
 

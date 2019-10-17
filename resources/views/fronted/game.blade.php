@@ -15,6 +15,16 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
     <link href="css/fronted/top.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="js/fronted/top.js"></script>
+    <script src="js/fronted/index.js"></script>
+    <script src="js/fronted/logout.js"></script>
+
 </head>
 
 <body>
@@ -110,22 +120,8 @@
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-    <footer class="py-1 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br>
-            {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
-        </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
-    <script src="js/fronted/top.js"></script>
-    <script src="js/fronted/index.js"></script>
-    <script src="js/fronted/logout.js"></script>
-
+    @include('fronted.layouts.footer')    
+    
 </body>
 
 </html>
