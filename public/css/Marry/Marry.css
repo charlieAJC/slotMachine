@@ -7,7 +7,6 @@ table {
 
 td {
     border-collapse: separate;
-    /* border: 3px solid black; */
     border: 3px solid rgba(255,255,255,0);
     width: 54px;
     height: 54px;
@@ -27,7 +26,6 @@ td {
 }
 
 .normal {
-    /* border: 3px solid black; */
     border: 3px solid rgba(255,255,255,0);
 }
 
@@ -39,7 +37,6 @@ td {
     margin-right: 2px;
     text-align: center;
     display: inline-block;
-    /* border: 3px solid black; */
     border: 3px solid rgba(255,255,255,0);
     width: 74px;
     height: 146px;

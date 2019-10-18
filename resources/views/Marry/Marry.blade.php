@@ -92,7 +92,7 @@
     <!-- 轉盤區域結束 -->
     <!-- 投注區域 -->
     <div id="setBoard" class="text-center">
-        <div id="odds1">
+        <div id="odds1" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -101,7 +101,7 @@
             </div>
             <p><input type="number" id="coinAdjust1" value="0" readonly="readonly"/></p>
         </div>
-        <div id="odds2">
+        <div id="odds2" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -110,7 +110,7 @@
             </div>
             <p><input type="number" id="coinAdjust2" value="0" readonly="readonly" /></p>
         </div>
-        <div id="odds3">
+        <div id="odds3" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -119,7 +119,7 @@
             </div>
             <p><input type="number" id="coinAdjust3" value="0" readonly="readonly" /></p>
         </div>
-        <div id="odds4">
+        <div id="odds4" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -128,7 +128,7 @@
             </div>
             <p><input type="number" id="coinAdjust4" value="0" readonly="readonly" /></p>
         </div>
-        <div id="odds5">
+        <div id="odds5" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -137,7 +137,7 @@
             </div>
             <p><input type="number" id="coinAdjust5" value="0" readonly="readonly" /></p>
         </div>
-        <div id="odds6">
+        <div id="odds6" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -146,7 +146,7 @@
             </div>
             <p><input type="number" id="coinAdjust6" value="0" readonly="readonly" /></p>
         </div>
-        <div id="odds7">
+        <div id="odds7" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -155,7 +155,7 @@
             </div>
             <p><input type="number" id="coinAdjust7" value="0" readonly="readonly" /></p>
         </div>
-        <div id="odds8">
+        <div id="odds8" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -164,7 +164,7 @@
             </div>
             <p><input type="number" id="coinAdjust8" value="0" readonly="readonly" /></p>
         </div>
-        <div id="odds9">
+        <div id="odds9" style="color:yellow">
             @{{messege}}
             <img v-bind:src='pic'>
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -177,7 +177,6 @@
             <input type="number" id="coin" value="0" readonly="readonly">
             <button onclick="btnInsert()" id="insertButton">insert coins</button>
             <button type="submit" onclick="btnStart()" id="startButton">Start</button>
-            <button type="submit" onclick="btnFinish()" id="finishButton">Finish</button>
         </p>
     </div>
     <!-- 投注區域結束 -->
