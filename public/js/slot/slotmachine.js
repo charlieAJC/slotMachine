@@ -86,9 +86,6 @@ $(document).ready(function(){
         chip = $("#totalChip").text();
         if(chip != 0){
             if(rollFlag === 0){
-                setFlag = 0;
-                timerFlag = setInterval(rollImg,50);
-                rollFlag = 1;
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -102,8 +99,16 @@ $(document).ready(function(){
                         "cost" : $("#totalChip").text()
                     },
                     success: function(e){
-                        var data = JSON.parse(e);
-                        endImg = data;
+                        if(e == "Oops"){
+                            alert("over bet!");
+                            location.reload();
+                        } else {
+                            setFlag = 0;
+                            timerFlag = setInterval(rollImg,50);
+                            rollFlag = 1;
+                            var data = JSON.parse(e);
+                            endImg = data;
+                        }
                     }
                 })
             }

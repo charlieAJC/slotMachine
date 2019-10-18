@@ -23,7 +23,9 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     {{-- <script src="js/fronted/top.js"></script> --}}
 
-<script src="js/fronted/manager.js"></script>
+    <script src="js/fronted/manager.js"></script>
+    <script src="js/fronted/index.js"></script>
+    <script src="js/fronted/logout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
 </head>
 
