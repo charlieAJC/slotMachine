@@ -39,7 +39,12 @@ $(document).ready(function(){
             if(rollFlag === 0){
                 chip = $("#totalChip").text();
                 chip = parseInt(chip) + chipArr[i];
-                $("#totalChip").text(chip);
+                coin = $("#navCoin").text().match(/\d+/);
+                if(chip > parseInt(coin)){
+                    alert("You don't have enough coin!");
+                } else {
+                    $("#totalChip").text(chip);
+                }
             }
         });
     }
@@ -78,27 +83,32 @@ $(document).ready(function(){
     
     $("#casinoShuffle").click(function(){
         // 注意函數名稱不用括弧!
-        if(rollFlag === 0){
-            setFlag = 0;
-            timerFlag = setInterval(rollImg,50);
-            rollFlag = 1;
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                method: "POST",
-                url: "slot",
-                data: {
-                    "slot" : "1",
-                    "cost" : $("#totalChip").text()
-                },
-                success: function(e){
-                    var data = JSON.parse(e);
-                    endImg = data;
-                }
-            })
+        chip = $("#totalChip").text();
+        if(chip != 0){
+            if(rollFlag === 0){
+                setFlag = 0;
+                timerFlag = setInterval(rollImg,50);
+                rollFlag = 1;
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    method: "POST",
+                    url: "slot",
+                    data: {
+                        "slot" : "1",
+                        "cost" : $("#totalChip").text()
+                    },
+                    success: function(e){
+                        var data = JSON.parse(e);
+                        endImg = data;
+                    }
+                })
+            }
+        } else {
+            alert("Please set your chip");
         }
     });
 
@@ -117,6 +127,10 @@ $(document).ready(function(){
             }
 
             console.log(endImg);
+
+            $("#navCoin").text("現有: " + endImg["coin"] + "代幣")
+            // coin = endImg["coin"];
+            // $("#totalChip").text(coin);
         }
     });
     
