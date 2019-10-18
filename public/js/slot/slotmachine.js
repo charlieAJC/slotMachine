@@ -92,7 +92,7 @@ $(document).ready(function(){
                 url: "slot",
                 data: {
                     "slot" : "1",
-                    "chip" : $("#totalChip").text()
+                    "cost" : $("#totalChip").text()
                 },
                 success: function(e){
                     var data = JSON.parse(e);
