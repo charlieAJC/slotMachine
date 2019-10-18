@@ -72,7 +72,7 @@ Route::group(['middleware'=>'Permission'],function(){
     });
     //儲值
     Route::get('/buy', function () {return view('fronted.buy');});
-    Route::post('/buy',"memberController@buy");
+    Route::post('/buy',"BuyController@buy");
     // ------拉霸機------
     Route::get('/slot', function () {return view('slot.slot');});
     Route::post('/slot', "SlotController@slot");
