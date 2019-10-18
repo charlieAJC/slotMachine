@@ -18,18 +18,18 @@ class ManagerController extends Controller
         $countSlot = Stamp::where('GameName','SlotMachine' )->count();
         //小瑪莉總獲利
         $maryProfit=Stamp::where('GameName','LittleMary')->sum('BetCoin')-
-        Stamp::where('GameName','LittleMary')->sum('ChangeCoin');
+        Stamp::where('GameName','LittleMary')->sum('GetCoin');
         //拉霸機總獲利
         $slotProfit=Stamp::where('GameName','SlotMachine')->sum('BetCoin')-
-        Stamp::where('GameName','SlotMachine')->sum('ChangeCoin');
+        Stamp::where('GameName','SlotMachine')->sum('GetCoin');
         
         // $bet = Stamp::sum('BetCoin');
-        // $change=Stamp::sum('ChangeCoin');
+        // $change=Stamp::sum('GetCoin');
         // $profit=$bet-$change;
 
         //官方勝率
-        $lose=Stamp::where('ChangeCoin','0' )->count();
-        $total=Stamp::count('ChangeCoin');
+        $lose=Stamp::where('GetCoin','0' )->count();
+        $total=Stamp::count('GetCoin');
         $winrate=($lose/$total)*100;
         
 
