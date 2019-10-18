@@ -16,7 +16,7 @@ class SlotController extends Controller
         // echo $coin1[0];
         $cost1 =$request->cost;
         // echo $cost1;
-        if(isset($request->slot) && $request->slot == '1' && $cost1<=$coin1[0]){
+        if(isset($request->slot) && $request->slot === '1' && $cost1<=$coin1[0]){
             // $memberAccount = $request->account;
             //從Session取得帳號，cost接前端押金
             // $memberAccount = Session::get("account");
@@ -94,7 +94,7 @@ class SlotController extends Controller
                     'GetWay'=>'Play',
                     'GameName'=>'SlotMachine',
                     'BetCoin'=>$cost,
-                    'ChangeCoin'=>$win,
+                    'GetCoin'=>$win,
                     'GameCoin'=>$coin[0]-$cost+$win
                 ]);
                 echo json_encode($arr);
@@ -112,7 +112,7 @@ class SlotController extends Controller
                     'GetWay'=>'Play',
                     'GameName'=>'SlotMachine',
                     'BetCoin'=>$cost,
-                    'ChangeCoin'=>0,
+                    'GetCoin'=>0,
                     'GameCoin'=>$arr["coin"]
                 ]);
                 echo json_encode($arr);
