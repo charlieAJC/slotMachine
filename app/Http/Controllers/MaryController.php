@@ -146,7 +146,7 @@ class MaryController extends Controller
                 'carrot'=>[1,12,15,24,26],
                 );
                 //水果種類賠率 [$pineapple,$watermelon,$grape,$strawberry,$orange,$cherry,$tomato,$cranberry,$carrot]
-                $fruitodds=[10,5,4,3,2,1,0.4,0.25,0.2];
+                $fruitodds=[10,6,5,4,3.5,3,2.5,2,1.5];
                 $fruittype=array();
                 $fruitarray=array();
                 foreach ($fruit as $u=>$k) {
@@ -187,7 +187,7 @@ class MaryController extends Controller
                 'GetWay'=>'Play',
                 'GameName'=>'LittleMary',
                 'BetCoin'=>$sum,
-                'ChangeCoin'=>$coin,
+                'GetCoin'=>$coin,
                 'GameCoin'=>$NewGameCoin
             ]);
                 $transJSON=array('number'=>$number,'coin'=>$coin,'GameCoin'=>$NewGameCoin);
