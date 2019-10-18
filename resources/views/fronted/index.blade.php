@@ -25,7 +25,6 @@
 
     <script src="js/fronted/index.js"></script>
     <script src="js/fronted/logout.js"></script>
-    <script src="js/fronted/top.js"></script>
 
 </head>
 
