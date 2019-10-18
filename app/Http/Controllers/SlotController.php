@@ -11,17 +11,23 @@ use Illuminate\Support\Facades\Session;
 class SlotController extends Controller
 {
     public function slot(Request $request){
-        
-        
-        if(isset($request->slot) && $request->slot === '1'){
+        $memberAccount = Session::get("account");
+        $coin1 = User::where('Account', $memberAccount)->pluck('GameCoin');
+        // echo $coin1[0];
+        $cost1 =$request->cost;
+        // echo $cost1;
+        if(isset($request->slot) && $request->slot == '1' && $cost1<=$coin1[0]){
             // $memberAccount = $request->account;
-            $memberAccount = Session::get("account");
+            //從Session取得帳號，cost接前端押金
+            // $memberAccount = Session::get("account");
             $cost = $request->cost;
             // $cost = 100;
             // echo "hi, PHP get it!";
+            //隨機生成前端三張拉霸圖
             $arr[1] = rand(1,12);
             $arr[2] = rand(1,12);
             $arr[3] = rand(1,12);
+            //各圖產生機率
             for( $i=1; $i<4; $i++){
                 switch($arr[$i]){
                     case 1:case 2:case 3:case 4:
@@ -50,6 +56,7 @@ class SlotController extends Controller
                     break;
                 }
             }
+            //獲勝後獲得金額
             if($arr[1]===$arr[2] && $arr[1]===$arr[3]){
                 switch($arr[1]){
                     case 1:
@@ -90,7 +97,7 @@ class SlotController extends Controller
                     'ChangeCoin'=>$win,
                     'GameCoin'=>$coin[0]-$cost+$win
                 ]);
-
+                echo json_encode($arr);
             }else{
                 $arr["game"]="L";
                 $coin = User::where('Account', $memberAccount)->pluck('GameCoin');
@@ -108,12 +115,13 @@ class SlotController extends Controller
                     'ChangeCoin'=>0,
                     'GameCoin'=>$arr["coin"]
                 ]);
+                echo json_encode($arr);
 
             }
-            echo json_encode($arr);
+            
             // echo var_dump($arr);
         } else {
-            echo "Oops!";
+            echo "Oops";
         }
     }
 }
