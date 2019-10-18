@@ -5,13 +5,14 @@ var typeOf = new Array(28);
 var coinAdjustList = new Array(9);
 var totallInsert = 0; // 下注金額
 var totallCoin = 0; // 盤面上未使用總金額
-var runEndNum = 0; // 停止位置
+var runEndNum = 0; // 停止位置 0~27
 var result = 0; // 獎金
 var randNum = 0; // 中獎號碼
 var GameCoin = 0;
 var insertMoney = 1000;
 var increseMoney = 100;
 var decreseMoney = 100;
+
 function changeMode(setCoin) {
     increseMoney = parseInt(setCoin);
     decreseMoney = parseInt(setCoin);
@@ -93,7 +94,7 @@ function coinAdjust() {
 
 // 合計當次下注金額 totallInsert
 function totall() {
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i <= 8; i++) {
         totallInsert = parseInt(totallInsert) + parseInt(coinAdjustList[i]);
     }
 }
@@ -138,7 +139,6 @@ var isClick = false;
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
-    document.getElementById("finishButton").disabled = isClick ? true : false;
 }
 // 鎖定/解鎖 
 var isInsert = false;
@@ -151,12 +151,12 @@ function lockInsert() {
 var lightClean = 0;
 function btnStart() {
     lockClick();
-    coinAdjust(); // 輸出 投注金額陣列 coinAdjustList[i]
-    totall(); // 輸出 下注金額總計 totallInsert
-    document.getElementById("Gold").innerHTML = "" ;
-    if (totallInsert != 0) { //未下注則不執行
+    coinAdjust();
+    totall();
+    document.getElementById("Gold").innerHTML = "";
+    if (totallInsert != 0) {
         $.ajax({
-            async: true, //啟用同步請求
+            async: true,
             type: "POST",
             url: "/LittleMary",
             dataType: "json",
@@ -179,81 +179,60 @@ function btnStart() {
                     for (j = 1; j <= 28; j++) { //把所有格子改成白底
                         document.getElementById(j).className = "normal";
                     }
-                    console.log("2");
-                    document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成黃底
-                    runEndNum++;
-                    times++;
                     if (runEndNum >= 28) {
                         runEndNum = 0;
                     }
-                    console.log("3");
-                    if (times >= 28) {
+                    document.getElementById(list[runEndNum]).className = "yellowLight"; // 把該格子改成黃底
+                    times++;
+                    runEndNum++;
+                    if (times > 28) { //減速
                         if (randNum - 14 > 0 && randNum - 14 == runEndNum) {
                             t = 500;
                         } else if (randNum - 14 <= 0 && randNum + 14 == runEndNum) {
                             t = 500;
                         }
                     }
-                    console.log("4");
                     startGame = setTimeout(go, t);
-                    console.log("5");
+                    console.log(randNum, runEndNum);
                     if (t == 500 && randNum == runEndNum) {
                         clearTimeout(startGame);
-                        document.getElementById("Gold").innerHTML = "中獎了~" + result ;
+                        if (result != 0 && totallInsert < result) {
+                            document.getElementById("Gold").innerHTML = "喜從天降~獎金~ " + result + " 元";
+                        } else if (result != 0 && totallInsert >= result) {
+                            document.getElementById("Gold").innerHTML = "恭喜中獎~獎金~ " + result + " 元 , 但還是虧錢哦";
+                        } else {
+                            document.getElementById("Gold").innerHTML = "謝謝課長讓我們有遊戲玩~";
+                        }
                         for (i = 0; i <= 8; i++) {
                             if (fruitName[i] == typeOf[randNum]) {
                                 lightClean = i;
                             }
                         }
                         document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
+                        $.ajax({
+                            type: "post",
+                            url: "navbar",
+                            success: function (e) {
+                                $("#navCoin").text("現有: " + e + "代幣");
+                                $("#navCoin").show();
+                            }
+                        });
+                        if (coin.value < totallInsert) {
+                            for (i = 0; i <= 8; i++) {
+                                document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
+                            }
+                            clearAdjust();
+                        } else {
+                            coin.value = coin.value - totallInsert;
+                            clearAdjust();
+                        }
                         lockClick();
                     }
                 }, 20);
-                if (coin.value <= totallInsert) {
-                    for (i = 0; i <= 8; i++) {
-                        document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
-                    }
-                } else {
-                    coin.value = coin.value - totallInsert;
-                }
-                clearAdjust();
-            },
+            }
         })
     } else {
         lockClick();
         alert("請下注");
-    }
-}
-
-// 結束遊戲返還餘額至玩家儲值金
-function btnFinish() {
-    coinAdjust();
-    totall();
-    coin.value = parseInt(coin.value) + totallInsert;
-    clearAdjust();
-    for (i = 0; i <= 8; i++) {
-        document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;
-    }
-    if (confirm("遊戲結束,即將返還您的遊戲餘額至您的帳號,確定要離開嗎?")) {
-        // var d = new Date();
-        // alert("返還金額 :" + coin.value + ", 時間:" + d.getFullYear() + "年" + d.getMonth() + "月" +
-        //     d.getDate() + "日" + d.getHours() + "時" + d.getMinutes() + "分" + d.getSeconds() + "秒");
-        $.ajax({
-            async: true,
-            type: "POST",
-            url: "Marry",
-            dataType: "json",
-            data: {
-                'backMoney': 'backMoney'
-            },
-            success: function () {
-                alert("OKfinishButton")
-            },
-            error: function () {
-                alert("發生錯誤finishButton");
-            }
-        })
-    } else {
-        alert("遊戲繼續");
     }
 }
