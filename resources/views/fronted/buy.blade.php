@@ -133,23 +133,23 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko100" value="NT$ 100,遊戲幣 × 300" checked><label for="jko100">NT$ 100</label></td>
+                                    <td><input type="radio" name="price" id="jko100" value="100,300" checked><label for="jko100">NT$ 100</label></td>
                                     <td><label for="jko100">遊戲幣 × 300</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko250" value="NT$ 250,遊戲幣 × 800"><label for="jko250">NT$ 250</label></td>
+                                    <td><input type="radio" name="price" id="jko250" value="250,800"><label for="jko250">NT$ 250</label></td>
                                     <td><label for="jko250">遊戲幣 × 800</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko500" value="NT$ 500,遊戲幣 × 1700"><label for="jko500">NT$ 500</label></td>
+                                    <td><input type="radio" name="price" id="jko500" value="500,1700"><label for="jko500">NT$ 500</label></td>
                                     <td><label for="jko500">遊戲幣 × 1700</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko1000" value="NT$ 1000,遊戲幣 × 3500"><label for="jko1000">NT$ 1000</label></td>
+                                    <td><input type="radio" name="price" id="jko1000" value="1000,3500"><label for="jko1000">NT$ 1000</label></td>
                                     <td><label for="jko1000">遊戲幣 × 3500</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="price" id="jko2500" value="NT$ 2500,遊戲幣 × 8000"><label for="jko2500">NT$ 2500</label></td>
+                                    <td><input type="radio" name="price" id="jko2500" value="2500,8000"><label for="jko2500">NT$ 2500</label></td>
                                     <td><label for="jko2500">遊戲幣 × 8000</label></td>
                                 </tr>
                                 </tbody>
@@ -225,23 +225,23 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht100" value="NT$ 100,遊戲幣 × 300" checked><label for="cht100">NT$ 100</label></td>
+                                        <td><input type="radio" name="price" id="cht100" value="NT$ 100,300" checked><label for="cht100">NT$ 100</label></td>
                                         <td><label for="cht100">遊戲幣 × 300</label></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht250" value="NT$ 250,遊戲幣 × 800"><label for="cht250">NT$ 250</label></td>
+                                        <td><input type="radio" name="price" id="cht250" value="NT$ 250,800"><label for="cht250">NT$ 250</label></td>
                                         <td><label for="cht250">遊戲幣 × 800</label></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht500" value="NT$ 500,遊戲幣 × 1700"><label for="cht500">NT$ 500</label></td>
+                                        <td><input type="radio" name="price" id="cht500" value="NT$ 500,1700"><label for="cht500">NT$ 500</label></td>
                                         <td><label for="cht500">遊戲幣 × 1700</label></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht1000" value="NT$ 1000,遊戲幣 × 3500"><label for="cht1000">NT$ 1000</label></td>
+                                        <td><input type="radio" name="price" id="cht1000" value="NT$ 1000,3500"><label for="cht1000">NT$ 1000</label></td>
                                         <td><label for="cht1000">遊戲幣 × 3500</label></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht2500" value="NT$ 2500,遊戲幣 × 8000"><label for="cht2500">NT$ 2500</label></td>
+                                        <td><input type="radio" name="price" id="cht2500" value="NT$ 2500,8000"><label for="cht2500">NT$ 2500</label></td>
                                         <td><label for="cht2500">遊戲幣 × 8000</label></td>
                                     </tr>
                                     </tbody>
@@ -271,24 +271,27 @@
                                     <tr>
                                             <td colspan="2">
                                                 <div class="form-group">
-                                                        <label for="exampleInputText">中華電信手機門號</label>
-                                                        <input type="text" class="form-control" id="InputCellphone" aria-describedby="emailHelp" placeholder="輸入您的手機號碼">
+                                                        <label>中華電信手機門號</label>
+                                                        {{-- <input type="text" class="form-control" id="InputCellphone" aria-describedby="emailHelp" placeholder="輸入您的手機號碼"> --}}
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" class="form-control" placeholder="輸入您的手機號碼" aria-label="輸入您的手機號碼" aria-describedby="button-addon2">
+                                                            <div class="input-group-append">
+                                                              <button class="btn btn-outline-secondary" type="button" id="button-addon2">傳送驗證碼</button>
+                                                            </div>
+                                                        </div>
                                                         <small id="emailHelp" class="form-text text-muted">將傳送簡訊驗證碼至您所輸入的手機</small>
                                                 </div>
-                                                <div>輸入您所收到的簡訊驗證碼</div>
+                                                
 
-                                                <div>
-                                                    <div class="col-md-4 mb-3">
+                                                <label>
+                                                    <label>輸入您所收到的簡訊驗證碼</label>
+                                                    <div class="input-group mb-3 ">
+                                                            {{-- col-md-4 --}}
                                                         {{-- <label for="validationDefault01">First name</label> --}}
-                                                        <input type="text" class="form-control" id="validationDefault01" placeholder="驗證碼"required>
+                                                        <input type="text" class="form-control" id="validationDefault01" placeholder="驗證碼" style="text-align:left" required>
                                                     </div>
                                                 </div>
-                                                <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                                        <div class="input-group-append">
-                                                          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                                                        </div>
-                                                      </div>
+                                               
                                             </td>
                                     <tr>
                                     <td colspan="2">
@@ -305,11 +308,11 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div style="width:50%;float:left;text-align: center;display:none" id="chtVerification">
+                            {{-- <div style="width:50%;float:left;text-align: center;display:none" id="chtVerification">
                             
                             <div style="text-align: center;color:gray">付款完成後，請點選下方按鈕</div>
                             <button type="button" class="btn btn-primary btn-lg btn-block">付款完成</button>
-                        </div>
+                            </div> --}}
                             
                         </div>
                     </form>
@@ -331,7 +334,6 @@
         </div>
     </footer>
     <script>
-        var dfg = "";
         //勾選同意才可點確認
       $('#agree').click(function () {
         if($('#agree').is(':checked')){
@@ -346,17 +348,23 @@
           $("#QRdiv").show();
       })
        //更改購買內容資料
+       var arr=new Array();
+       arr[0]=100;
+       arr[1]=300;
       $('input[type=radio][name="price"]').change(function() {
-         var arr=new Array();
+        
+          $("#QRdiv").hide();
+          $("#buycontent").show();
+          
          var pricecoin=this.value;
          arr=pricecoin.split(',');
           
-         document.getElementById("pricetable").innerHTML = arr[0] ;
-         document.getElementById("cointable").innerHTML = arr[1] ;
+         document.getElementById("pricetable").innerHTML = 'NT$ '+arr[0] ;
+         document.getElementById("cointable").innerHTML = '遊戲幣 × '+arr[1] ;
 
       })
       $("#jkofinishstore").click(function(){
-          var howmuch=document.getElementById("pricetable").innerHTML;
+          var howmuch=arr[0];
         $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -368,7 +376,7 @@
                 datatype:"json",
                 data: {
                     "MoneyOrigin" : "JkoPay",
-                    "storemoney" : howmuch
+                    "StoreMoney" : howmuch
                 },
                 success: function(response){
                     var data = JSON.parse(response);
@@ -401,6 +409,7 @@
          document.getElementById("chtcointable").innerHTML = arr[1] ;
 
       })
+
     </script>
     
 

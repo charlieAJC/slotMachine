@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\User;
+use App\Payment;
+use Session;
 
 class BuyController extends Controller
 {
@@ -82,7 +86,20 @@ class BuyController extends Controller
         //
     }
     function buy(Request $request){
-        $asd=$request->storemoney;
-           echo json_encode(array("qwe"=>"123"));
+        if(isset($request->MoneyOrigin)){
+            $Account=Session::get('account');
+            $StoreMoney=$request->StoreMoney;
+            $MoneyOrigin=$request->MoneyOrigin;
+            $UserID=User::where('Account', '=', $Account)->pluck('UserID');
+            Payment::insert([
+                'UserID'=>$UserID[0],
+                "MoneyOrigin"=>$MoneyOrigin,
+                "StoreMoney"=>$StoreMoney,
+            ]);
+            echo json_encode(array("qwe"=>$MoneyOrigin));
+        }
+        
+        // $asd=$request->storemoney;
+        //    echo json_encode(array("qwe"=>$asd));
     }
 }
