@@ -1,155 +1,132 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  background-size: cover;
-}
-
 body {
-  color: white;
-  /* 字 */
   font-family: 'Microsoft JhengHei', Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-.header {
-  background-color: #f1f1f1;
-  padding: 0px;
-}
-
-/* Create three unequal columns that floats next to each other */
-.column {
   float: left;
-  padding: 10px;
-  height: 615px;
-  /* display: flex;
+  background: url(../../img/slot/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.row {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.money img {
+  position: relative;
+  width: 40%;
+  display: inline-flex;
   justify-content: center;
-  align-items: center; */
-
-  /* Should be removed. Only for demonstration */
+  align-self: center;
+  left: 5%;
 }
 
-/* Left and right column */
-.column.side {
-  width: 25%;
-  background-color: #94b8b8;
-  /* display: flex;
+.machine img {
+  position: relative;
+  width: 90%;
+  display: flex;
+  margin: auto;
   justify-content: center;
-  align-items: center; */
-
-
+  align-self: center;
 }
 
-.none {
-  border-style: none;
-  margin: 120px 95px;
+.col-12 {
+  height:0px;
+  margin-bottom: 70%;
 }
 
-.none td {
-  border: 20px solid #94b8b8;
-}
-
-/* .......................... */
-
-/* Middle column */
-.column.middle {
-  width: 50%;
-  background: #94b8b8 url(../../img/slot/machine.png) no-repeat fixed 50% 35%;
-  /* position:relative; */
+.result img {
+  width: 90%;
+  height: auto;
+  margin: 10px;
+  display: flex;
+  position: relative;
 }
 
 /* Shuffle&Stop Btn*/
 .btn-group {
   display: flex;
-  align-items: center;
   justify-content: center;
-  /* position:absolute; */
-  bottom: -480px;
-  right: 32px;
+  right: 5%;
 }
 
 .btn-group .button {
-  border: 5px solid #333333;
+  border: 5px solid #000000;
+  background-color: #33bbff;
+  opacity:0.8;
   color: #000000;
   padding: 12px 28px;
-  width: 120px;
+  width: 180px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 50px;
   cursor: pointer;
-  /* float: left; */
+  
 }
 
 .btn-group .button:hover {
-  background-color: #ff6600;
+  background-color: #ff471a;
+  opacity:0.8;
   color: #000000;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-
-  .column.side,
-  .column.middle {
-      width: 100%;
-  }
-}
-
-/* .......................... */
-
 /* fruit Btn */
 .casino {
-  width: 350px;
-  margin-right: 100px;
-  margin-left: 180px;
-  padding-top: 148px;
-}
-
-.casino .slotMachine .slot {
-  height: 100px;
-  background-repeat: no-repeat;
-}
-
-.casino .slotMachine {
-  width: 110px;
-  height: 110px;
-  border: 5px solid #CF5178;
-  display: inline-block;
+  position: relative;
+  flex-wrap: nowrap;
+  left: 43.5%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -250%);
+  width:60%;
 }
 
 .slot1 {
-  background-image: url("../../img/slot/slot1.png");
-  /* background-position:left center; */
+  border: 5px solid #CF5178;
+  padding: 50%;
+  background: url(../../img/slot/slot1.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .slot2 {
-  background-image: url("../../img/slot/slot2.png");
-  /* background-position:center center; */
+  border: 5px solid #CF5178;
+  padding: 50%;
+  background: url(../../img/slot/slot2.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .slot3 {
-  background-image: url("../../img/slot/slot3.png");
-  /* background-position:right center; */
+  border: 5px solid #CF5178;
+  padding: 50%;
+  background: url(../../img/slot/slot3.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .slot4 {
-  background-image: url("../../img/slot/slot4.png");
+  border: 5px solid #CF5178;
+  padding: 50%;
+  background: url(../../img/slot/slot4.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .slot5 {
-  background-image: url("../../img/slot/slot5.png");
+  border: 5px solid #CF5178;
+  padding: 50%;
+  background: url(../../img/slot/slot5.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .slot6 {
-  background-image: url("../../img/slot/slot6.png");
+  border: 5px solid #CF5178;
+  padding: 50%;
+  background: url(../../img/slot/slot6.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
