@@ -225,23 +225,23 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht100" value="NT$ 100,300" checked><label for="cht100">NT$ 100</label></td>
+                                        <td><input type="radio" name="price" id="cht100" value="100,300" checked><label for="cht100">NT$ 100</label></td>
                                         <td><label for="cht100">遊戲幣 × 300</label></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht250" value="NT$ 250,800"><label for="cht250">NT$ 250</label></td>
+                                        <td><input type="radio" name="price" id="cht250" value="250,800"><label for="cht250">NT$ 250</label></td>
                                         <td><label for="cht250">遊戲幣 × 800</label></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht500" value="NT$ 500,1700"><label for="cht500">NT$ 500</label></td>
+                                        <td><input type="radio" name="price" id="cht500" value="500,1700"><label for="cht500">NT$ 500</label></td>
                                         <td><label for="cht500">遊戲幣 × 1700</label></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht1000" value="NT$ 1000,3500"><label for="cht1000">NT$ 1000</label></td>
+                                        <td><input type="radio" name="price" id="cht1000" value="1000,3500"><label for="cht1000">NT$ 1000</label></td>
                                         <td><label for="cht1000">遊戲幣 × 3500</label></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="price" id="cht2500" value="NT$ 2500,8000"><label for="cht2500">NT$ 2500</label></td>
+                                        <td><input type="radio" name="price" id="cht2500" value="2500,8000"><label for="cht2500">NT$ 2500</label></td>
                                         <td><label for="cht2500">遊戲幣 × 8000</label></td>
                                     </tr>
                                     </tbody>
@@ -302,7 +302,7 @@
                                                 我同意會員系統服務合約、個人資料隱私權保護政策未滿20歲之消費者，應由法定代理人閱讀並同意上述合約後，方得使用本儲值服務。
                                             </label>
                                         </div>  
-                                    <button class="btn btn-primary btn-lg btn-block  "data-toggle="button" id="chtconfirm" disabled>確認</button>
+                                    <button class="btn btn-primary btn-lg btn-block  "data-toggle="button" id="chtfinishstore" disabled>確認</button>
                                     </td>
                                     </tr>
                                     </tbody>
@@ -317,6 +317,25 @@
                         </div>
                     </form>
                 </div>
+                <!-- 成功後彈跳視窗  -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">儲值成功</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modaltext">
+              遊戲幣已成功儲值進您的帳號
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
             <div style="clear:both"></div>
         </div>
@@ -348,23 +367,24 @@
           $("#QRdiv").show();
       })
        //更改購買內容資料
-       var arr=new Array();
-       arr[0]=100;
-       arr[1]=300;
+       var jkoarr=new Array();
+       jkoarr[0]=100;
+       jkoarr[1]=300;
       $('input[type=radio][name="price"]').change(function() {
         
           $("#QRdiv").hide();
           $("#buycontent").show();
           
          var pricecoin=this.value;
-         arr=pricecoin.split(',');
+         jkoarr=pricecoin.split(',');
           
-         document.getElementById("pricetable").innerHTML = 'NT$ '+arr[0] ;
-         document.getElementById("cointable").innerHTML = '遊戲幣 × '+arr[1] ;
+         document.getElementById("pricetable").innerHTML = 'NT$ '+jkoarr[0] ;
+         document.getElementById("cointable").innerHTML = '遊戲幣 × '+jkoarr[1] ;
 
       })
+      //完成街口支付送資料給後端
       $("#jkofinishstore").click(function(){
-          var howmuch=arr[0];
+          var howmuch=jkoarr[0];
         $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -379,36 +399,69 @@
                     "StoreMoney" : howmuch
                 },
                 success: function(response){
-                    var data = JSON.parse(response);
-                    // dfg = response["qwe"];
-                   console.log(data);
+                var jkodata = JSON.parse(response);
+                //    console.log(data.StoredCoin);
+                $("#modaltext").text('遊戲幣 × '+jkodata.StoredCoin+' 已成功儲值進您的帳號');
+                
+                
+                $('#exampleModalCenter').modal('show');
                 }
             })
       })
-
+           
         //中華付款
         //勾選同意才可點確認
       $('#chtagree').click(function () {
         if($('#chtagree').is(':checked')){
-            $("#chtconfirm").attr('disabled',false);         
+            $("#chtfinishstore").attr('disabled',false);         
         }else{
-            $("#chtconfirm").attr('disabled',true);      
+            $("#chtfinishstore").attr('disabled',true);      
         } 
       })
-    //   $("#chtconfirm").click(function(){
+    //   $("#chtfinishstore").click(function(){
     //       $("#chtbuycontent").hide();
     //       $("#chtVerification").show();
     //   })
        //更改購買內容資料
+       var chtarr=new Array();
+       chtarr[0]=100;
+       chtarr[1]=300;
       $('input[type=radio][name="price"]').change(function() {
          var arr=new Array();
          var pricecoin=this.value;
-         arr=pricecoin.split(',');
+         chtarr=pricecoin.split(',');
           
-         document.getElementById("chtpricetable").innerHTML = arr[0] ;
-         document.getElementById("chtcointable").innerHTML = arr[1] ;
+         document.getElementById("chtpricetable").innerHTML = "NT$ "+chtarr[0] ;
+         document.getElementById("chtcointable").innerHTML = "遊戲幣 × "+chtarr[1] ;
 
       })
+      //完成中華電信送資料給後端
+      $("#chtfinishstore").click(function(){
+          var howmuch=chtarr[0];
+        $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                method: "POST",
+                url: "buy",
+                datatype:"json",
+                data: {
+                    "MoneyOrigin" : "CHT",
+                    "StoreMoney" : howmuch
+                },
+                success: function(response){
+                var chtdata = JSON.parse(response);
+                $("#modaltext").text('遊戲幣 × '+chtdata.StoredCoin+' 已成功儲值進您的帳號');
+                $('#exampleModalCenter').modal('show');
+                }
+            })
+      })
+      //彈跳視窗關閉後會重新整理
+      $('#exampleModalCenter').on('hidden.bs.modal', function (e) {
+             location.reload();
+            })
 
     </script>
     
