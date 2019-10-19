@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" style="opacity:0.9">
     <div class="container">
         <a class="navbar-brand" href="/">Slot Machine</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"

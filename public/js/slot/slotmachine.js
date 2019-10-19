@@ -30,7 +30,7 @@ $(document).ready(function(){
 
         $("#chip"+i).mouseout(function(){
             if(rollFlag === 0){
-                $("#chip"+i).css("opacity","0.5");
+                $("#chip"+i).css("opacity","0.7");
             }
         });
 
