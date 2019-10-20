@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Payment;
+use App\Stamp;
 use Session;
 
 class BuyController extends Controller
@@ -96,10 +97,10 @@ class BuyController extends Controller
                 "MoneyOrigin"=>$MoneyOrigin,
                 "StoreMoney"=>$StoreMoney,
             ]);
-            echo json_encode(array("qwe"=>$MoneyOrigin));
+            $GetCoin=Stamp::where('UserID','=',$UserID)->orderBy('StampID', 'desc')->take(1)->value('GetCoin');
+            echo json_encode(array('StoredCoin'=> $GetCoin));
         }
         
-        // $asd=$request->storemoney;
-        //    echo json_encode(array("qwe"=>$asd));
+      
     }
 }
