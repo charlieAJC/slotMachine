@@ -21,9 +21,23 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     {{-- <script src="js/fronted/top.js"></script> --}}
-<style>
+    <style>
 
-</style>
+    #imgdiv>ul>li{
+    background-color:#5bc0de;
+    margin: 10px;
+    border-radius: 20px;
+    }
+    #storeway{
+        font-weight: bold; 
+    }
+    .paytitle{
+        font-weight: bold; 
+    }
+    .imgborder{
+        border: 2px red solid;
+    }
+    </style>
 </head>
 
 <body>
@@ -83,11 +97,11 @@
             <li class="breadcrumb-item active">購點儲值</li>
         </ol>
         <div>
-            <p>儲值方法</p>
+            <p id="storeway">儲值方法</p>
         </div>
     
         <nav class="navbar navbar-expand-lg">
-            <div>
+            <div id='imgdiv'>
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#jkopay" data-toggle="tab"><img src="img\fronted\buy\jkopay.png" alt=""></a>
@@ -117,13 +131,13 @@
             {{-- 街口支付 --}}
             <div id="jkopay" class="tab-pane fade show active">
                 <form action="" >
-                    <div>街口支付</div>
+                    <div class="paytitle">街口支付</div>
                     <div>
                         <p id="buyDesc">使用街口支付App掃描網頁內付款QRCode碼，並以「街口帳戶」餘額付款或連結「銀行帳戶」付款</p>
                     </div>
     
                     <div>
-                        <div style="width:50%;float:left">
+                        <div style="width:50%;float:left;padding:10px">
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
@@ -156,7 +170,7 @@
                             </table>
                         </div>
     
-                        <div style="width:50%;float:left" id="buycontent">
+                        <div style="width:50%;float:left;padding:10px" id="buycontent">
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -209,7 +223,7 @@
             {{-- cht --}}
             <div id="cht" class="tab-pane fade">
                     <form action="" >
-                        <div>中華電信手機</div>
+                        <div class="paytitle">中華電信手機</div>
                         <div>
                             <p id="buyDesc">系統認證您的個資後，將發送簡訊至您的手機，請直接回覆該簡訊之驗證碼，待收到付款完成的簡訊通知後，請在頁面上按下「確定」按鈕，即完成流程並獲得貝殼幣。</p>
                         </div>
@@ -274,7 +288,7 @@
                                                         <label>中華電信手機門號</label>
                                                         {{-- <input type="text" class="form-control" id="InputCellphone" aria-describedby="emailHelp" placeholder="輸入您的手機號碼"> --}}
                                                         <div class="input-group mb-3">
-                                                            <input type="text" class="form-control" placeholder="輸入您的手機號碼" aria-label="輸入您的手機號碼" aria-describedby="button-addon2">
+                                                            <input type="text" class="form-control" placeholder="輸入您的手機號碼" aria-label="輸入您的手機號碼" aria-describedby="button-addon2" required>
                                                             <div class="input-group-append">
                                                               <button class="btn btn-outline-secondary" type="button" id="button-addon2">傳送驗證碼</button>
                                                             </div>
@@ -353,6 +367,12 @@
         </div>
     </footer>
     <script>
+        $("#imgdiv >ul>li").click(function(){
+            $("#imgdiv >ul>li").removeClass("imgborder")
+            $(this).addClass('imgborder');
+        })
+
+
         //勾選同意才可點確認
       $('#agree').click(function () {
         if($('#agree').is(':checked')){
