@@ -86,60 +86,168 @@
     </header>
 
     <div class="container">
-        <h2 class="mt-4 mb-3">最新消息</h2>
-        <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="card">
-                <div class="card-header" role="tab" id="headingOne">
-                    <h5 class="mb-0">
-                        <span class="badge badge-secondary">New</span>
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">【2019/10/08】客服中心電話維護說明公告</a>
-                    </h5>
-                </div>
-                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="card-body">
-                        親愛的玩家您好：<br>
-                        為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<br>
-                        影響時間：2019/10/12（六）11:00~12:00<br>
-                        遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" role="tab" id="headingTwo">
-                    <h5 class="mb-0">
-                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-                            aria-expanded="false" aria-controls="collapseTwo">【2019/10/07】嚴正聲明：本公司從未對外徵求銀行存簿、金融卡，切勿受騙上當！
-                        </a>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="card-body">
-                        親愛的玩家您好：<br>
-                        近期接獲玩家反應，有不肖之徒冒用本團隊名義，以調整財務為由蒐購銀行存摺、提款卡，企圖欺瞞大眾提供銀行帳戶，作為人頭帳戶使用。<br>
-                        對於此類不法行徑本公司已主動調查瞭解，並採取相關法律行動，也再次呼籲各位切勿提供重要財務資料予他人，以免淪為犯罪共犯！<br>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" role="tab" id="headingThree">
-                    <h5 class="mb-0">
-                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
-                            aria-expanded="false" aria-controls="collapseThree">【2019/10/06】網頁HD版優化說明公告</a>
-                    </h5>
-                </div>
-                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="card-body">
-                        各位親愛的玩家您好：<br>
-                        因進行網頁及遊戲優化作業，故網頁HD版將會於2019/10/08（二）更換登入介面。<br>
-                        新的網頁HD版遊戲館僅開放【拉霸機】、【小瑪莉】共二款遊戲館。<br>
-                        其餘遊戲館則陸續增加，若遇未開放遊戲館還請玩家透過PC版或手機裝置進行遊戲及新活動，造成不便，敬請見諒！謝謝。<br>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{-- <h2 class="mt-4 mb-3">最新消息</h2> --}}
+        <h3 class="mt-4 mb-3" style="font-weight:bolder;">最新消息</h3>
 
-        <h2 class="mt-4 mb-3">遊戲介紹</h2>
+        <div class="tab">
+          <button class="tablinks" onclick="openNews(event, 'All')" id="defaultOpen">全部公告</button>
+          <button class="tablinks" onclick="openNews(event, 'System')">系統公告</button>
+          <button class="tablinks" onclick="openNews(event, 'Activity')">活動公告</button>
+        </div>
+        
+        <div id="All" class="tabcontent show">
+                <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                                <div class="card-header" role="tab" id="heading1-1">
+                                    <h5 class="mb-0">
+                                        <span class="badge badge-primary">系統公告</span>
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1-1"
+                                            aria-expanded="false" aria-controls="collapse1-1" style="color:black;font-size:14pt;font-weight:bolder;">客服中心電話維護說明
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse1-1" class="collapse" role="tabpanel" aria-labelledby="heading1-1">
+                                    <div class="card-body">
+                                    親愛的玩家您好：<br>
+                                    為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<br>
+                                    影響時間：2019/10/12（六）11:00~12:00<br>
+                                    遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="heading1-2">
+                                <h5 class="mb-0">
+                                    <span class="badge badge-primary">系統公告</span>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1-2"
+                                        aria-expanded="false" aria-controls="collapse1-2" style="color:black;font-size:14pt;font-weight:bolder;">嚴正聲明：本公司從未對外徵求銀行存簿、金融卡，切勿受騙上當！
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse1-2" class="collapse" role="tabpanel" aria-labelledby="heading1-2">
+                                <div class="card-body">
+                                    親愛的玩家您好：<br>
+                                    近期接獲玩家反應，有不肖之徒冒用本團隊名義，以調整財務為由蒐購銀行存摺、提款卡，企圖欺瞞大眾提供銀行帳戶，作為人頭帳戶使用。<br>
+                                    對於此類不法行徑本公司已主動調查瞭解，並採取相關法律行動，也再次呼籲各位切勿提供重要財務資料予他人，以免淪為犯罪共犯！<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="heading1-3">
+                                <h5 class="mb-0">
+                                    <span class="badge badge-danger">活動公告</span>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1-3"
+                                        aria-expanded="false" aria-controls="collapse1-3" style="color:black;font-size:14pt;font-weight:bolder;">Slot Machine之LINE官方帳號上線囉!!</a>
+                                </h5>
+                            </div>
+                            <div id="collapse1-3" class="collapse" role="tabpanel" aria-labelledby="heading1-3">
+                                <div class="card-body">
+                                        親愛的玩家您好：<br> 
+                                        即日起，Slot Machine之LINE官方帳號正式上線。<br>
+                                        免費貼圖等你拿~立即加入好友以獲得最新消息!!<br>                                       
+                                        請注意，官方不會主動私訊索取個人資料，請勿受騙上當!!<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="heading1-4">
+                                <h5 class="mb-0">
+                                        <span class="badge badge-primary">系統公告</span>
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1-4"
+                                        aria-expanded="false" aria-controls="collapse1-4" style="color:black;font-size:14pt;font-weight:bolder;">網頁HD版優化說明</a>
+                                </h5>
+                            </div>
+                            <div id="collapse1-4" class="collapse" role="tabpanel" aria-labelledby="heading1-4">
+                                <div class="card-body">
+                                    各位親愛的玩家您好：<br>
+                                    因進行網頁及遊戲優化作業，故網頁HD版將會於2019/10/08（二）更換登入介面。<br>
+                                    新的網頁HD版遊戲館僅開放【拉霸機】、【小瑪莉】共二款遊戲館。<br>
+                                    其餘遊戲館則陸續增加，若遇未開放遊戲館還請玩家透過PC版或手機裝置進行遊戲及新活動，造成不便，敬請見諒！謝謝。<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+     
+        <div id="System" class="tabcontent">
+                <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                                <div class="card-header" role="tab" id="heading2-1">
+                                    <h5 class="mb-0">
+                                        <span class="badge badge-primary">系統公告</span>
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2-1"
+                                            aria-expanded="false" aria-controls="collapse2-1" style="color:black;font-size:14pt;font-weight:bolder;">客服中心電話維護說明
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse2-1" class="collapse" role="tabpanel" aria-labelledby="heading2-1">
+                                    <div class="card-body">
+                                    親愛的玩家您好：<br>
+                                    為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<br>
+                                    影響時間：2019/10/12（六）11:00~12:00<br>
+                                    遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="heading2-2">
+                                <h5 class="mb-0">
+                                    <span class="badge badge-primary">系統公告</span>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2-2"
+                                        aria-expanded="false" aria-controls="collapse2-2" style="color:black;font-size:14pt;font-weight:bolder;">嚴正聲明：本公司從未對外徵求銀行存簿、金融卡，切勿受騙上當！
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse2-2" class="collapse" role="tabpanel" aria-labelledby="heading2-2">
+                                <div class="card-body">
+                                    親愛的玩家您好：<br>
+                                    近期接獲玩家反應，有不肖之徒冒用本團隊名義，以調整財務為由蒐購銀行存摺、提款卡，企圖欺瞞大眾提供銀行帳戶，作為人頭帳戶使用。<br>
+                                    對於此類不法行徑本公司已主動調查瞭解，並採取相關法律行動，也再次呼籲各位切勿提供重要財務資料予他人，以免淪為犯罪共犯！<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="heading2-3">
+                                <h5 class="mb-0">
+                                        <span class="badge badge-primary">系統公告</span>
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2-3"
+                                        aria-expanded="false" aria-controls="collapse2-3" style="color:black;font-size:14pt;font-weight:bolder;">網頁HD版優化說明</a>
+                                </h5>
+                            </div>
+                            <div id="collapse2-3" class="collapse" role="tabpanel" aria-labelledby="heading2-3">
+                                <div class="card-body">
+                                    各位親愛的玩家您好：<br>
+                                    因進行網頁及遊戲優化作業，故網頁HD版將會於2019/10/08（二）更換登入介面。<br>
+                                    新的網頁HD版遊戲館僅開放【拉霸機】、【小瑪莉】共二款遊戲館。<br>
+                                    其餘遊戲館則陸續增加，若遇未開放遊戲館還請玩家透過PC版或手機裝置進行遊戲及新活動，造成不便，敬請見諒！謝謝。<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        
+        <div id="Activity" class="tabcontent">
+                <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="heading3-1">
+                                <h5 class="mb-0">
+                                    <span class="badge badge-danger">活動公告</span>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3-1"
+                                        aria-expanded="false" aria-controls="collapse3-1" style="color:black;font-size:14pt;font-weight:bolder;">Slot Machine之LINE官方帳號上線囉!!</a>
+                                </h5>
+                            </div>
+                            <div id="collapse3-1" class="collapse" role="tabpanel" aria-labelledby="heading3-1">
+                                <div class="card-body">
+                                        親愛的玩家您好：<br> 
+                                        即日起，Slot Machine之LINE官方帳號正式上線。<br>
+                                        免費貼圖等你拿~立即加入好友以獲得最新消息!!<br>                                       
+                                        請注意，官方不會主動私訊索取個人資料，請勿受騙上當!!<br>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+        </div>
+        <h3 class="mt-4 mb-3" style="font-weight:bolder;">遊戲介紹</h3>
         <div class="row">
             <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
@@ -209,11 +317,13 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-    @include('fronted.layouts.footer')    
+    @include('fronted.layouts.footer')
 
 </body>
 
