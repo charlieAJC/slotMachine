@@ -73,7 +73,14 @@
             </div>
         </div>
     </nav>
-
+    <div class="container">
+            {{-- <h2 class="mt-4 mb-3">登入會員</h2> --}}
+            <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
+                    <li class="breadcrumb-item">
+                    <a href="/">首頁</a>
+                </li>
+                <li class="breadcrumb-item active">登入會員</li>
+            </ol>
     {{-- <div class="row">
     <div class="col-sm-6 carousel slide" id="demo" data-ride="carousel">
         <div class="slideGrp">
@@ -84,14 +91,14 @@
             </ul>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://fakeimg.pl/1920x1080" width="100%" height="100%">
+                    <img src="img/fronted/img_1.jpg" width="50%" height="50%">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://fakeimg.pl/1920x1080" width="100%" height="100%">
-                </div>
+                        <img src="img/fronted/img_2.jpg" width="50%" height="50%">
+                    </div>
                 <div class="carousel-item">
-                    <img src="https://fakeimg.pl/1920x1080" width="100%" height="100%">
-                </div>
+                        <img src="img/fronted/img_1.jpg" width="50%" height="50%">
+                    </div>
             </div>
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
@@ -101,20 +108,13 @@
             </a>
         </div>
     </div> --}}
-    <div class="container">
-        {{-- <h2 class="mt-4 mb-3">登入會員</h2> --}}
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="/">首頁</a>
-            </li>
-            <li class="breadcrumb-item active">登入會員</li>
-        </ol>
+    
         {{-- <form id="user_login" method="POST" action="/index.blade.php" class="form-signin needs-validation" novalidate> --}}
         {{-- <div id="user_login" class="form-signin was-validated"> --}}
         <div id="user_login" class="form-signin">
             @csrf
             <div class="text-center mb-1">
-                <img class="mb-4" src="img/fronted/member.png" alt="" width="72" height="72">
+                <img class="mb-4" src="img/fronted/member.png" alt="" width="100" height="100">
             </div>
             <div class="form-group">
                 {{-- <input type="account" id="loginAccount" class="form-control" placeholder="帳號" pattern="^\w{6,12}$" required autofocus> --}}
@@ -145,8 +145,18 @@
             <div id="login_success" style="display:none;"></div>
         </div>
     </div>
+    {{-- </div> --}}
 
-    @include('fronted.layouts.footer')    
+    {{-- @include('fronted.layouts.footer')     --}}
+    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
+            <div class="container" >
+                <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
+                    <span>&copy; Copyright Slot Machine - 2019 </span>
+                </div>
+                {{-- <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br> --}}
+                {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
+            </div>
+    </footer>
 
 </body>
 

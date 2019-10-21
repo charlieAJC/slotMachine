@@ -13,6 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
+    <link href="css/fronted/game.css" rel="stylesheet">
     <link href="css/fronted/style.css" rel="stylesheet">
     <link href="css/fronted/top.css" rel="stylesheet">
 
@@ -32,79 +33,64 @@
 
     <div class="container">
         {{-- <h2 class="mt-4 mb-3">遊戲介紹</h2> --}}
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
             <li class="breadcrumb-item">
                 <a href="/">首頁</a>
             </li>
             <li class="breadcrumb-item active">遊戲介紹</li>
         </ol>
         <div class="row">
-            <div class="col-lg-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="slot"><img class="card-img-top d-block w-100" src="img/fronted/game_1.jpg" alt="Avatar"></a>
-                    {{-- <div class="middle">
-                        <div class="centered">Centered</div>
-                    </div> --}}
+            <div class="col-lg-4 col-sm-6 portfolio-item">                          
+                <div class="card">
+                    <a href="slot"><img class="card-img-top" src="img/fronted/game_1.jpg" alt="Avatar"></a>
                     <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="slot">拉霸機</a>
-                        </h4>
-                        <p class="card-text">Slot</p>
+                        <h4 class="card-title">拉霸機</h4>
+                        <p class="card-text">我是拉霸機，我是拉霸機<br>我是拉霸機，我是拉霸機</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="LittleMary"><img class="card-img-top d-block w-100" src="img/fronted/game_2.jpg" alt=""></a>
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="card">
+                    <a href="LittleMary"><img class="card-img-top" src="img/fronted/game_2.jpg" alt=""></a>
                     <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="LittleMary">小瑪莉</a>
-                        </h4>
-                        <p class="card-text">Marry</p>
+                        <h4 class="card-title">小瑪莉</h4>
+                        <p class="card-text">我是小瑪莉，我是小瑪莉<br>我是小瑪莉，我是小瑪莉</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top d-block w-100" src="img/fronted/game_3.jpg" alt=""></a>
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="card">
+                    <a href="#"><img class="card-img-top" src="img/fronted/game_3.jpg" alt=""></a>
                     <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">賓果彈珠台</a>
-                        </h4>
-                        <p class="card-text">日式煙花祭典風格，多元化的玩法設計，讓你彷彿置身日本屋台打彈珠台的樂趣。</p>
+                        <h4 class="card-title">賓果彈珠台</h4>
+                        <p class="card-text">日式煙花祭典風格，多元化的玩法設計<br>讓你彷彿置身日本屋台打彈珠台的樂趣</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 portfolio-item">
+            <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top d-block w-100" src="img/fronted/game_4.jpg" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="img/fronted/game_4.jpg" alt=""></a>
                     <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">逗陣捕魚季</a>
-                        </h4>
-                        <p class="card-text">捕魚連線倍數贈，幸運輪盤彩金送；砲台鯊魚逗陣來，連爆大獎拿不完。</p>
+                        <h4 class="card-title">逗陣捕魚季</h4>
+                        <p class="card-text">捕魚連線倍數贈，幸運輪盤彩金送<br>砲台鯊魚逗陣來，連爆大獎拿不完</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top d-block w-100" src="img/fronted/game_5.jpg" alt=""></a>
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="card">
+                    <a href="#"><img class="card-img-top" src="img/fronted/game_5.jpg" alt=""></a>
                     <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">瘋狂農場</a>
-                        </h4>
-                        <p class="card-text">瘋狂動物吃得飽，翻倍彩金不會少！橫衝直撞送百搭、連線多多是最好！吃飽喝足拼轉盤、百倍頭獎樂逍遙！</p>
+                        <h4 class="card-title">瘋狂農場</h4>
+                        <p class="card-text">瘋狂動物吃得飽，翻倍彩金不會少<br>吃飽喝足拼轉盤、百倍頭獎樂逍遙</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 portfolio-item">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top d-block w-100" src="img/fronted/game_6.png" alt=""></a>
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="card">
+                    <a href="#"><img class="card-img-top" src="img/fronted/game_6.png" alt=""></a>
                     <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">百家樂</a>
-                        </h4>
-                        <p class="card-text">超擬真瞇牌畫面，完整5路單詳細記錄！賠率再加碼！緊張刺激猶如身歷其境！</p>
+                        <h4 class="card-title">百家樂</h4>
+                        <p class="card-text">超擬真瞇牌畫面，完整5路單詳細記錄<br>賠率再加碼！緊張刺激猶如身歷其境</p>
                     </div>
                 </div>
             </div>
@@ -118,7 +104,7 @@
         </ul>
     </div>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    {{-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
     @include('fronted.layouts.footer')    
     

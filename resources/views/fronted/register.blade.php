@@ -76,8 +76,8 @@
 
     <div class="container">
         {{-- <h2 class="mt-4 mb-3">註冊帳號</h2> --}}
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
+        <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
+                <li class="breadcrumb-item">
                 <a href="/">首頁</a>
             </li>
             <li class="breadcrumb-item active">註冊帳號</li>
@@ -88,7 +88,7 @@
         <div id="user_register" class="form-signin">
             @csrf
             <div class="text-center mb-1">
-                <img class="mb-4" src="img/fronted/member.png" alt="" width="72" height="72">
+                <img class="mb-4" src="img/fronted/member.png" alt="" width="100" height="100">
             </div>
             <div class="form-group">
                 {{-- <input type="name" id="name" class="form-control" placeholder="姓名" pattern="^.+$" required autofocus> --}}
@@ -125,7 +125,16 @@
         </div>
     </div>
 
-    @include('fronted.layouts.footer')    
+    {{-- @include('fronted.layouts.footer')     --}}
+    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
+            <div class="container" >
+                <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
+                    <span>&copy; Copyright Slot Machine - 2019 </span>
+                </div>
+                {{-- <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br> --}}
+                {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
+            </div>
+    </footer>
 
 </body>
 

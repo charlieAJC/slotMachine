@@ -90,8 +90,8 @@
     </nav>
     <div class="container" style="position:relative">
         {{-- <h2 class="mt-4 mb-3">購點儲值</h2> --}}
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
+        <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
+                <li class="breadcrumb-item">
                 <a href="/">首頁</a>
             </li>
             <li class="breadcrumb-item active">購點儲值</li>
