@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/slot/style copy.css" rel="stylesheet">
+    <link href="css/slot/style.css" rel="stylesheet">
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -75,7 +75,12 @@
                 </div>
             </div>
         </div>
-        @include('fronted.layouts.footer')
+        <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
+            <div class="container" >
+                <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br>
+                {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
+            </div>
+        </footer>
     </div>
 </body>
 
