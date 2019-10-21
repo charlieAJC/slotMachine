@@ -32,16 +32,17 @@
 
     <div class="container">
         {{-- <h2 class="mt-4 mb-3">客服中心</h2> --}}
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
+        <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
+                <li class="breadcrumb-item">
                 <a href="/">首頁</a>
             </li>
             <li class="breadcrumb-item active">客服中心</li>
         </ol>
         <div class="row">
             <div class="col-12 col-md-6 mb-5">
-                <h3>聯絡方式</h3>
-                <div class="mt-4 mb-4">
+                <h3 class="mt-4 mb-3" style="font-weight:bolder;">聯絡方式</h3>
+
+                <div class="mt-4 mb-4"style="font-weight:bold;">
                     <p>
                         地　　址：12345 台中市678區90路一段1號2樓
                     </p>
@@ -63,9 +64,9 @@
             </div>
 
             <div class="col-12 col-md-6">
-                <h3>遊戲問題回報中心</h3>
+                <h3 class="mt-4 mb-3" style="font-weight:bolder;">遊戲問題回報中心</h3>
                 <form class="mt-4 mb-5" name="sentMessage" id="contactForm" novalidate>
-                    <div class="control-group form-group">
+                    <div class="control-group form-group" >
                         <div class="controls">
                             <input type="text" class="form-control" placeholder="遊戲帳號" id="name" required autofocus
                                 data-validation-required-message="請輸入您的遊戲帳號">

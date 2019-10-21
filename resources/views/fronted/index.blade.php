@@ -261,44 +261,38 @@
         <div class="row">
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
-                    <a href="slot"><img class="card-img-top" src="img/fronted/game_1.jpg" alt="">
-                        <h4 class="card-title">拉霸機</h4>
-                    </a>
+                    <a href="slot"><img class="card-img-top" src="img/fronted/game_1.jpg" alt=""></a>
+                        <h4 class="card-title">拉霸機</h4>                    
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
-                    <a href="LittleMary"><img class="card-img-top" src="img/fronted/game_2.jpg" alt="">
-                        <h4 class="card-title">小瑪莉</h4>
-                    </a>
+                    <a href="LittleMary"><img class="card-img-top" src="img/fronted/game_2.jpg" alt=""></a>
+                        <h4 class="card-title">小瑪莉</h4>                    
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
-                    <a href="#"><img class="card-img-top" src="img/fronted/game_3.jpg" alt="">
-                        <h4 class="card-title">賓果彈珠台</h4>
-                    </a>
+                    <a href="#"><img class="card-img-top" src="img/fronted/game_3.jpg" alt=""></a>
+                        <h4 class="card-title">賓果彈珠台</h4>                    
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
-                    <a href="#"><img class="card-img-top" src="img/fronted/game_4.jpg" alt="">
-                        <h4 class="card-title">逗陣捕魚季</h4>
-                    </a>
+                    <a href="#"><img class="card-img-top" src="img/fronted/game_4.jpg" alt=""></a>
+                        <h4 class="card-title">逗陣捕魚季</h4>                    
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
-                    <a href="#"><img class="card-img-top" src="img/fronted/game_5.jpg" alt="">
-                        <h4 class="card-title">瘋狂農場</h4>
-                    </a>
+                    <a href="#"><img class="card-img-top" src="img/fronted/game_5.jpg" alt=""></a>
+                        <h4 class="card-title">瘋狂農場</h4>                    
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
-                    <a href="#"><img class="card-img-top" src="img/fronted/game_6.png" alt="">
-                        <h4 class="card-title">百家樂</h4>
-                    </a>
+                    <a href="#"><img class="card-img-top" src="img/fronted/game_6.png" alt=""></a>
+                        <h4 class="card-title">百家樂</h4>                    
                 </div>
             </div>
         </div>

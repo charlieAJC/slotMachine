@@ -133,6 +133,43 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </nav>
+    <div class="container" style="position:relative">
+        {{-- <h2 class="mt-4 mb-3">購點儲值</h2> --}}
+        <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
+                <li class="breadcrumb-item">
+                <a href="/">首頁</a>
+            </li>
+            <li class="breadcrumb-item active">購點儲值</li>
+        </ol>
+        <div>
+            <p id="storeway">儲值方法</p>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg">
+            <div id='imgdiv'>
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#jkopay" data-toggle="tab"><img src="img\fronted\buy\jkopay.png" alt=""></a>
+                </li>   
+                {{-- <li class="nav-item">
+                    <a class="nav-link" href="#visa" data-toggle="tab"><img src="img\fronted\buy\visa.png" alt=""></a>
+                </li> --}}
+                {{-- <li class="nav-item">
+                    <a class="nav-link" href="#atm" data-toggle="tab" ><img src="img\fronted\buy\ATM.png" alt=""></a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="#cht" data-toggle="tab"><img src="img\fronted\buy\CHT.png" alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#farpass" data-toggle="tab"><img src="img\fronted\buy\FarPass.png" alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#taiwanmobile" data-toggle="tab"><img src="img\fronted\buy\TaiwanMobile.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
         </nav>
         <div class="container" id="bodydiv">
             <ol class="breadcrumb">
