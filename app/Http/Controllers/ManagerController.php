@@ -27,10 +27,20 @@ class ManagerController extends Controller
         // $change=Stamp::sum('GetCoin');
         // $profit=$bet-$change;
 
-        //官方勝率
-        $lose=Stamp::where('GetCoin','0' )->count();
+        //官方總勝率
+        $lose=Stamp::where('GetWay','Play')->where('GetCoin','0')->count();
         $total=Stamp::count('GetCoin');
         $winrate=($lose/$total)*100;
+        //拉霸勝率
+        $loseSlot=Stamp::where('GetWay','Play')->where('GetCoin','0')
+        ->where('GameName','SlotMachine')->count();
+        $totalSlot=Stamp::where('GameName','SlotMachine')->count('GetCoin');
+        $winrateSlot=($loseSlot/$totalSlot)*100;
+        //小瑪莉勝率
+        $loseMary=Stamp::where('GetWay','Play')->where('GetCoin','<','BetCoin')
+        ->where('GameName','LittleMary')->count();
+        $totalMary=Stamp::where('GameName','LittleMary')->count('GetCoin');
+        $winrateMary=($loseMary/$totalMary)*100;
         
 
         $arr["countMary"]=$countMary;
@@ -40,6 +50,8 @@ class ManagerController extends Controller
         $arr["slotProfit"]=$slotProfit;
 
         $arr["winrate"]=$winrate;
+        $arr["winrateSlot"]=$winrateSlot;
+        $arr["winrateMary"]=$winrateMary;
         echo json_encode($arr);
 
         // $array=array("countMary"=>$countMary);

@@ -26,7 +26,8 @@ $(document).ready(function(){
                 options: {
                     title: {
                         display: true,
-                        text: '遊玩比例'
+                        fontSize:20,
+                        text: '遊玩比例(次)'
                     }
                 }
             })
@@ -53,7 +54,49 @@ $(document).ready(function(){
                 }
             })
 
+            //拉霸機勝率
+            var winrateSlot = [data.winrateSlot,100-data.winrateSlot];
+            var winOrLose = ["win", "lose"];
+            var ctx = document.getElementById("winrateSlotCanvas");
+            var pieChart = new Chart(ctx, {
+                type: "pie",
+                data: {
+                    labels: winOrLose,
+                    datasets: [{
+                        data: winrateSlot,
+                        backgroundColor: ["#3cba9f", "#c45850"]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        fontSize:20,
+                        text: '拉霸機勝率(%)'
+                    }
+                }
+            })
 
+             //小瑪莉勝率
+             var winrateMary = [100-data.winrateMary,data.winrateMary];
+             var winOrLose = ["win", "lose"];
+             var ctx = document.getElementById("winrateMaryCanvas");
+             var pieChart = new Chart(ctx, {
+                 type: "pie",
+                 data: {
+                     labels: winOrLose,
+                     datasets: [{
+                         data: winrateMary,
+                         backgroundColor: ["#3cba9f", "#c45850"]
+                     }]
+                 },
+                 options: {
+                     title: {
+                         display: true,
+                         fontSize:20,
+                         text: '小瑪莉勝率(%)'
+                     }
+                 }
+             })
 
 
 
