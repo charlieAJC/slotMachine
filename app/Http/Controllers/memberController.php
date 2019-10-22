@@ -43,7 +43,8 @@ class memberController extends Controller
             $msg=User::insert([
                 'Account'=>$memberAccount,
                 'Password'=>$memberPassword,
-                'Name'=>$memberName
+                'Name'=>$memberName,
+                'GameCoin'=>100
             ]);
             echo "success";
             // var_dump($msg);
