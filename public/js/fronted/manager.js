@@ -31,7 +31,7 @@ $(document).ready(function(){
                 }
             })
 
-            var gameProfit = [data.maryProfit,data.slotProfit];
+            var gameProfit = [data.maryProfit,data.slotProfit,0];
             var gameName = ["Mary", "Slot"];
             var ctx = document.getElementById("profitCanvas");
             var barChart = new Chart(ctx, {
