@@ -77,7 +77,7 @@ $(document).ready(function(){
             })
 
              //小瑪莉勝率
-             var winrateMary = [100-data.winrateMary,data.winrateMary];
+             var winrateMary = [data.winrateMary,100-data.winrateMary];
              var winOrLose = ["win", "lose"];
              var ctx = document.getElementById("winrateMaryCanvas");
              var pieChart = new Chart(ctx, {
