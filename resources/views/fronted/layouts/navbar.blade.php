@@ -1,14 +1,15 @@
 <!-- Navigation -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" style="opacity:0.9">
     <div class="container">
-        <a class="navbar-brand" href="/">Slot Machine</a>
+        <a class="navbar-brand" style="width:150px" href="/"><img src="img/fronted/logo_casino8.png" height="55">
+        </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" style="font-size:14pt">
                 <li class="nav-item">
                     <a class="nav-link" href="game">遊戲介紹</a>
                 </li>
