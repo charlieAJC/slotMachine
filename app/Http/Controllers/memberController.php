@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\User;
+use App\Stamp;
 
 
 class memberController extends Controller
@@ -46,6 +47,15 @@ class memberController extends Controller
                 'Name'=>$memberName,
                 'GameCoin'=>100
             ]);
+            
+            $UserID=User::where('Account',$memberAccount)->pluck('UserID');
+            
+            Stamp::insert([
+                'UserID'=>$UserID[0],
+                'GetWay'=>'Register',
+                'GameCoin'=>100
+                ]);
+
             echo "success";
             // var_dump($msg);
                 // $data = User::ALL();
