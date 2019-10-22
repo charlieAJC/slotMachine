@@ -70,8 +70,15 @@
             </div>
             {{-- right --}}
             <div class="col-3">
-                <div class="result">
-                    {{-- <img alt="" src="../../img/slot/winner2.gif"> --}}
+                <div class="col-12">
+                    <div class="#">
+                        {{-- <img alt="" src="../../img/slot/table.png"> --}}
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="result">
+                        <img alt="" src="../../img/slot/table.png">
+                    </div>
                 </div>
             </div>
         </div>

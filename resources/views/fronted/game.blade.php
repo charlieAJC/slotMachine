@@ -45,7 +45,7 @@
                     <a href="slot"><img class="card-img-top" src="img/fronted/game_1.jpg" alt="Avatar"></a>
                     <div class="card-body">
                         <h4 class="card-title">拉霸機</h4>
-                        <p class="card-text">我是拉霸機，我是拉霸機<br>我是拉霸機，我是拉霸機</p>
+                        <p class="card-text">選定下注金額，隨機轉動出現不同圖案<br>出現完全相同圖案，則依其賠率勝出</p>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                     <a href="LittleMary"><img class="card-img-top" src="img/fronted/game_2.jpg" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">小瑪莉</h4>
-                        <p class="card-text">我是小瑪莉，我是小瑪莉<br>我是小瑪莉，我是小瑪莉</p>
+                        <p class="card-text">依不同賠率選擇下注金額<br>下注項目與轉定圖案相符，則依其賠率勝出</p>
                     </div>
                 </div>
             </div>
