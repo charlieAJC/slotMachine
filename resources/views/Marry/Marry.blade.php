@@ -53,7 +53,7 @@
                     <button onclick="changeMode(100)" class="btn btn-info">100</button>
                     <button onclick="changeMode(200)" class="btn btn-warning">200</button>
                     <button onclick="changeMode(500)" class="btn btn-danger">500</button>
-                    <div><h1 id="Gold" style="color:yellow"></h1></div>
+                    <div><h1 id="Gold"></h1></div>
                 </td>
                 <td id="9"></td>
             </tr>

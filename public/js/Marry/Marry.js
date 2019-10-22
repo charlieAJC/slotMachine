@@ -154,7 +154,8 @@ function btnStart() {
     lockClick();
     coinAdjust();
     totall();
-    document.getElementById("Gold").innerHTML = "";
+    document.getElementById("Gold").innerHTML = "" ;
+    document.getElementById("Gold").classList.remove("font");
     if (totallInsert != 0) {
         $.ajax({
             async: true,
@@ -169,10 +170,7 @@ function btnStart() {
                 randNum = response["number"];
                 result = response["coin"];
                 GameCoin = response["GameCoin"];
-                // console.log("中獎數字:" + randNum);
-                // console.log("獎金:" + result);
-                // console.log("帳戶餘額:" + GameCoin);
-                // run(); 遊戲效果跑圈
+                // 遊戲效果跑圈
                 document.getElementById("odds" + oddsList[lightClean]).className = "normal";
                 var t = 40;
                 var times = 1;
@@ -204,11 +202,15 @@ function btnStart() {
                         document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
                         if (result != 0 && totallInsert < result) {
                             document.getElementById("Gold").innerHTML = "喜從天降~獎金~ " + result + " 元";
+                            document.getElementById("Gold").className = "font";
                         } else if (result != 0 && totallInsert >= result) {
                             document.getElementById("Gold").innerHTML = "恭喜中獎~獎金~ " + result + " 元 , 但還是虧錢哦";
+                            document.getElementById("Gold").className = "font";
                         } else {
                             document.getElementById("Gold").innerHTML = "謝謝課長讓我們有遊戲玩~";
+                            document.getElementById("Gold").className = "font";
                         }
+                        // 刷新 navbar 玩家餘額
                         $.ajax({
                             type: "post",
                             url: "navbar",
@@ -217,6 +219,8 @@ function btnStart() {
                                 $("#navCoin").show();
                             }
                         });
+
+                        // 判斷下注餘額,決定是否清空下注金
                         if (coin.value < totallInsert) {
                             for (i = 0; i <= 8; i++) {
                                 document.getElementById("coinAdjust" + parseInt(i + 1)).value = 0;

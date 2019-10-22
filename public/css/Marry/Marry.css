@@ -22,6 +22,8 @@ td {
 }
 
 .yellowLight {
+    animation-name: borderColor ;
+    animation-duration:2s ;
     border: 3px solid yellow;
 }
 
@@ -43,4 +45,46 @@ td {
 
 p>input {
     width: 68px;
+}
+
+@keyframes borderColor{
+    0%{
+        border: 3px solid yellow;
+    }
+    25%{
+        border: 3px solid red;
+    }
+    50%{
+        border: 3px solid white;
+    }
+    75%{
+        border: 3px solid red;
+    }
+    100%{
+        border: 3px solid yellow;
+    }
+}
+
+@keyframes fontColor{
+    0%{
+        color: yellow;
+    }
+    25%{
+        color: red;
+    }
+    50%{
+        color: white;
+    }
+    75%{
+        color: red;
+    }
+    100%{
+        color: yellow;
+    }
+}
+
+.font{
+    animation-name: fontColor;
+    animation-duration:2s ;
+    color:yellow;
 }
