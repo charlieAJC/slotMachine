@@ -1,8 +1,8 @@
-var list = new Array(28);
-var oddsList = new Array(9);
-var odds = new Array(9);
-var typeOf = new Array(28);
-var coinAdjustList = new Array(9);
+var list = new Array(28); // 1~28
+var oddsList = new Array(9); // 1~9
+var odds = new Array(9); // 9種賠率
+var typeOf = new Array(28); // 28格種類
+var coinAdjustList = new Array(9); //9種下注金額
 var totallInsert = 0; // 下注金額
 var totallCoin = 0; // 盤面上未使用總金額
 var runEndNum = 0; // 停止位置 0~27
@@ -13,6 +13,7 @@ var insertMoney = 1000;
 var increseMoney = 100;
 var decreseMoney = 100;
 
+// 改變下注金額
 function changeMode(setCoin) {
     increseMoney = parseInt(setCoin);
     decreseMoney = parseInt(setCoin);
@@ -105,7 +106,7 @@ function clearAdjust() {
     totallInsert = 0;
 }
 
-// 預儲遊戲機台,扣玩家儲值金
+// 跟伺服端確認玩家餘額,再提供盤面遊戲幣
 function btnInsert() {
     lockInsert();
     coinAdjust();
@@ -168,10 +169,10 @@ function btnStart() {
                 randNum = response["number"];
                 result = response["coin"];
                 GameCoin = response["GameCoin"];
-                console.log("中獎數字:" + randNum);
-                console.log("獎金:" + result);
-                console.log("帳戶餘額:" + GameCoin);
-                // run();
+                // console.log("中獎數字:" + randNum);
+                // console.log("獎金:" + result);
+                // console.log("帳戶餘額:" + GameCoin);
+                // run(); 遊戲效果跑圈
                 document.getElementById("odds" + oddsList[lightClean]).className = "normal";
                 var t = 40;
                 var times = 1;
@@ -193,9 +194,14 @@ function btnStart() {
                         }
                     }
                     startGame = setTimeout(go, t);
-                    console.log(randNum, runEndNum);
                     if (t == 500 && randNum == runEndNum) {
                         clearTimeout(startGame);
+                        for (i = 0; i <= 8; i++) { // 中獎項目亮燈
+                            if (fruitName[i] == typeOf[randNum]) {
+                                lightClean = i;
+                            }
+                        }
+                        document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
                         if (result != 0 && totallInsert < result) {
                             document.getElementById("Gold").innerHTML = "喜從天降~獎金~ " + result + " 元";
                         } else if (result != 0 && totallInsert >= result) {
@@ -203,12 +209,6 @@ function btnStart() {
                         } else {
                             document.getElementById("Gold").innerHTML = "謝謝課長讓我們有遊戲玩~";
                         }
-                        for (i = 0; i <= 8; i++) {
-                            if (fruitName[i] == typeOf[randNum]) {
-                                lightClean = i;
-                            }
-                        }
-                        document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
                         $.ajax({
                             type: "post",
                             url: "navbar",
