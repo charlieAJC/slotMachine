@@ -45,6 +45,7 @@
 
     <!--圖表測試-->
     <div class="container">
+        
                 <!-- 統計圖畫在這裡 -->
                 <div class="row">
                     <div class=col-sm-6>
@@ -54,6 +55,16 @@
                         <canvas id="profitCanvas"></canvas>
                     </div>
                 </div>
+                <hr>
+                <div class="row">
+                    <div class=col-sm-6>
+                        <canvas id="winrateSlotCanvas"></canvas>
+                    </div>
+                    <div class=col-sm-6>
+                        <canvas id="winrateMaryCanvas"></canvas>
+                    </div>
+                </div>
+                <hr>
     </div>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
