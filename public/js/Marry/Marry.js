@@ -202,14 +202,12 @@ function btnStart() {
                         document.getElementById("odds" + oddsList[lightClean]).className = "yellowLight";
                         if (result != 0 && totallInsert < result) {
                             document.getElementById("Gold").innerHTML = "喜從天降~獎金~ " + result + " 元";
-                            document.getElementById("Gold").className = "font";
                         } else if (result != 0 && totallInsert >= result) {
                             document.getElementById("Gold").innerHTML = "恭喜中獎~獎金~ " + result + " 元 , 但還是虧錢哦";
-                            document.getElementById("Gold").className = "font";
                         } else {
                             document.getElementById("Gold").innerHTML = "謝謝課長讓我們有遊戲玩~";
-                            document.getElementById("Gold").className = "font";
                         }
+                        document.getElementById("Gold").className = "font";
                         // 刷新 navbar 玩家餘額
                         $.ajax({
                             type: "post",
