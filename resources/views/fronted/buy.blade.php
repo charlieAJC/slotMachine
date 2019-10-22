@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Buy</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/fronted/logo.png" />
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
