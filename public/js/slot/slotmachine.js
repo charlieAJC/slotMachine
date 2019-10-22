@@ -131,7 +131,7 @@ $(document).ready(function(){
                 $(divId).addClass(newClass);
             }
 
-            console.log(endImg);
+            // console.log(endImg);
 
             $("#navCoin").text("現有: " + endImg["coin"] + "代幣")
             // coin = endImg["coin"];

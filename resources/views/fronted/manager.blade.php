@@ -33,7 +33,7 @@
     @include('fronted.layouts.navbar')
 
     <div class="container">
-        <h2 class="mt-4 mb-3">Manager</h2>
+        {{-- <h2 class="mt-4 mb-3">Manager</h2> --}}
         <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
                 <li class="breadcrumb-item">
                 <a href="/">首頁</a>
