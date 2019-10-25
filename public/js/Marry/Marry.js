@@ -17,6 +17,23 @@ var decreseMoney = 100;
 function changeMode(setCoin) {
     increseMoney = parseInt(setCoin);
     decreseMoney = parseInt(setCoin);
+    switch(setCoin){
+        case 100 :
+        document.getElementById("100").style.opacity = 0.5 ;
+        document.getElementById("200").style.opacity = 1 ;
+        document.getElementById("500").style.opacity = 1 ;
+        break;
+        case 200 :
+        document.getElementById("100").style.opacity = 1 ;
+        document.getElementById("200").style.opacity = 0.5 ;
+        document.getElementById("500").style.opacity = 1 ;
+        break;
+        case 500 :
+        document.getElementById("100").style.opacity = 1 ;
+        document.getElementById("200").style.opacity = 1 ;
+        document.getElementById("500").style.opacity = 0.5 ;
+        break;
+    }
 }
 
 $.ajaxSetup({
@@ -53,6 +70,7 @@ $(document).ready(function () {
             for (i = 1; i <= 28; i++) {
                 document.getElementById(i).style.backgroundImage = `url("img/Marry/${typeOf[i]}.png")`;
             }
+            document.getElementById("100").style.opacity = 0.5 ;
             for (i = 1; i <= 9; i++) {
                 new Vue({
                     el: `#odds${i}`,
@@ -137,12 +155,14 @@ function btnInsert() {
 
 // 鎖定/解鎖 開始&結束
 var isClick = false;
+
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
 }
 // 鎖定/解鎖 
 var isInsert = false;
+
 function lockInsert() {
     isInsert = !isInsert;
     document.getElementById("insertButton").disabled = isInsert ? true : false;
@@ -150,12 +170,15 @@ function lockInsert() {
 
 // 遊戲開始
 var lightClean = 0;
+
 function btnStart() {
     lockClick();
     coinAdjust();
     totall();
-    document.getElementById("Gold").innerHTML = "" ;
+    document.getElementById("Gold").innerHTML = "";
     document.getElementById("Gold").classList.remove("font");
+    document.getElementById("navCoin").classList.remove("navFont");
+    document.getElementById("Flycoin").classList.remove("Coin");
     if (totallInsert != 0) {
         $.ajax({
             async: true,
@@ -213,8 +236,14 @@ function btnStart() {
                             type: "post",
                             url: "navbar",
                             success: function (e) {
-                                $("#navCoin").text("現有: " + e + "代幣");
-                                $("#navCoin").show();
+                                if (result != 0) {
+                                    $("#Flycoin").addClass("Coin");
+                                }
+                                setTimeout(function () {
+                                    $("#navCoin").text("現有: " + e + "代幣");
+                                    $("#navCoin").show();
+                                    $("#navCoin").addClass("navFont")
+                                }, 1000)
                             }
                         });
 
