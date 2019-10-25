@@ -37,7 +37,7 @@ class ManagerController extends Controller
         $totalSlot=Stamp::where('GameName','SlotMachine')->count('GetCoin');
         $winrateSlot=($loseSlot/$totalSlot)*100;
         //小瑪莉勝率
-        $loseMary=Stamp::where('GetWay','Play')->where('GetCoin','>','BetCoin')
+        $loseMary=Stamp::where('GetWay','Play')->where('BetCoin','>','GetCoin')
         ->where('GameName','LittleMary')->count();
         $totalMary=Stamp::where('GameName','LittleMary')->count('GetCoin');
         $winrateMary=($loseMary/$totalMary)*100;
