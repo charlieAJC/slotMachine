@@ -16,7 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/game.css" rel="stylesheet">
     <link href="css/fronted/style.css" rel="stylesheet">
-    <link href="css/fronted/top.css" rel="stylesheet">
+    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -107,7 +107,7 @@
 
     {{-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
-    @include('fronted.layouts.footer')    
+    @include('fronted.layouts.footer')
     
 </body>
 

@@ -8,14 +8,14 @@
     <meta name="author" content=""> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Login</title>
+    <title>Update</title>
     <link rel="Shortcut Icon" type="image/x-icon" href="img/fronted/logo.png" />
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
-    <link href="css/fronted/top.css" rel="stylesheet">
+    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
     <link href="css/fronted/login.css" rel="stylesheet">
     
     <!-- Bootstrap core JavaScript -->
@@ -44,7 +44,7 @@
         <div id="user_login" class="form-signin">
                 @csrf
                 <div class="text-center mb-1">
-                    <img class="mb-4" src="img/fronted/member.png" alt="" width="100" height="100">
+                    <img class="mb-4" src="img/fronted/member.png" alt="" width="85" height="85">
                 </div>
                 <div class="form-group">
                     <input type="text" id="phone" class="form-control" placeholder="電話" required autofocus>
@@ -53,23 +53,16 @@
                     <input type="text" id="address" class="form-control" placeholder="地址" required>
                 </div>
                 <button class="btn btn-info btn-primary btn-block" id="send" type="submit">送出</button>
-            </div>
+                <br><br>
+        </div>
 
     </div>
     <br><br>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    {{-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
-    {{-- @include('fronted.layouts.footer')     --}}
-    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
-        <div class="container" >
-            <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
-                <span>&copy; Copyright Slot Machine - 2019 </span>
-            </div>
-            {{-- <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br> --}}
-            {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
-        </div>
-</footer> 
+    @include('fronted.layouts.footer')
+
 
 </body>
 

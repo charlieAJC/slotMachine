@@ -16,7 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/news.css" rel="stylesheet">
     <link href="css/fronted/style.css" rel="stylesheet">
-    <link href="css/fronted/top.css" rel="stylesheet">
+    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -235,38 +235,33 @@
                         </div>
                     </div>
                 </div>
-                <ul class="pagination justify-content-center mb-4">
-                    <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
-                </ul>
+                
             </div>
 
             <!-- Sidebar Widgets Column -->
             <div class="col-md-2">
+                <div class="row">
 
                 <!-- Side Widget -->
-                <div class="card mb-4">
+                <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
                     {{-- <h5 class="card-header">Side Widget</h5> --}}
                     <div class="card-header">
                         <img src="img/fronted/news_1.jpg" style="width:100%;">
                     </div>
                 </div>
-                <div class="card mb-4">
+                <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
                     {{-- <h5 class="card-header">Side Widget</h5> --}}
                     <div class="card-header">
                         <img src="img/fronted/news_2.jpg" style="width:100%;">
                     </div>
                 </div>
-                <div class="card mb-4">
+                <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
                     {{-- <h5 class="card-header">Side Widget</h5> --}}
                     <div class="card-header">
                         <img src="img/fronted/news_3.jpg" style="width:100%;">
                     </div>
                 </div>
-
+                </div>
                 <!-- Search Widget -->
                 {{-- <div class="card my-4">
                     <h5 class="card-header">Search</h5>
@@ -317,6 +312,15 @@
 
             </div>
         </div>
+            <ul class="pagination justify-content-center mb-4">
+                <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
+            </ul>
+
+        
     </div>
     {{-- 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}

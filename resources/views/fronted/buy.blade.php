@@ -14,7 +14,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
-    <link href="css/fronted/top.css" rel="stylesheet">
+    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
     {{-- <script src="jquery/jquery.min.js"></script> --}}
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -94,7 +94,7 @@
     @include('fronted.layouts.navbar')
     <div class="container" style="position:relative">
         <div class="container" id="bodydiv">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
                 <li class="breadcrumb-item">
                     <a href="/">首頁</a>
                 </li>
@@ -621,19 +621,12 @@
 
     <div style="clear:both"></div>
     </div>
-    
-
-
 
     </div>
     {{-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
-    <footer class="py-1 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br>
-            {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
-        </div>
-    </footer>
+    @include('fronted.layouts.footer')
+
       
 </body>
 
