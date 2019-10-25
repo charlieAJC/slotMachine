@@ -111,7 +111,7 @@ class BuyController extends Controller
                 $GetCoin=3500;
                 break;
                 case 2500:
-                $GetCoin=800;
+                $GetCoin=10000;
                 break;
             }
             // $GetCoin=Stamp::where('UserID','=',$UserID)->orderBy('StampID', 'desc')->take(1)->value('GetCoin');
