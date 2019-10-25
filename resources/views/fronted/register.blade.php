@@ -27,53 +27,8 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">Slot Machine</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="game">遊戲介紹</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="news">最新消息</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="buy" id="navBuy" style="display:none">購點 / 儲值</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact">客服中心</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login" id="navLogin" style="display:none">登入會員</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register" id="navRegister" style="display:none">註冊帳號</a>
-                    </li>
+    @include('fronted.layouts.navbar')
 
-                    {{-- 登入成功才會顯示的下拉式選單 --}}
-                    <li class="nav-item dropdown" id="navAccount" style="display:none">
-                        <a class="nav-link dropdown-toggle" href=".dropdown-menu" id="navbardrop"
-                            data-toggle="dropdown">
-                            使用者帳號
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="update">更改個人資料</a>
-                            <a class="dropdown-item" href="#" id="navLogout">登出</a>
-                        </div>
-                    </li>
-                    {{-- 登入成功才會顯示的下拉式選單 --}}
-
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <div class="container">
         {{-- <h2 class="mt-4 mb-3">註冊帳號</h2> --}}
@@ -89,7 +44,7 @@
         <div id="user_register" class="form-signin">
             @csrf
             <div class="text-center mb-1">
-                <img class="mb-4" src="img/fronted/member.png" alt="" width="100" height="100">
+                <img class="mb-4" src="img/fronted/member.png" alt="" width="85" height="85">
             </div>
             <div class="form-group">
                 {{-- <input type="name" id="name" class="form-control" placeholder="姓名" pattern="^.+$" required autofocus> --}}
@@ -126,16 +81,7 @@
         </div>
     </div>
 
-    {{-- @include('fronted.layouts.footer')     --}}
-    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
-            <div class="container" >
-                <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
-                    <span>&copy; Copyright Slot Machine - 2019 </span>
-                </div>
-                {{-- <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br> --}}
-                {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
-            </div>
-    </footer>
+    @include('fronted.layouts.footer')
 
 </body>
 

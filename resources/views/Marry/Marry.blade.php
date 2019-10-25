@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Crazy Marry</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/fronted/logo.png" />
+
     <script src="js/Marry/jquery-3.4.1.js"></script>
     <script src="js/Marry/vue.js"></script>
     <script src="js/Marry/Marry.js"></script>
@@ -164,12 +166,8 @@
         </p>
     </div>
     <!-- 投注區域結束 -->
-    <footer class="py-1 bg-dark fixed-bottom" style="position:relative">
-        <div class="container">
-            <div class="m-0 text-center text-white align-middle" style="height:30px;font-size: 1.2rem">Copyright
-                &copy;Slot Machine 2019</div>
-        </div>
-    </footer>
+    @include('fronted.layouts.footer')
+
 </body>
 
 </html>

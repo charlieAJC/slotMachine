@@ -16,9 +16,10 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
-    <link href="css/fronted/top.css" rel="stylesheet">
+    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
     <link href="css/fronted/manager.css" rel="stylesheet">
     {{-- <link href="css/fronted/index.css" rel="stylesheet"> --}}
+    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -88,18 +89,10 @@
     
 </div>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    {{-- <button on。click="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
-    {{-- @include('fronted.layouts.footer')     --}}
-    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
-        <div class="container" >
-            <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
-                <span>&copy; Copyright Slot Machine - 2019 </span>
-            </div>
-            {{-- <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br> --}}
-            {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
-        </div>
-</footer> 
+    @include('fronted.layouts.footer')
+
 
 </body>
 
