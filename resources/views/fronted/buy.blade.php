@@ -171,7 +171,7 @@
                                         <tr>
                                             <td><input type="radio" name="price" id="jko2500" value="2500,8000"><label
                                                     for="jko2500">NT$2500</label></td>
-                                            <td><label for="jko2500">遊戲幣 × 8000</label></td>
+                                            <td><label for="jko2500">遊戲幣 × 10000</label></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -270,7 +270,7 @@
                                         <tr>
                                             <td><input type="radio" name="price" id="cht2500" value="2500,8000"><label
                                                     for="cht2500">NT$ 2500</label></td>
-                                            <td><label for="cht2500">遊戲幣 × 8000</label></td>
+                                            <td><label for="cht2500">遊戲幣 × 10000</label></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -392,7 +392,7 @@
                                             <tr>
                                                 <td><input type="radio" name="price" id="farpass2500" value="2500,8000"><label
                                                         for="farpass2500">NT$ 2500</label></td>
-                                                <td><label for="farpass2500">遊戲幣 × 8000</label></td>
+                                                <td><label for="farpass2500">遊戲幣 × 10000</label></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -513,7 +513,7 @@
                                             <tr>
                                                 <td><input type="radio" name="price" id="taiwanmobile2500" value="2500,8000"><label
                                                         for="taiwanmobile2500">NT$ 2500</label></td>
-                                                <td><label for="taiwanmobile2500">遊戲幣 × 8000</label></td>
+                                                <td><label for="taiwanmobile2500">遊戲幣 × 10000</label></td>
                                             </tr>
                                         </tbody>
                                     </table>
