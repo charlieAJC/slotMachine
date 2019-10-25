@@ -54,40 +54,36 @@ Route::get('/contact', function () {
 });
 Route::post('/contact',"memberController@contact");
 
-
-//--------------會員頁面---------------
 Route::group(['middleware'=>'Permission'],function(){
-    //-----------------會員資料修改-----------------
+    // 會員資料修改
     Route::get('/update', function () {return view('fronted.Update');});
     Route::post('/update', "memberController@Update");
 
     // navbar顯示使用者有多少代幣
     Route::post('/navbar', "memberController@navbar");
 
-    //---------------管理者頁面--------------
+    // 管理者頁面
     Route::group(['middleware'=>'Manager'],function(){
-        //---------------------測試用
+        // 測試用
         Route::get('/manager', function () {return view('fronted.Manager');});
         Route::post('/manager', "ManagerController@manager");
+        // 開啟/關閉遊戲
+        Route::post('/gamestatus', "ManagerController@switchstatus");
     });
+    
+    // 確認遊戲狀態
+    Route::get('/gamestatus', "ManagerController@checkstatus");
+
     //儲值
     Route::get('/buy', function () {return view('fronted.buy');});
     Route::post('/buy',"BuyController@buy");
-    // ------拉霸機------
+    // 拉霸機
     Route::get('/slot', function () {return view('slot.slot');});
+    // Route::get('/slot', "SlotController@slot");
     Route::post('/slot', "SlotController@slot");
-    // ------小瑪莉-------
+    // 小瑪莉
     Route::get('/LittleMary', function () {return view('Marry.Marry');});
     Route::post('/LittleMary', "MaryController@test");
+
 });
-
-
-
-
-// ------佩諠 拉霸機test-----
-Route::get('slot copy', function () {
-    return view('slot.slot copy');
-});
-Route::post('slot copy', "SlotController@slot copy");
-// ------佩諠 拉霸機test------
 

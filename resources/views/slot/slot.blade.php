@@ -20,6 +20,13 @@
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
+    <!-- toastr v2.1.4 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+    {{-- sweet alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
     <script src="js/slot/slotmachine.js"></script>
     <script src="js/fronted/index.js"></script>
     <script src="js/fronted/logout.js"></script>
@@ -64,8 +71,8 @@
                     </div>
                 </div>
                 <div class="btn-group">
-                    <button id="casinoShuffle" class="button btn-light col-sm-4">開始遊戲<br>START GAME</button>
-                    <button id="casinoStop" class="button btn-light col-sm-4">結束遊戲<br>STOP GAME</button>
+                    <button id="casinoShuffle" class="button btn-light col-sm-4">開始<br>START ROLL</button>
+                    <button id="casinoStop" class="button btn-light col-sm-4">停止<br>STOP ROLL</button>
                 </div>
             </div>
             {{-- right --}}

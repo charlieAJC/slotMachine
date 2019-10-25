@@ -24,8 +24,12 @@
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
+    {{-- sweet alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
     <script src="js/fronted/index.js"></script>
     <script src="js/fronted/logout.js"></script>
+    <script src="js/fronted/gameStatus.js"></script>
 
 </head>
 
@@ -262,7 +266,7 @@
         <div class="row">
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
-                    <a href="slot"><img class="card-img-top" src="img/fronted/game_1.jpg" alt=""></a>
+                    <a href="slot" id="indexSlotBtn"><img class="card-img-top" src="img/fronted/game_1.jpg" alt=""></a>
                         <h4 class="card-title">拉霸機</h4>                    
                 </div>
             </div>

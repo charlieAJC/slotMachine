@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    // Swal.fire('Hello world!')
     // // 按按鈕改變圖片
     // for(i=1;i<7;i++){
     //     var id = "#btn" + i;
@@ -19,6 +20,8 @@ $(document).ready(function(){
     var setFlag;
     // 籌碼id對應籌碼的值
     var chipArr = [5, 10, 50, 100];
+    // 紀錄玩家輸贏、決定toastr內容的flag
+    // var resultFlag = "";
 
     for(let i=0;i<4;i++){
         // 游標 移動/離開 籌碼圖案的變化
@@ -41,7 +44,12 @@ $(document).ready(function(){
                 chip = parseInt(chip) + chipArr[i];
                 coin = $("#navCoin").text().match(/\d+/);
                 if(chip > parseInt(coin)){
-                    alert("You don't have enough coin!");
+                    // alert("You don't have enough coin!");
+                    Swal.fire(
+                        "餘額不足!",
+                        '',
+                        'warning'
+                    )
                 } else {
                     $("#totalChip").text(chip);
                 }
@@ -100,8 +108,14 @@ $(document).ready(function(){
                     },
                     success: function(e){
                         if(e == "Oops"){
-                            alert("over bet!");
-                            location.reload();
+                            // alert("over bet!");
+                            Swal.fire(
+                                "餘額不足!",
+                                '',
+                                'warning'
+                            ).then((result) => {
+                                location.reload();
+                            })
                         } else {
                             setFlag = 0;
                             timerFlag = setInterval(rollImg,50);
@@ -113,7 +127,12 @@ $(document).ready(function(){
                 })
             }
         } else {
-            alert("Please set your chip");
+            // alert("Please set your chip");
+            Swal.fire(
+                "請點選想要的籌碼!",
+                '',
+                'warning'
+            )
         }
     });
 
@@ -133,6 +152,52 @@ $(document).ready(function(){
 
             // console.log(endImg);
 
+            toastr.options = {
+                // 參數設定[註1]
+                "closeButton": false, // 顯示關閉按鈕
+                "debug": false, // 除錯
+                "newestOnTop": false,  // 最新一筆顯示在最上面
+                "progressBar": true, // 顯示隱藏時間進度條
+                "positionClass": "toast-bottom-right", // 位置的類別
+                "preventDuplicates": false, // 隱藏重覆訊息
+                "onclick": null, // 當點選提示訊息時，則執行此函式
+                "showDuration": "300", // 顯示時間(單位: 毫秒)
+                "hideDuration": "1000", // 隱藏時間(單位: 毫秒)
+                "timeOut": "3000", // 當超過此設定時間時，則隱藏提示訊息(單位: 毫秒)
+                "extendedTimeOut": "1000", // 當使用者觸碰到提示訊息時，離開後超過此設定時間則隱藏提示訊息(單位: 毫秒)
+                "showEasing": "swing", // 顯示動畫時間曲線
+                "hideEasing": "linear", // 隱藏動畫時間曲線
+                "showMethod": "fadeIn", // 顯示動畫效果
+                "hideMethod": "fadeOut" // 隱藏動畫效果
+            }
+            if(endImg["game"] == "W"){
+                // alert("win");
+                toastr.success( "恭喜,你贏了!" );
+            }else if (endImg["game"] == "L"){
+                // alert("lose");
+                toastr.success( "再接再厲!" );
+            }
+
+            // // sweet alert 2 的 toast
+            // const Toast = Swal.mixin({
+            //     toast: true,
+            //     position: 'top-end',
+            //     showConfirmButton: false,
+            //     timer: 3000
+            // })
+            
+            // if(endImg["game"] == "W"){
+            //     Toast.fire({
+            //         // type: 'success',
+            //         title: '恭喜,你贏了!'
+            //     })
+            // }else if (endImg["game"] == "L"){
+            //     Toast.fire({
+            //         // type: 'success',
+            //         title: '再接再厲!'
+            //     })
+            // }
+            
             $("#navCoin").text("現有: " + endImg["coin"] + "代幣")
             // coin = endImg["coin"];
             // $("#totalChip").text(coin);

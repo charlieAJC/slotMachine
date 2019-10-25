@@ -23,10 +23,10 @@
                     <a class="nav-link" href="contact">客服中心</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login" id="navLogin" style="display:none">登入會員</a>
+                    <a class="nav-link" href="login" id="navLogin" style="display:none">登入</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register" id="navRegister" style="display:none">註冊帳號</a>
+                    <a class="nav-link" href="register" id="navRegister" style="display:none">註冊</a>
                 </li>
 
                 {{-- 登入成功才會顯示的下拉式選單 --}}

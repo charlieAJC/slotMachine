@@ -78,9 +78,9 @@
     </div>
     <div id="game" class="tabcontent">
         <h3>上下架</h3><label ></label>
-        <h1><label >拉霸機</label></h1>
-        <button class="btn btn-primary">開啟</button>
-        <button class="btn btn-danger">關閉</button>
+        <p id="slotStatus"></p>
+        <button class="btn btn-primary" id="slotOpen">開啟</button>
+        <button class="btn btn-danger" id="slotClose">關閉</button>
     </div>
     <div id="Tokyo" class="tabcontent">
             <h3>Tokyo</h3>

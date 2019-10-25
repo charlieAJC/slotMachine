@@ -8,6 +8,12 @@ body {
   margin-bottom: 50px;
 }
 
+#toast-container  {
+  margin-bottom: 2.55%;
+  /* width: 500px; */
+  /* height: 200px;  */
+}
+
 .row {
   align-items: center;
   justify-content: space-around;

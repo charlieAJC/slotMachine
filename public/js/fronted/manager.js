@@ -104,6 +104,79 @@ $(document).ready(function(){
 
         }
     })
+
+    // 確認拉霸機遊戲狀態
+    $.ajax({
+        method: "POST",
+        url: "gamestatus",
+        data: {
+            "action" : "check",
+            "game" : "slot"
+        },
+        success: function(e){
+            // switch(e){
+            //     case 0:
+            //         $("#slotStatus").val("拉霸機現況為 : 關閉");
+            //         break;
+            //     case 1:
+            //         $("#slotStatus").val("拉霸機現況為 : 開啟");
+            //         break;
+            // }
+            if(e == 0){
+                $("#slotStatus").text("拉霸機(現況為 : 關閉)");
+            } else if (e == 1){
+                $("#slotStatus").text("拉霸機(現況為 : 開啟)");
+            }
+        }
+    });
+    // 開啟/關閉拉霸機
+    $("#slotOpen").click(function(){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        
+        $.ajax({
+            method: "POST",
+            url: "gamestatus",
+            data: {
+                "action" : "switch",
+                "game" : "slot",
+                "status" : "1"
+            },
+            success: function(e){
+                // alert(e);
+                if(e == 1){
+                    alert("現狀為 : 開啟");
+                }
+            }
+        });
+    })
+
+    $("#slotClose").click(function(){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        
+        $.ajax({
+            method: "POST",
+            url: "gamestatus",
+            data: {
+                "action" : "switch",
+                "game" : "slot",
+                "status" : "0"
+            },
+            success: function(e){
+                // alert(e);
+                if(e == 1){
+                    alert("現狀為 : 關閉");
+                }
+            }
+        });
+    })
 })
 //管理分頁
 function openManager(evt, managerName) {

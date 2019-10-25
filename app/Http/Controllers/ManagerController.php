@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use App\Stamp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -62,5 +63,26 @@ class ManagerController extends Controller
         // dd($bet);
         // dd($change);
         // dd($profit);
+    }
+
+    // 確認遊戲狀態
+    public function checkstatus(Request $request){
+        if ($request->action == "check"){
+            if ($request->game == "slot"){
+                $result = Game::where('GameName', 'SlotMachine')->pluck('GameStatus');
+                echo $result[0];
+                
+            }
+        }
+    }
+
+    // 開啟/關閉遊戲
+    public function switchstatus(Request $request){
+        if ($request->action == "switch"){
+            if ($request->game == "slot"){
+                $result = Game::where('GameID', '1')->update(['GameStatus' => $request->status]);
+                echo $result;
+            }
+        }
     }
 }
