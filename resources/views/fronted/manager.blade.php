@@ -17,6 +17,8 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
     <link href="css/fronted/top.css" rel="stylesheet">
+    <link href="css/fronted/manager.css" rel="stylesheet">
+    {{-- <link href="css/fronted/index.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -41,12 +43,18 @@
             </li>
             <li class="breadcrumb-item active">Manager</li>
         </ol>
-    </div>
+    
 
+    <div class="tab">
+        <button class="tablinks" onclick="openManager(event, 'chart')">遊戲報表</button>
+        <button class="tablinks" onclick="openManager(event, 'game')">遊戲管理</button>
+        <button class="tablinks" onclick="openManager(event, 'Tokyo')">Tokyo</button>
+      </div>
 
     <!--圖表測試-->
-    <div class="container">
-        
+    <div id="chart" class="tabcontent">
+        <div class="container">
+
                 <!-- 統計圖畫在這裡 -->
                 <div class="row">
                     <div class=col-sm-6>
@@ -66,7 +74,19 @@
                     </div>
                 </div>
                 <hr>
+        </div>
     </div>
+    <div id="game" class="tabcontent">
+        <h3>上下架</h3><label ></label>
+        <h1><label >拉霸機</label></h1>
+        <button class="btn btn-primary">開啟</button>
+        <button class="btn btn-danger">關閉</button>
+    </div>
+    <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+    </div>
+    
+</div>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 

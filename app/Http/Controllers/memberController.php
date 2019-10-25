@@ -58,8 +58,8 @@ class memberController extends Controller
 
             echo "success";
             // var_dump($msg);
-                // $data = User::ALL();
-                // echo $data;
+            // $data = User::ALL();
+            // echo $data;
         } else {
             echo "fail";
             // die();

@@ -4,6 +4,8 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    
+
     $.ajax({
         method: "POST",
         url: "manager",
@@ -103,3 +105,17 @@ $(document).ready(function(){
         }
     })
 })
+//管理分頁
+function openManager(evt, managerName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(managerName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
