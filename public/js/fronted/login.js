@@ -39,7 +39,13 @@ $(document).ready(function () {
             $('#loginPassword').css("border-color", "red")
         }
     })
-
+    // $("#loginPassword").keyup(function(event) {
+    //     if (event.keyCode == 13) {
+    //         $("#login").click();
+    //     }
+    // });
+    
+    
     $("#login").click(function () {
         // alert("123");
 
@@ -73,7 +79,16 @@ $(document).ready(function () {
 
         }
     });
+
+
+
+
+
+
 });
+
+
+
 
 // // Disable form submissions if there are invalid fields
 // (function() {

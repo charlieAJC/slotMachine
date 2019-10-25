@@ -17,7 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/index.css" rel="stylesheet">
     <link href="css/fronted/style.css" rel="stylesheet">
-    <link href="css/fronted/top.css" rel="stylesheet">
+    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>

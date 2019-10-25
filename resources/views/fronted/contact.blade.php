@@ -15,7 +15,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
-    <link href="css/fronted/top.css" rel="stylesheet">
+    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -41,9 +41,9 @@
         </ol>
         <div class="row">
             <div class="col-12 col-md-6 mb-5">
-                <h3 class="mt-4 mb-3" style="font-weight:bolder;">聯絡方式</h3>
+                <h3 class="mt-2 mb-3" style="font-weight:bolder;">聯絡方式</h3>
 
-                <div class="mt-4 mb-4"style="font-weight:bold;">
+                <div class="mt-2 mb-4"style="font-weight:bold;">
                     <p>
                         地　　址：12345 台中市678區90路一段1號2樓
                     </p>
@@ -65,8 +65,8 @@
             </div>
 
             <div class="col-12 col-md-6">
-                <h3 class="mt-4 mb-3" style="font-weight:bolder;">遊戲問題回報中心</h3>
-                <form class="mt-4 mb-5" name="sentMessage" id="contactForm" novalidate>
+                <h3 class="mt-2 mb-3" style="font-weight:bolder;">遊戲問題回報中心</h3>
+                <form class="mt-2 mb-5" name="sentMessage" id="contactForm" novalidate>
                     <div class="control-group form-group" >
                         <div class="controls">
                             <input type="text" class="form-control" placeholder="遊戲帳號" id="name" required autofocus
@@ -102,9 +102,9 @@
         </div>
     </div>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    {{-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
-    @include('fronted.layouts.footer')    
+    @include('fronted.layouts.footer')
 
 </body>
 

@@ -27,10 +27,10 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row" style="height: 600px;">
+        <div class="row">
             @include('fronted.layouts.navbar')
             {{-- left --}}
-            <div class="col-3" style="background: url(../../img/slot/money_bg.png);background-repeat: no-repeat;background-size:220%;">
+            <div class="col-md-3 col-6" style="background: url(../../img/slot/money_bg.png);background-repeat: no-repeat;background-size:220%;">
                 <div class="money">
                     <img id="chip0" alt="" src="../../img/slot/chip5.png" style="opacity:0.7;margin-bottom:15%">
                     <img id="chip1" alt="" src="../../img/slot/chip10.png" style="opacity:0.7;margin-bottom:15%">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             {{-- middle --}}
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="col-12">
                     <div class="machine">
                         <img alt="" src="../../img/slot/machine.png">
@@ -63,32 +63,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn-group">
-                    <button id="casinoShuffle" class="button btn-light col-sm-4">開始遊戲<br>START GAME</button>
-                    <button id="casinoStop" class="button btn-light col-sm-4">結束遊戲<br>STOP GAME</button>
+                <div class="btn-group ">
+                    <button id="casinoShuffle" class="button btn-light">開始遊戲<br>START GAME</button>
+                    <button id="casinoStop" class="button btn-light">結束遊戲<br>STOP GAME</button>
                 </div>
             </div>
             {{-- right --}}
-            <div class="col-3">
-                <div class="col-12">
-                    <div class="#">
-                        {{-- <img alt="" src="../../img/slot/table.png"> --}}
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="result">
-                        <img alt="" src="../../img/slot/table.png">
-                    </div>
-                </div>
+            <div class="col-md-3  col-6 result">
+                {{-- <div class=""> --}}
+                    <img alt="" src="../../img/slot/table.png">
+                {{-- </div> --}}
             </div>
-        </div>
-        <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
-            <div class="container" >
-                <p class="m-0 text-center text-white">Copyright &copy; Slot Machine 2019</p><br>
-                {{-- <p class="m-0 text-center"><a href="#" class="text-white">Back to top</a></p> --}}
-            </div>
-        </footer>
+        </div> 
     </div>
+        @include('fronted.layouts.footer')
+
+   
 </body>
 
 </html>
