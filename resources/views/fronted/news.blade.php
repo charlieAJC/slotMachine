@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {{-- <meta name="description" content="">
-    <meta name="author" content=""> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>News</title>
@@ -16,7 +14,6 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/news.css" rel="stylesheet">
     <link href="css/fronted/style.css" rel="stylesheet">
-    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -24,7 +21,6 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <script src="js/fronted/news.js"></script>
-    <script src="js/fronted/top.js"></script>
     <script src="js/fronted/index.js"></script>
     <script src="js/fronted/logout.js"></script>
 
@@ -42,10 +38,8 @@
         </ol>
 
         <div class="row">
-
             <!-- Blog Entries Column -->
             <div class="col-md-10">
-
                 <div class="tab">
                     <button class="tablinks" onclick="openNews(event, 'All')" id="defaultOpen">全部公告</button>
                     <button class="tablinks" onclick="openNews(event, 'System')">系統公告</button>
@@ -66,11 +60,6 @@
                                             為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<br>
                                             影響時間：2019/10/19（六）11:00~12:00<br>
                                             遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。</p>
-                                        {{-- <p class="card-text">親愛的玩家您好：
-                                    為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<span id="dots">...</span><span id="more">
-                                    影響時間：2019/10/19（六）11:00~12:00
-                                    遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。</span></p>
-                                <button onclick="myFunction()" id="myBtn">Read more</button> --}}
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +99,6 @@
                                             即日起，Slot Machine之LINE官方帳號正式上線。<br>
                                             免費貼圖等你拿~立即加入好友以獲得最新消息!!<br>
                                             請注意，官方不會主動私訊索取個人資料，請勿受騙上當!!</p>
-                                        {{-- <a href="#" class="btn btn-primary">點我看更多 &rarr;</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +119,6 @@
                                             因進行網頁及遊戲優化作業，故網頁HD版將會於2019/10/08（二）更換登入介面。<br>
                                             新的網頁HD版遊戲館僅開放【拉霸機】、【小瑪莉】共二款遊戲館。<br>
                                             其餘遊戲館則陸續增加，若遇未開放遊戲館還請玩家透過PC版或手機裝置進行遊戲及新活動，造成不便，敬請見諒！謝謝。</p>
-                                        {{-- <a href="#" class="btn btn-primary">點我看更多 &rarr;</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -156,11 +143,6 @@
                                             為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<br>
                                             影響時間：2019/10/19（六）11:00~12:00<br>
                                             遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。</p>
-                                        {{-- <p class="card-text">親愛的玩家您好：
-                                    為配合電信業者進行線路優化作業，屆時電話系統將暫停服務，造成不便敬請多加見諒。<span id="dots">...</span><span id="more">
-                                    影響時間：2019/10/19（六）11:00~12:00
-                                    遊戲伺服器正常運作不受影響，期間如有任何問題歡迎多加利用問題通報或客服信箱。</span></p>
-                                <button onclick="myFunction()" id="myBtn">Read more</button> --}}
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +182,6 @@
                                             因進行網頁及遊戲優化作業，故網頁HD版將會於2019/10/08（二）更換登入介面。<br>
                                             新的網頁HD版遊戲館僅開放【拉霸機】、【小瑪莉】共二款遊戲館。<br>
                                             其餘遊戲館則陸續增加，若遇未開放遊戲館還請玩家透過PC版或手機裝置進行遊戲及新活動，造成不便，敬請見諒！謝謝。</p>
-                                        {{-- <a href="#" class="btn btn-primary">點我看更多 &rarr;</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -225,7 +206,6 @@
                                             即日起，Slot Machine之LINE官方帳號正式上線。<br>
                                             免費貼圖等你拿~立即加入好友以獲得最新消息!!<br>
                                             請注意，官方不會主動私訊索取個人資料，請勿受騙上當!!</p>
-                                        {{-- <a href="#" class="btn btn-primary">點我看更多 &rarr;</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -235,96 +215,39 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
 
             <!-- Sidebar Widgets Column -->
             <div class="col-md-2">
                 <div class="row">
 
-                <!-- Side Widget -->
-                <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
-                    {{-- <h5 class="card-header">Side Widget</h5> --}}
-                    <div class="card-header">
-                        <img src="img/fronted/news_1.jpg" style="width:100%;">
-                    </div>
-                </div>
-                <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
-                    {{-- <h5 class="card-header">Side Widget</h5> --}}
-                    <div class="card-header">
-                        <img src="img/fronted/news_2.jpg" style="width:100%;">
-                    </div>
-                </div>
-                <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
-                    {{-- <h5 class="card-header">Side Widget</h5> --}}
-                    <div class="card-header">
-                        <img src="img/fronted/news_3.jpg" style="width:100%;">
-                    </div>
-                </div>
-                </div>
-                <!-- Search Widget -->
-                {{-- <div class="card my-4">
-                    <h5 class="card-header">Search</h5>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="button">Go!</button>
-                            </span>
+                    <!-- Side Widget -->
+                    <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
+                        <div class="card-header">
+                            <img src="img/fronted/news_1.jpg" style="width:100%;">
                         </div>
                     </div>
-                </div> --}}
-
-                <!-- Categories Widget -->
-                {{-- <div class="card my-4">
-                    <h5 class="card-header">Categories</h5>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a href="#">MySQL</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">HTML</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">PHP</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a href="#">JavaScript</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">CSS</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Vue</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
+                        <div class="card-header">
+                            <img src="img/fronted/news_2.jpg" style="width:100%;">
                         </div>
                     </div>
-                </div> --}}
-
+                    <div class="card mb-4 col-md-12 col-lg-12 col-sm-4">
+                        <div class="card-header">
+                            <img src="img/fronted/news_3.jpg" style="width:100%;">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-            <ul class="pagination justify-content-center mb-4">
-                <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
-            </ul>
-
-        
+        <ul class="pagination justify-content-center mb-4">
+            <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
+        </ul>
     </div>
-    {{-- 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
-
     @include('fronted.layouts.footer')
 
 </body>

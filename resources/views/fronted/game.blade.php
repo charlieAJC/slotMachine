@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {{-- <meta name="description" content="">
-    <meta name="author" content=""> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Game</title>
@@ -16,16 +14,15 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/game.css" rel="stylesheet">
     <link href="css/fronted/style.css" rel="stylesheet">
-    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-
-    <script src="js/fronted/top.js"></script>
     <script src="js/fronted/index.js"></script>
     <script src="js/fronted/logout.js"></script>
+
+   
 
 </head>
 
@@ -33,7 +30,6 @@
     @include('fronted.layouts.navbar')
 
     <div class="container">
-        {{-- <h2 class="mt-4 mb-3">遊戲介紹</h2> --}}
         <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
             <li class="breadcrumb-item">
                 <a href="/">首頁</a>
@@ -104,8 +100,6 @@
             <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
         </ul>
     </div>
-
-    {{-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
     @include('fronted.layouts.footer')
     
