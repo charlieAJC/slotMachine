@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {{-- <meta name="description" content="">
-    <meta name="author" content=""> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
@@ -17,7 +15,6 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/index.css" rel="stylesheet">
     <link href="css/fronted/style.css" rel="stylesheet">
-    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -28,6 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <script src="js/fronted/index.js"></script>
+    <script src="js/fronted/news.js"></script>
     <script src="js/fronted/logout.js"></script>
     <script src="js/fronted/gameStatus.js"></script>
 
@@ -57,41 +55,9 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
-        {{-- <div id="demo" class="carousel slide" data-ride="carousel">
-
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="img/fronted/carousel_1.jpg" alt="First Side">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="img/fronted/carousel_2.jpg" alt="Second Side">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="img/fronted/carousel_3.jpg" alt="Third Side">
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-        </div> --}}
     </header>
 
     <div class="container">
-        {{-- <h2 class="mt-4 mb-3">最新消息</h2> --}}
         <h3 class="mt-4 mb-3" style="font-weight:bolder;">最新消息</h3>
 
         <div class="tab">
@@ -189,7 +155,6 @@
                                 style="color:black;font-size:14pt;font-weight:bolder;">客服中心電話維護說明
                             </a>
                         </h5>
-                        {{-- <footer class="blockquote-footer" style="text-align:right">2019/10/08</footer> --}}
                     </div>
                     <div id="collapse2-1" class="collapse" role="tabpanel" aria-labelledby="heading2-1">
                         <div class="card-body">
@@ -267,45 +232,41 @@
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
                     <a href="slot" id="indexSlotBtn"><img class="card-img-top" src="img/fronted/game_1.jpg" alt=""></a>
-                        <h4 class="card-title">拉霸機</h4>                    
+                    <h4 class="card-title">拉霸機</h4>
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
                     <a href="LittleMary"><img class="card-img-top" src="img/fronted/game_2.jpg" alt=""></a>
-                        <h4 class="card-title">小瑪莉</h4>                    
+                    <h4 class="card-title">小瑪莉</h4>
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
                     <a href="#"><img class="card-img-top" src="img/fronted/game_3.jpg" alt=""></a>
-                        <h4 class="card-title">賓果彈珠台</h4>                    
+                    <h4 class="card-title">賓果彈珠台</h4>
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
                     <a href="#"><img class="card-img-top" src="img/fronted/game_4.jpg" alt=""></a>
-                        <h4 class="card-title">逗陣捕魚季</h4>                    
+                    <h4 class="card-title">逗陣捕魚季</h4>
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
                     <a href="#"><img class="card-img-top" src="img/fronted/game_5.jpg" alt=""></a>
-                        <h4 class="card-title">瘋狂農場</h4>                    
+                    <h4 class="card-title">瘋狂農場</h4>
                 </div>
             </div>
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
                     <a href="#"><img class="card-img-top" src="img/fronted/game_6.png" alt=""></a>
-                        <h4 class="card-title">百家樂</h4>                    
+                    <h4 class="card-title">百家樂</h4>
                 </div>
             </div>
         </div>
-
-
     </div>
-
-    {{-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
     @include('fronted.layouts.footer')
 

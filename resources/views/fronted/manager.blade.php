@@ -16,16 +16,13 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
-    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
     <link href="css/fronted/manager.css" rel="stylesheet">
-    {{-- <link href="css/fronted/index.css" rel="stylesheet"> --}}
-    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    {{-- <script src="js/fronted/top.js"></script> --}}
 
     <script src="js/fronted/manager.js"></script>
     <script src="js/fronted/index.js"></script>
@@ -37,23 +34,21 @@
     @include('fronted.layouts.navbar')
 
     <div class="container">
-        {{-- <h2 class="mt-4 mb-3">Manager</h2> --}}
         <ol class="breadcrumb" style="font-weight: bold;font-size:14pt;">
                 <li class="breadcrumb-item">
                 <a href="/">首頁</a>
             </li>
-            <li class="breadcrumb-item active">Manager</li>
+            <li class="breadcrumb-item active">管理者</li>
         </ol>
     
 
     <div class="tab">
-        <button class="tablinks" onclick="openManager(event, 'chart')">遊戲報表</button>
+        <button class="tablinks" onclick="openManager(event, 'chart')" id="defaultOpen">遊戲報表</button>
         <button class="tablinks" onclick="openManager(event, 'game')">遊戲管理</button>
-        <button class="tablinks" onclick="openManager(event, 'Tokyo')">Tokyo</button>
       </div>
 
     <!--圖表測試-->
-    <div id="chart" class="tabcontent">
+    <div id="chart" class="tabcontent show">
         <div class="container">
 
                 <!-- 統計圖畫在這裡 -->
@@ -83,16 +78,10 @@
         <button class="btn btn-primary" id="slotOpen">開啟</button>
         <button class="btn btn-danger" id="slotClose">關閉</button>
     </div>
-    <div id="Tokyo" class="tabcontent">
-            <h3>Tokyo</h3>
-    </div>
     
 </div>
 
-    {{-- <button on。click="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
-
     @include('fronted.layouts.footer')
-
 
 </body>
 

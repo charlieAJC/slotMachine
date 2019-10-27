@@ -45,11 +45,11 @@
                     <img id="chip3" alt="" src="../../img/slot/chip100.png" style="opacity:0.7;">
                 </div>
                 <div class="btn-group" style="margin-top:10%;">
-                    <h3 style="display:inline;color: #ffffff;font-weight:bolder;">已投入金額：$</h3>
-                    <h3 style="display:inline;color: #ffffff;font-weight:bolder;" id="totalChip">0</h3>
+                    <h4 style="display:inline;color: #ffffff;font-weight:bolder; font-size: 2vw;">已投入金額：$</h4>
+                    <h4 style="display:inline;color: #ffffff;font-weight:bolder; font-size: 2vw;" id="totalChip">0</h4>
                 </div>
                 <div class="btn-group" style="margin-top:4%;">
-                    <button id="resetChip" class="button btn-light">重新輸入<br>RESET</button>
+                    <button id="resetChip" class="button btn-light">重新輸入 RESET</button>
                 </div>
             </div>
             {{-- middle --}}
@@ -71,8 +71,8 @@
                     </div>
                 </div>
                 <div class="btn-group">
-                    <button id="casinoShuffle" class="button btn-light col-sm-4">開始<br>START ROLL</button>
-                    <button id="casinoStop" class="button btn-light col-sm-4">停止<br>STOP ROLL</button>
+                    <button id="casinoShuffle" class="button btn-light col-sm-4">開始 START ROLL</button>
+                    <button id="casinoStop" class="button btn-light col-sm-4">停止 STOP ROLL</button>
                 </div>
             </div>
             {{-- right --}}
@@ -83,8 +83,13 @@
             </div>
         </div> 
     </div>
-        @include('fronted.layouts.footer')
-
+    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
+        <div class="container">
+            <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
+                <span>&copy; Copyright Slot Machine - 2019 </span>
+            </div>
+        </div>
+    </footer>
    
 </body>
 

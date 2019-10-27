@@ -14,7 +14,6 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
-    {{-- <link href="css/fronted/top.css" rel="stylesheet"> --}}
     {{-- <script src="jquery/jquery.min.js"></script> --}}
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -23,8 +22,7 @@
     <script src="js/fronted/buy.js"></script>
     <script src="js/fronted/index.js"></script>
     <script src="js/fronted/logout.js"></script>
-    
-    {{-- <script src="js/fronted/top.js"></script> --}}
+
     <style>
         #bodydiv {
             position: relative;
@@ -86,7 +84,6 @@
         .imgborder {
             border: 2px red solid;
         }
-
     </style>
 </head>
 
@@ -338,9 +335,9 @@
                                                     <label class="form-check-label" for="chtagree">
                                                         我同意會員系統服務合約、個人資料隱私權保護政策未滿20歲之消費者，應由法定代理人閱讀並同意上述合約後，方得使用本儲值服務。
                                                     </label>
-                            
-                                                    <button class="btn btn-primary btn-lg btn-block  " data-toggle="button" id="chtfinishstore"
-                                                    disabled>確認</button>
+
+                                                    <button class="btn btn-primary btn-lg btn-block  "
+                                                        data-toggle="button" id="chtfinishstore" disabled>確認</button>
                                                 </span>
                                             </td>
                                         </tr>
@@ -353,248 +350,255 @@
 
                 {{-- farpass --}}
                 <div id="farpass" class="tab-pane fade">
-                        <form>
-                            <div class="paytitle">遠傳手機</div>
-                            <div>
-                                <p id="buyDesc">輸入您的手機號碼，系統將發送驗證碼至您的手機號碼，填入驗證碼後在頁面上按下「確定」按鈕，即完成流程並獲得遊戲幣。</p>
+                    <form>
+                        <div class="paytitle">遠傳手機</div>
+                        <div>
+                            <p id="buyDesc">輸入您的手機號碼，系統將發送驗證碼至您的手機號碼，填入驗證碼後在頁面上按下「確定」按鈕，即完成流程並獲得遊戲幣。</p>
+                        </div>
+
+                        <div>
+                            <div style="width:50%;float:left;padding:20px">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>價格</th>
+                                            <th>點數</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="farpass100" value="100,300"
+                                                    checked><label for="farpass100">NT$ 100</label></td>
+                                            <td><label for="farpass100">遊戲幣 × 300</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="farpass250" value="250,800"><label
+                                                    for="farpass250">NT$ 250</label></td>
+                                            <td><label for="farpass250">遊戲幣 × 800</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="farpass500" value="500,1700"><label
+                                                    for="farpass500">NT$ 500</label></td>
+                                            <td><label for="farpass500">遊戲幣 × 1700</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="farpass1000"
+                                                    value="1000,3500"><label for="farpass1000">NT$ 1000</label></td>
+                                            <td><label for="farpass1000">遊戲幣 × 3500</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="farpass2500"
+                                                    value="2500,8000"><label for="farpass2500">NT$ 2500</label></td>
+                                            <td><label for="farpass2500">遊戲幣 × 10000</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-    
-                            <div>
-                                <div style="width:50%;float:left;padding:20px">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>價格</th>
-                                                <th>點數</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="farpass100" value="100,300"
-                                                        checked><label for="farpass100">NT$ 100</label></td>
-                                                <td><label for="farpass100">遊戲幣 × 300</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="farpass250" value="250,800"><label
-                                                        for="farpass250">NT$ 250</label></td>
-                                                <td><label for="farpass250">遊戲幣 × 800</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="farpass500" value="500,1700"><label
-                                                        for="farpass500">NT$ 500</label></td>
-                                                <td><label for="farpass500">遊戲幣 × 1700</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="farpass1000" value="1000,3500"><label
-                                                        for="farpass1000">NT$ 1000</label></td>
-                                                <td><label for="farpass1000">遊戲幣 × 3500</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="farpass2500" value="2500,8000"><label
-                                                        for="farpass2500">NT$ 2500</label></td>
-                                                <td><label for="farpass2500">遊戲幣 × 10000</label></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-    
-                                <div style="width:50%;float:left;padding:20px" id="farpassbuycontent">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="2">確認購買內容</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>商品</td>
-                                                <td id="farpasscointable">遊戲幣 × 300</td>
-                                            </tr>
-                                            <tr>
-                                                <td>價格</td>
-                                                <td id="farpasspricetable">NT$ 100</td>
-                                            </tr>
-                                            <tr>
-                                                <td>付費方式</td>
-                                                <td>遠傳電信</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <div class="form-group" style="height:90px">
-                                                        <label>遠傳電信手機門號</label>
-                                                        <div class="input-group mb-3" style="margin-bottom:0px !important ">
-    
-                                                            <input type="text" class="form-control" id="farpasscelphone"
-                                                                placeholder="輸入您的手機號碼" aria-label="輸入您的手機號碼"
-                                                                aria-describedby="farpassphoneerror" required>
-                                                            {{-- <div class="input-group-append"> --}}
-                                                            <button class="btn btn-outline-secondary"
-                                                                type="button">傳送驗證碼</button>
-                                                            {{-- </div>   --}}
-                                                        </div>
-                                                        {{-- <div style="display: block"> --}}
-                                                        <small id="farpassphoneerror"></small>
-                                                        {{-- </div>  --}}
-    
-    
+
+                            <div style="width:50%;float:left;padding:20px" id="farpassbuycontent">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">確認購買內容</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>商品</td>
+                                            <td id="farpasscointable">遊戲幣 × 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td>價格</td>
+                                            <td id="farpasspricetable">NT$ 100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>付費方式</td>
+                                            <td>遠傳電信</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="form-group" style="height:90px">
+                                                    <label>遠傳電信手機門號</label>
+                                                    <div class="input-group mb-3" style="margin-bottom:0px !important ">
+
+                                                        <input type="text" class="form-control" id="farpasscelphone"
+                                                            placeholder="輸入您的手機號碼" aria-label="輸入您的手機號碼"
+                                                            aria-describedby="farpassphoneerror" required>
+                                                        {{-- <div class="input-group-append"> --}}
+                                                        <button class="btn btn-outline-secondary"
+                                                            type="button">傳送驗證碼</button>
+                                                        {{-- </div>   --}}
                                                     </div>
-    
-    
-                                                    <div class="form-group" style="height:90px">
-                                                        <label>輸入您所收到的簡訊驗證碼</label>
-                                                        <div class="input-group mb-3 "
-                                                            style="margin-bottom:0px !important ">
-                                                            <input type="text" class="form-control" id="farpassverification"
-                                                                placeholder="驗證碼" style="text-align:left" required>
-                                                        </div>
-                                                        <small id="farpassverificationerror"></small>
+                                                    {{-- <div style="display: block"> --}}
+                                                    <small id="farpassphoneerror"></small>
+                                                    {{-- </div>  --}}
+
+
+                                                </div>
+
+
+                                                <div class="form-group" style="height:90px">
+                                                    <label>輸入您所收到的簡訊驗證碼</label>
+                                                    <div class="input-group mb-3 "
+                                                        style="margin-bottom:0px !important ">
+                                                        <input type="text" class="form-control" id="farpassverification"
+                                                            placeholder="驗證碼" style="text-align:left" required>
                                                     </div>
-                                                    <small id="farpassnullerror"></small>
-    
-                                                </td>
-                                            <tr>
-                                                <td colspan="2">
-    
-                                                    <span class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="farpassagree">
-                                                        <label class="form-check-label" for="farpassagree">
-                                                            我同意會員系統服務合約、個人資料隱私權保護政策未滿20歲之消費者，應由法定代理人閱讀並同意上述合約後，方得使用本儲值服務。
-                                                        </label>
-                                
-                                                        <button class="btn btn-primary btn-lg btn-block  " data-toggle="button" id="farpassfinishstore"
+                                                    <small id="farpassverificationerror"></small>
+                                                </div>
+                                                <small id="farpassnullerror"></small>
+
+                                            </td>
+                                        <tr>
+                                            <td colspan="2">
+
+                                                <span class="form-group form-check">
+                                                    <input type="checkbox" class="form-check-input" id="farpassagree">
+                                                    <label class="form-check-label" for="farpassagree">
+                                                        我同意會員系統服務合約、個人資料隱私權保護政策未滿20歲之消費者，應由法定代理人閱讀並同意上述合約後，方得使用本儲值服務。
+                                                    </label>
+
+                                                    <button class="btn btn-primary btn-lg btn-block  "
+                                                        data-toggle="button" id="farpassfinishstore"
                                                         disabled>確認</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        </form>
+                        </div>
+                    </form>
                 </div>
                 {{-- taiwanmobile --}}
                 <div id="taiwanmobile" class="tab-pane fade">
-                        <form>
-                            <div class="paytitle">台哥大電信手機</div>
-                            <div>
-                                <p id="buyDesc">輸入您的手機號碼，系統將發送驗證碼至您的手機號碼，填入驗證碼後在頁面上按下「確定」按鈕，即完成流程並獲得遊戲幣。</p>
-                            </div>
-    
-                            <div>
-                                <div style="width:50%;float:left;padding:20px">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>價格</th>
-                                                <th>點數</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="taiwanmobile100" value="100,300"
-                                                        checked><label for="taiwanmobile100">NT$ 100</label></td>
-                                                <td><label for="taiwanmobile100">遊戲幣 × 300</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="taiwanmobile250" value="250,800"><label
-                                                        for="taiwanmobile250">NT$ 250</label></td>
-                                                <td><label for="taiwanmobile250">遊戲幣 × 800</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="taiwanmobile500" value="500,1700"><label
-                                                        for="taiwanmobile500">NT$ 500</label></td>
-                                                <td><label for="taiwanmobile500">遊戲幣 × 1700</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="taiwanmobile1000" value="1000,3500"><label
-                                                        for="taiwanmobile1000">NT$ 1000</label></td>
-                                                <td><label for="taiwanmobile1000">遊戲幣 × 3500</label></td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="radio" name="price" id="taiwanmobile2500" value="2500,8000"><label
-                                                        for="taiwanmobile2500">NT$ 2500</label></td>
-                                                <td><label for="taiwanmobile2500">遊戲幣 × 10000</label></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-    
-                                <div style="width:50%;float:left;padding:20px" id="taiwanmobilebuycontent">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="2">確認購買內容</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>商品</td>
-                                                <td id="taiwanmobilecointable">遊戲幣 × 300</td>
-                                            </tr>
-                                            <tr>
-                                                <td>價格</td>
-                                                <td id="taiwanmobilepricetable">NT$ 100</td>
-                                            </tr>
-                                            <tr>
-                                                <td>付費方式</td>
-                                                <td>台哥大電信</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <div class="form-group" style="height:90px">
-                                                        <label>台哥大電信手機門號</label>
-                                                        <div class="input-group mb-3" style="margin-bottom:0px !important ">
-    
-                                                            <input type="text" class="form-control" id="taiwanmobilecelphone"
-                                                                placeholder="輸入您的手機號碼" aria-label="輸入您的手機號碼"
-                                                                aria-describedby="taiwanmobilephoneerror" required>
-                                                            {{-- <div class="input-group-append"> --}}
-                                                            <button class="btn btn-outline-secondary"
-                                                                type="button">傳送驗證碼</button>
-                                                            {{-- </div>   --}}
-                                                        </div>
-                                                        {{-- <div style="display: block"> --}}
-                                                        <small id="taiwanmobilephoneerror"></small>
-                                                        {{-- </div>  --}}
-    
-    
-                                                    </div>
-    
-    
-                                                    <div class="form-group" style="height:90px">
-                                                        <label>輸入您所收到的簡訊驗證碼</label>
-                                                        <div class="input-group mb-3 "
-                                                            style="margin-bottom:0px !important ">
-                                                            <input type="text" class="form-control" id="taiwanmobileverification"
-                                                                placeholder="驗證碼" style="text-align:left" required>
-                                                        </div>
-                                                        <small id="taiwanmobileverificationerror"></small>
-                                                    </div>
-                                                    <small id="taiwanmobilenullerror"></small>
-    
-                                                </td>
-                                            <tr>
-                                                <td colspan="2">
-    
-                                                    <span class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="taiwanmobileagree">
-                                                        <label class="form-check-label" for="taiwanmobileagree">
-                                                            我同意會員系統服務合約、個人資料隱私權保護政策未滿20歲之消費者，應由法定代理人閱讀並同意上述合約後，方得使用本儲值服務。
-                                                        </label>
-                                
-                                                        <button class="btn btn-primary btn-lg btn-block  " data-toggle="button" id="taiwanmobilefinishstore"
-                                                        disabled>確認</button>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <form>
+                        <div class="paytitle">台哥大電信手機</div>
+                        <div>
+                            <p id="buyDesc">輸入您的手機號碼，系統將發送驗證碼至您的手機號碼，填入驗證碼後在頁面上按下「確定」按鈕，即完成流程並獲得遊戲幣。</p>
+                        </div>
 
-             </div>
+                        <div>
+                            <div style="width:50%;float:left;padding:20px">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>價格</th>
+                                            <th>點數</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="taiwanmobile100" value="100,300"
+                                                    checked><label for="taiwanmobile100">NT$ 100</label></td>
+                                            <td><label for="taiwanmobile100">遊戲幣 × 300</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="taiwanmobile250"
+                                                    value="250,800"><label for="taiwanmobile250">NT$ 250</label></td>
+                                            <td><label for="taiwanmobile250">遊戲幣 × 800</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="taiwanmobile500"
+                                                    value="500,1700"><label for="taiwanmobile500">NT$ 500</label></td>
+                                            <td><label for="taiwanmobile500">遊戲幣 × 1700</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="taiwanmobile1000"
+                                                    value="1000,3500"><label for="taiwanmobile1000">NT$ 1000</label>
+                                            </td>
+                                            <td><label for="taiwanmobile1000">遊戲幣 × 3500</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="price" id="taiwanmobile2500"
+                                                    value="2500,8000"><label for="taiwanmobile2500">NT$ 2500</label>
+                                            </td>
+                                            <td><label for="taiwanmobile2500">遊戲幣 × 10000</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div style="width:50%;float:left;padding:20px" id="taiwanmobilebuycontent">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">確認購買內容</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>商品</td>
+                                            <td id="taiwanmobilecointable">遊戲幣 × 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td>價格</td>
+                                            <td id="taiwanmobilepricetable">NT$ 100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>付費方式</td>
+                                            <td>台哥大電信</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="form-group" style="height:90px">
+                                                    <label>台哥大電信手機門號</label>
+                                                    <div class="input-group mb-3" style="margin-bottom:0px !important ">
+
+                                                        <input type="text" class="form-control"
+                                                            id="taiwanmobilecelphone" placeholder="輸入您的手機號碼"
+                                                            aria-label="輸入您的手機號碼"
+                                                            aria-describedby="taiwanmobilephoneerror" required>
+                                                        {{-- <div class="input-group-append"> --}}
+                                                        <button class="btn btn-outline-secondary"
+                                                            type="button">傳送驗證碼</button>
+                                                        {{-- </div>   --}}
+                                                    </div>
+                                                    {{-- <div style="display: block"> --}}
+                                                    <small id="taiwanmobilephoneerror"></small>
+                                                    {{-- </div>  --}}
+
+
+                                                </div>
+
+
+                                                <div class="form-group" style="height:90px">
+                                                    <label>輸入您所收到的簡訊驗證碼</label>
+                                                    <div class="input-group mb-3 "
+                                                        style="margin-bottom:0px !important ">
+                                                        <input type="text" class="form-control"
+                                                            id="taiwanmobileverification" placeholder="驗證碼"
+                                                            style="text-align:left" required>
+                                                    </div>
+                                                    <small id="taiwanmobileverificationerror"></small>
+                                                </div>
+                                                <small id="taiwanmobilenullerror"></small>
+
+                                            </td>
+                                        <tr>
+                                            <td colspan="2">
+
+                                                <span class="form-group form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="taiwanmobileagree">
+                                                    <label class="form-check-label" for="taiwanmobileagree">
+                                                        我同意會員系統服務合約、個人資料隱私權保護政策未滿20歲之消費者，應由法定代理人閱讀並同意上述合約後，方得使用本儲值服務。
+                                                    </label>
+
+                                                    <button class="btn btn-primary btn-lg btn-block  "
+                                                        data-toggle="button" id="taiwanmobilefinishstore"
+                                                        disabled>確認</button>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
         </div>
 
     </div>
@@ -623,11 +627,10 @@
     </div>
 
     </div>
-    {{-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> --}}
 
     @include('fronted.layouts.footer')
 
-      
+
 </body>
 
 </html>
