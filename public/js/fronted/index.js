@@ -18,6 +18,29 @@
 //   document.documentElement.scrollTop = 0;
 // }
 
+function indexslot(){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        method: "GET",
+        url: "gamestatus?action=check&game=slot",
+        success: function(e){
+            if (e == "1"){
+                window.location.href = "slot";
+            } else if (e == "0"){
+                Swal.fire(
+                    "遊戲維修中",
+                    '',
+                    'warning'
+                )
+            }
+        }
+    })
+}
+
 $(document).ready(function () {
     if (sessionStorage.getItem('account') == null || sessionStorage.getItem('account') == '') {
         // alert('第一次訪問頁面沒session');
