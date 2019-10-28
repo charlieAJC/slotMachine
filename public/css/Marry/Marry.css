@@ -61,14 +61,14 @@ td {
 
 #setBoard>div {
     padding: auto;
-    margin-top: 9px;
+    margin-top: 5px;
     margin-left: 3px;
     margin-right: 3px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     text-align: center;
     display: inline-block;
     width: 74px;
-    height: 155px;
+    height: 150px;
 }
 
 h3{
