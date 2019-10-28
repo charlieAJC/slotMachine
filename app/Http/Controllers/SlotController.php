@@ -98,7 +98,7 @@ class SlotController extends Controller
                     // $name = User::select('GameCoin')->where('Account', $memberAccount)->first();
                     $arr["game"] = "W";
                     $arr["win"] = $win;
-                    $arr["coin"] = $coin[0] + $win;
+                    $arr["coin"] = $coin[0] + $win -$cost;
                     User::where('Account', $memberAccount)->update(array('GameCoin' => $arr["coin"]));
 
                     $Account = Session::get('account');
@@ -128,7 +128,7 @@ class SlotController extends Controller
                         'GameName' => 'SlotMachine',
                         'BetCoin' => $cost,
                         'GetCoin' => 0,
-                        'GameCoin' => $arr["coin"]
+                        'GameCoin' => $coin[0] - $cost,
                     ]);
                     echo json_encode($arr);
 
