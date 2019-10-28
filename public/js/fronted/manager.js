@@ -144,9 +144,14 @@ $(document).ready(function () {
                 "status": "1"
             },
             success: function (e) {
-                // alert(e);
                 if (e == 1) {
-                    alert("現狀為 : 開啟");
+                    Swal.fire(
+                        "拉霸機現狀為:開啟",
+                        '',
+                        'warning'
+                    ).then((result) => {
+                        window.location.href = "manager";
+                    })
                 }
             }
         });
@@ -168,9 +173,14 @@ $(document).ready(function () {
                 "status": "0"
             },
             success: function (e) {
-                // alert(e);
                 if (e == 1) {
-                    alert("現狀為 : 關閉");
+                    Swal.fire(
+                        "拉霸機現狀為:關閉",
+                        '',
+                        'warning'
+                    ).then((result) => {
+                        window.location.href = "manager";
+                    })
                 }
             }
         });
@@ -193,9 +203,14 @@ $(document).ready(function () {
                 "status": "1"
             },
             success: function (e) {
-                // alert(e);
                 if (e == 1) {
-                    alert("現狀為 : 開啟");
+                    Swal.fire(
+                        "小瑪莉現狀為:開啟",
+                        '',
+                        'warning'
+                    ).then((result) => {
+                        window.location.href = "manager";
+                    })
                 }
             }
         });
@@ -217,10 +232,13 @@ $(document).ready(function () {
                 "status": "0"
             },
             success: function (e) {
-                // alert(e);
-                if (e == 1) {
-                    alert("現狀為 : 關閉");
-                }
+                Swal.fire(
+                    "小瑪莉現狀為:關閉",
+                    '',
+                    'warning'
+                ).then((result) => {
+                    window.location.href = "manager";
+                })
             }
         });
     })
