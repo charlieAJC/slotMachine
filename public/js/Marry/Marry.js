@@ -17,22 +17,22 @@ var decreseMoney = 100;
 function changeMode(setCoin) {
     increseMoney = parseInt(setCoin);
     decreseMoney = parseInt(setCoin);
-    switch(setCoin){
-        case 100 :
-        document.getElementById("100").style.opacity = 0.5 ;
-        document.getElementById("200").style.opacity = 1 ;
-        document.getElementById("500").style.opacity = 1 ;
-        break;
-        case 200 :
-        document.getElementById("100").style.opacity = 1 ;
-        document.getElementById("200").style.opacity = 0.5 ;
-        document.getElementById("500").style.opacity = 1 ;
-        break;
-        case 500 :
-        document.getElementById("100").style.opacity = 1 ;
-        document.getElementById("200").style.opacity = 1 ;
-        document.getElementById("500").style.opacity = 0.5 ;
-        break;
+    switch (setCoin) {
+        case 100:
+            document.getElementById("100").style.opacity = 0.5;
+            document.getElementById("200").style.opacity = 1;
+            document.getElementById("500").style.opacity = 1;
+            break;
+        case 200:
+            document.getElementById("100").style.opacity = 1;
+            document.getElementById("200").style.opacity = 0.5;
+            document.getElementById("500").style.opacity = 1;
+            break;
+        case 500:
+            document.getElementById("100").style.opacity = 1;
+            document.getElementById("200").style.opacity = 1;
+            document.getElementById("500").style.opacity = 0.5;
+            break;
     }
 }
 
@@ -70,7 +70,7 @@ $(document).ready(function () {
             for (i = 1; i <= 28; i++) {
                 document.getElementById(i).style.backgroundImage = `url("img/Marry/${typeOf[i]}.png")`;
             }
-            document.getElementById("100").style.opacity = 0.5 ;
+            document.getElementById("100").style.opacity = 0.5;
             for (i = 1; i <= 9; i++) {
                 new Vue({
                     el: `#odds${i}`,
@@ -81,6 +81,9 @@ $(document).ready(function () {
                 })
             }
         },
+        error: function () {
+            alert("遊戲目前維修中");
+        }
     })
 });
 
@@ -150,19 +153,21 @@ function btnInsert() {
             clearAdjust();
             insertMoney = 1000;
         },
+        error:function(){
+            alert("遊戲目前維修中");
+        }
     })
 }
 
+
 // 鎖定/解鎖 開始&結束
 var isClick = false;
-
 function lockClick() {
     isClick = !isClick;
     document.getElementById("startButton").disabled = isClick ? true : false;
 }
 // 鎖定/解鎖 
 var isInsert = false;
-
 function lockInsert() {
     isInsert = !isInsert;
     document.getElementById("insertButton").disabled = isInsert ? true : false;
@@ -170,7 +175,6 @@ function lockInsert() {
 
 // 遊戲開始
 var lightClean = 0;
-
 function btnStart() {
     lockClick();
     coinAdjust();
@@ -260,6 +264,9 @@ function btnStart() {
                         lockClick();
                     }
                 }, 20);
+            },
+            error:function(){
+                alert("遊戲目前維修中");
             }
         })
     } else {
