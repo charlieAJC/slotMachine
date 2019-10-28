@@ -166,7 +166,10 @@
         </p>
     </div>
     <!-- 投注區域結束 -->
+<<<<<<< HEAD
+=======
     {{-- <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9;position:relative"> --}}
+>>>>>>> 649b2fc685d323e9d091e6c1361ba0a2155e915a
     {{-- <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
         <div class="container">
             <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
