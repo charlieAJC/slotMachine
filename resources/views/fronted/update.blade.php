@@ -50,16 +50,16 @@
             <button class="btn btn-info btn-primary btn-block" id="send" type="submit">送出</button>
             <br><br>
         </div>
-
     </div>
 
-    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
+    {{-- <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
         <div class="container">
             <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
                 <span>&copy; Copyright Slot Machine - 2019 </span>
             </div>
         </div>
-    </footer>
+    </footer> --}}
+    @include('fronted.layouts.footer')
 
 </body>
 

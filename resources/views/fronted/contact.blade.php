@@ -66,9 +66,10 @@
                 <form class="mt-2 mb-5" name="sentMessage" id="contactForm" novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <input type="text" class="form-control" placeholder="遊戲帳號" id="name" required autofocus
-                                data-validation-required-message="請輸入您的遊戲帳號">
-                            <p class="help-block"></p>
+                            <input type="account" id="loginAccount" class="form-control" placeholder="遊戲帳號" required autofocus
+                                >
+                            {{-- <p class="help-block"></p> --}}
+                            <span class='error2'></span>
                         </div>
                     </div>
                     <div class="control-group form-group">
