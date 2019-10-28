@@ -1,29 +1,44 @@
-html,
-body {
+html
+{
     height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+    /* display: -ms-flexbox; */
+    /* display: flex; */
+    /* -ms-flex-align: center;
+    align-items: center; */
+    padding-top: 81px;
+    /* padding-bottom: 58.67px; */
+    font-family: 'Microsoft JhengHei', Arial, Helvetica, sans-serif;
+    background-color: #d6d6c2;
+    position: relative;
+    margin: 0;
+    padding-bottom: 3rem;
+    min-height: 100%;
+    float: left;
+    background: url(../../img/slot/bg.jpg);
+    /* font-family: "Helvetica Neue", Arial, sans-serif; */
 }
 
 /* footer */
 .py-1 {
-    /* position: fixed; */
-    left: 0;
+    position: absolute;
+    right: 0;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    padding: 1rem;
     background-color: #f2f2f2;
-    color: #8c8c8c;
     text-align: center;
-}
+  }
 
-body {
-    font-family: 'Microsoft JhengHei', Arial, Helvetica, sans-serif;
-    float: left;
-    background: url(../../img/slot/bg.jpg);
-    /* background-repeat: no-repeat;
-    background-size: cover; */
-    padding-top: 81px;
-    /* margin-top: 81px; */
-    padding-bottom: 58.67px;
-}
+
 
 /* .container-fluid {
     height: 100%;
