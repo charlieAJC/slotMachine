@@ -100,35 +100,33 @@ $(document).ready(function () {
                 }
             })
 
-
+            // 上下架頁面資訊
+            // 拉霸機
+            switch(data.slotStatus){
+                case "1":
+                    $("#slotStatus").text("拉霸機現況為 : 開啟");
+                    $("#slotClose").show();
+                    break;
+                case "0":
+                    $("#slotStatus").text("拉霸機現況為 : 關閉");
+                    $("#slotOpen").show();
+                    break;
+            }
+            // 小瑪莉
+            switch(data.maryStatus){
+                case "1":
+                    $("#maryStatus").text("小瑪莉現況為 : 開啟");
+                    $("#maryClose").show();
+                    break;
+                case "0":
+                    $("#maryStatus").text("小瑪莉現況為 : 關閉");
+                    $("#maryOpen").show();
+                    break;
+            }
 
         }
     })
 
-    // 確認拉霸機遊戲狀態
-    $.ajax({
-        method: "POST",
-        url: "gamestatus",
-        data: {
-            "action": "check",
-            "game": "slot"
-        },
-        success: function (e) {
-            // switch(e){
-            //     case 0:
-            //         $("#slotStatus").val("拉霸機現況為 : 關閉");
-            //         break;
-            //     case 1:
-            //         $("#slotStatus").val("拉霸機現況為 : 開啟");
-            //         break;
-            // }
-            if (e == 0) {
-                $("#slotStatus").text("拉霸機(現況為 : 關閉)");
-            } else if (e == 1) {
-                $("#slotStatus").text("拉霸機(現況為 : 開啟)");
-            }
-        }
-    });
     // 開啟/關閉拉霸機
     $("#slotOpen").click(function () {
         $.ajaxSetup({
@@ -146,9 +144,14 @@ $(document).ready(function () {
                 "status": "1"
             },
             success: function (e) {
-                // alert(e);
                 if (e == 1) {
-                    alert("現狀為 : 開啟");
+                    Swal.fire(
+                        "拉霸機現狀為:開啟",
+                        '',
+                        'warning'
+                    ).then((result) => {
+                        window.location.href = "manager";
+                    })
                 }
             }
         });
@@ -170,10 +173,72 @@ $(document).ready(function () {
                 "status": "0"
             },
             success: function (e) {
-                // alert(e);
                 if (e == 1) {
-                    alert("現狀為 : 關閉");
+                    Swal.fire(
+                        "拉霸機現狀為:關閉",
+                        '',
+                        'warning'
+                    ).then((result) => {
+                        window.location.href = "manager";
+                    })
                 }
+            }
+        });
+    })
+
+    // 開啟/關閉小瑪莉
+    $("#maryOpen").click(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            method: "POST",
+            url: "gamestatus",
+            data: {
+                "action": "switch",
+                "game": "mary",
+                "status": "1"
+            },
+            success: function (e) {
+                if (e == 1) {
+                    Swal.fire(
+                        "小瑪莉現狀為:開啟",
+                        '',
+                        'warning'
+                    ).then((result) => {
+                        window.location.href = "manager";
+                    })
+                }
+            }
+        });
+    })
+
+    $("#maryClose").click(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            method: "POST",
+            url: "gamestatus",
+            data: {
+                "action": "switch",
+                "game": "mary",
+                "status": "0"
+            },
+            success: function (e) {
+                Swal.fire(
+                    "小瑪莉現狀為:關閉",
+                    '',
+                    'warning'
+                ).then((result) => {
+                    window.location.href = "manager";
+                })
             }
         });
     })

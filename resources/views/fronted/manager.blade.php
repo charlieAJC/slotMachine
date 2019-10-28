@@ -24,6 +24,9 @@
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
+    {{-- sweet alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
     <script src="js/fronted/manager.js"></script>
     <script src="js/fronted/index.js"></script>
     <script src="js/fronted/logout.js"></script>
@@ -75,8 +78,12 @@
     <div id="game" class="tabcontent">
         <h3>上下架</h3><label ></label>
         <p id="slotStatus"></p>
-        <button class="btn btn-primary" id="slotOpen">開啟</button>
-        <button class="btn btn-danger" id="slotClose">關閉</button>
+        <button class="btn btn-primary" id="slotOpen" style="display:none">開啟</button>
+        <button class="btn btn-danger" id="slotClose" style="display:none">關閉</button>
+
+        <p id="maryStatus"></p>
+        <button class="btn btn-primary" id="maryOpen" style="display:none">開啟</button>
+        <button class="btn btn-danger" id="maryClose" style="display:none">關閉</button>
     </div>
     
 </div>

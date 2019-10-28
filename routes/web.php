@@ -64,8 +64,9 @@ Route::group(['middleware'=>'Permission'],function(){
 
     // 管理者頁面
     Route::group(['middleware'=>'Manager'],function(){
-        // 測試用
+        // 畫面呈現
         Route::get('/manager', function () {return view('fronted.Manager');});
+        // 資料讀取
         Route::post('/manager', "ManagerController@manager");
         // 開啟/關閉遊戲
         Route::post('/gamestatus', "ManagerController@switchstatus");
@@ -78,8 +79,8 @@ Route::group(['middleware'=>'Permission'],function(){
     Route::get('/buy', function () {return view('fronted.buy');});
     Route::post('/buy',"BuyController@buy");
     // 拉霸機
-    Route::get('/slot', function () {return view('slot.slot');});
-    // Route::get('/slot', "SlotController@slot");
+    // Route::get('/slot', function () {return view('slot.slot');});
+    Route::get('/slot', "SlotController@status");
     Route::post('/slot', "SlotController@slot");
     // 小瑪莉
     Route::get('/LittleMary', function () {return view('Marry.Marry');});

@@ -15,6 +15,7 @@
     <!-- Custom styles for this template -->
     <link href="css/fronted/style.css" rel="stylesheet">
     {{-- <script src="jquery/jquery.min.js"></script> --}}
+    <link href="css/fronted/buy.css" rel="stylesheet">
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -22,69 +23,6 @@
     <script src="js/fronted/buy.js"></script>
     <script src="js/fronted/index.js"></script>
     <script src="js/fronted/logout.js"></script>
-
-    <style>
-        #bodydiv {
-            position: relative;
-        }
-
-        #jkoleftdiv {
-            width: 50%;
-            float: left;
-            padding: 20px;
-        }
-
-        #buycontent {
-            width: 50%;
-            float: left;
-            padding: 20px;
-        }
-
-        #QRdiv {
-            width: 50%;
-            float: left;
-            text-align: center;
-            display: none;
-            padding: 20px;
-        }
-
-        #QRtext {
-            text-align: center;
-        }
-
-        #QRcodetext2rd {
-            text-align: center;
-        }
-
-        #QRcode {
-            width: 200px;
-            height: 200px;
-            text-align: center;
-        }
-
-        #QRdescript {
-            text-align: center;
-            color: gray;
-        }
-
-        #imgdiv>ul>li {
-            background-color: #5bc0de;
-            margin: 10px;
-            border-radius: 20px;
-        }
-
-        #storeway {
-            font-weight: bold;
-        }
-
-        .paytitle {
-            font-weight: bold;
-        }
-
-        .imgborder {
-            border: 2px red solid;
-        }
-    </style>
 </head>
 
 <body>
@@ -235,7 +173,7 @@
                         </div>
 
                         <div>
-                            <div style="width:50%;float:left;padding:20px">
+                            <div class="helf">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -273,7 +211,7 @@
                                 </table>
                             </div>
 
-                            <div style="width:50%;float:left;padding:20px" id="chtbuycontent">
+                            <div class="helf" id="chtbuycontent">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -295,7 +233,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <div class="form-group" style="height:90px">
+                                                <div class="form-group phoneletter">
                                                     <label>中華電信手機門號</label>
                                                     <div class="input-group mb-3" style="margin-bottom:0px !important ">
 
@@ -315,12 +253,12 @@
                                                 </div>
 
 
-                                                <div class="form-group" style="height:90px">
+                                                <div class="form-group phoneletter">
                                                     <label>輸入您所收到的簡訊驗證碼</label>
                                                     <div class="input-group mb-3 "
                                                         style="margin-bottom:0px !important ">
-                                                        <input type="text" class="form-control" id="verification"
-                                                            placeholder="驗證碼" style="text-align:left" required>
+                                                        <input type="text" class="form-control lettertext" id="verification"
+                                                            placeholder="驗證碼" required>
                                                     </div>
                                                     <small id="verificationerror"></small>
                                                 </div>
@@ -357,7 +295,7 @@
                         </div>
 
                         <div>
-                            <div style="width:50%;float:left;padding:20px">
+                            <div class="helf">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -395,7 +333,7 @@
                                 </table>
                             </div>
 
-                            <div style="width:50%;float:left;padding:20px" id="farpassbuycontent">
+                            <div class="helf" id="farpassbuycontent">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -417,7 +355,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <div class="form-group" style="height:90px">
+                                                <div class="form-group phoneletter">
                                                     <label>遠傳電信手機門號</label>
                                                     <div class="input-group mb-3" style="margin-bottom:0px !important ">
 
@@ -437,12 +375,12 @@
                                                 </div>
 
 
-                                                <div class="form-group" style="height:90px">
+                                                <div class="form-group phoneletter">
                                                     <label>輸入您所收到的簡訊驗證碼</label>
                                                     <div class="input-group mb-3 "
                                                         style="margin-bottom:0px !important ">
-                                                        <input type="text" class="form-control" id="farpassverification"
-                                                            placeholder="驗證碼" style="text-align:left" required>
+                                                        <input type="text" class="form-control lettertext" id="farpassverification"
+                                                            placeholder="驗證碼" required>
                                                     </div>
                                                     <small id="farpassverificationerror"></small>
                                                 </div>
@@ -479,7 +417,7 @@
                         </div>
 
                         <div>
-                            <div style="width:50%;float:left;padding:20px">
+                            <div class="helf">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -519,7 +457,7 @@
                                 </table>
                             </div>
 
-                            <div style="width:50%;float:left;padding:20px" id="taiwanmobilebuycontent">
+                            <div class="helf" id="taiwanmobilebuycontent">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -541,7 +479,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <div class="form-group" style="height:90px">
+                                                <div class="form-group phoneletter">
                                                     <label>台哥大電信手機門號</label>
                                                     <div class="input-group mb-3" style="margin-bottom:0px !important ">
 
@@ -562,13 +500,13 @@
                                                 </div>
 
 
-                                                <div class="form-group" style="height:90px">
+                                                <div class="form-group phoneletter">
                                                     <label>輸入您所收到的簡訊驗證碼</label>
                                                     <div class="input-group mb-3 "
                                                         style="margin-bottom:0px !important ">
-                                                        <input type="text" class="form-control"
+                                                        <input type="text" class="form-control lettertext"
                                                             id="taiwanmobileverification" placeholder="驗證碼"
-                                                            style="text-align:left" required>
+                                                            required>
                                                     </div>
                                                     <small id="taiwanmobileverificationerror"></small>
                                                 </div>

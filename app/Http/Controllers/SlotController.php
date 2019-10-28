@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Stamp;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class SlotController extends Controller
@@ -14,7 +15,10 @@ class SlotController extends Controller
     // 確認遊戲開啟/關閉
     public function status(Request $request){
         $status=Game::where('GameName', 'SlotMachine')->pluck('GameStatus');
-        echo $status[0];
+        // echo $status[0];
+        if($status[0] == 1) {
+            return view('slot.slot');
+        }
     }
     
     public function slot(Request $request){
@@ -98,7 +102,7 @@ class SlotController extends Controller
                     // $name = User::select('GameCoin')->where('Account', $memberAccount)->first();
                     $arr["game"] = "W";
                     $arr["win"] = $win;
-                    $arr["coin"] = $coin[0] + $win;
+                    $arr["coin"] = $coin[0] + $win -$cost;
                     User::where('Account', $memberAccount)->update(array('GameCoin' => $arr["coin"]));
 
                     $Account = Session::get('account');
@@ -112,6 +116,7 @@ class SlotController extends Controller
                         'GetCoin' => $win,
                         'GameCoin' => $coin[0] - $cost + $win
                     ]);
+                    $arr["msg"] = 1;
                     echo json_encode($arr);
                 } else {
                     $arr["game"] = "L";
@@ -128,18 +133,22 @@ class SlotController extends Controller
                         'GameName' => 'SlotMachine',
                         'BetCoin' => $cost,
                         'GetCoin' => 0,
-                        'GameCoin' => $arr["coin"]
+                        'GameCoin' => $coin[0] - $cost,
                     ]);
+
+                    $arr["msg"] = 1;
                     echo json_encode($arr);
-
                 }
-
                 // echo var_dump($arr);
             } else {
-                echo "Oops";
+                // 籌碼超過帳號餘額
+                $arr["msg"] = -1;
+                echo json_encode($arr);
             }
         } else if ($status[0] == 0){
-            return view('fronted.index');
+            // 遊戲到一半維修
+            $arr["msg"] = 0;
+            echo json_encode($arr);
         }
     }
 }

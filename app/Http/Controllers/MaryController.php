@@ -99,7 +99,7 @@ class MaryController extends Controller
             'carrot'=>[1,12,15,24,26],
             );
         //水果種類賠率 [$pineapple,$watermelon,$grape,$strawberry,$orange,$cherry,$tomato,$cranberry,$carrot]
-        $fruitodds=[10,6,5,4,3.5,3,2.5,2,1.5];
+        $fruitodds=[20,12,10,8,7,6,5,4,3];
         $fruittype=array();
         $fruitarray=array();
         foreach($fruit as $u=>$k){
