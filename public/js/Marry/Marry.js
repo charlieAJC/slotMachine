@@ -159,7 +159,6 @@ function btnInsert() {
     })
 }
 
-
 // 鎖定/解鎖 開始&結束
 var isClick = false;
 function lockClick() {
