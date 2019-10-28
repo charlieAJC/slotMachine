@@ -166,7 +166,7 @@
         </p>
     </div>
     <!-- 投注區域結束 -->
-    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9">
+    <footer class="py-1 bg-dark fixed-bottom" style="opacity:0.9;position:relative">
         <div class="container">
             <div class="f-copyright" style="text-align:center;color:white;margin:15px;font-size:14px">
                 <span>&copy; Copyright Slot Machine - 2019 </span>
