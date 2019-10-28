@@ -64,6 +64,12 @@ class ManagerController extends Controller
 
         // $arr["loseMary"]=$loseMary;
         // echo typeOf($loseMary);
+
+        // 查詢遊戲的狀態
+        $slotStatus=Game::where('GameName', 'SlotMachine')->pluck('GameStatus');
+        $maryStatus=Game::where('GameName', 'LittleMary')->pluck('GameStatus');
+        $arr["slotStatus"] = $slotStatus[0];
+        $arr["maryStatus"] = $maryStatus[0];
         echo json_encode($arr);
 
         // $array=array("countMary"=>$countMary);
@@ -82,7 +88,6 @@ class ManagerController extends Controller
             if ($request->game == "slot"){
                 $result = Game::where('GameName', 'SlotMachine')->pluck('GameStatus');
                 echo $result[0];
-                
             }
         }
     }
@@ -92,6 +97,9 @@ class ManagerController extends Controller
         if ($request->action == "switch"){
             if ($request->game == "slot"){
                 $result = Game::where('GameID', '1')->update(['GameStatus' => $request->status]);
+                echo $result;
+            } else if ($request->game == "mary"){
+                $result = Game::where('GameID', '2')->update(['GameStatus' => $request->status]);
                 echo $result;
             }
         }

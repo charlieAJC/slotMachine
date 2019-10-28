@@ -75,8 +75,12 @@
     <div id="game" class="tabcontent">
         <h3>上下架</h3><label ></label>
         <p id="slotStatus"></p>
-        <button class="btn btn-primary" id="slotOpen">開啟</button>
-        <button class="btn btn-danger" id="slotClose">關閉</button>
+        <button class="btn btn-primary" id="slotOpen" style="display:none">開啟</button>
+        <button class="btn btn-danger" id="slotClose" style="display:none">關閉</button>
+
+        <p id="maryStatus"></p>
+        <button class="btn btn-primary" id="maryOpen" style="display:none">開啟</button>
+        <button class="btn btn-danger" id="maryClose" style="display:none">關閉</button>
     </div>
     
 </div>

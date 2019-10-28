@@ -107,7 +107,8 @@ $(document).ready(function(){
                         "cost" : $("#totalChip").text()
                     },
                     success: function(e){
-                        if(e == "Oops"){
+                        var data = JSON.parse(e);
+                        if(data["msg"] == -1){
                             // alert("over bet!");
                             Swal.fire(
                                 "餘額不足!",
@@ -116,11 +117,18 @@ $(document).ready(function(){
                             ).then((result) => {
                                 location.reload();
                             })
-                        } else {
+                        } else if (data["msg"] == 0){
+                            Swal.fire(
+                                "遊戲維修中",
+                                '稍後將回到主頁',
+                                'warning'
+                            ).then((result) => {
+                                window.location.href = "/";
+                            })
+                        } else if (data["msg"] == 1){
                             setFlag = 0;
                             timerFlag = setInterval(rollImg,50);
                             rollFlag = 1;
-                            var data = JSON.parse(e);
                             endImg = data;
                         }
                     }

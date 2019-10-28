@@ -231,7 +231,7 @@
         <div class="row">
             <div class="col-lg-2 col-sm-4 portfolio-item zoom">
                 <div class="card">
-                    <a href="slot" id="indexSlotBtn"><img class="card-img-top" src="img/fronted/game_1.jpg" alt=""></a>
+                    <a onclick="indexslot()"id="indexSlotBtn"><img class="card-img-top" src="img/fronted/game_1.jpg" alt=""></a>
                     <h4 class="card-title">拉霸機</h4>
                 </div>
             </div>
