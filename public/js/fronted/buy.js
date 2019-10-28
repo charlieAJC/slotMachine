@@ -23,13 +23,13 @@ $(document).ready(function () {
         var jkoarr = new Array();
         jkoarr[0] = 100;
         jkoarr[1] = 300;
-        $('input[type=radio][name="price"]').change(function () {
+        $('input[type=radio][name="jkoprice"]').change(function () {
 
             $("#QRdiv").hide();
             $("#buycontent").show();
 
-            var pricecoin = this.value;
-            jkoarr = pricecoin.split(',');
+            var jkopricecoin = this.value;
+            jkoarr = jkopricecoin.split(',');
 
             document.getElementById("pricetable").innerHTML = 'NT$ ' + jkoarr[0];
             document.getElementById("cointable").innerHTML = '遊戲幣 × ' + jkoarr[1];
@@ -75,31 +75,33 @@ $(document).ready(function () {
         var phonerule = /^09[0-9]{8}$/;
         $("#celphonenumber").blur(function () {
             if (phonerule.test($(this).val())) {
-                $('#phoneerror').text('')
-                $('#celphonenumber').css("border-color", "green")
+                $('#phoneerror').text('');
+                $('#celphonenumber').css("border-color", "green");
                 phoneFlag = true;
             } else {
-                $('#phoneerror').text('請輸入開頭為09的十位數字')
+                $('#phoneerror').text('請輸入開頭為09的十位數字');
                 $('#phoneerror').css({
                     "color": "red",
                     "font-size": "0.8rem"
-                })
-                $('#celphonenumber').css("border-color", "red")
+                });
+                $('#celphonenumber').css("border-color", "red");
+                phoneFlag = false;
             }
         })
         var verificationrule = /^[0-9]{4}$/;
         $("#verification").blur(function () {
             if (verificationrule.test($(this).val())) {
-                $('#verificationerror').text('')
-                $('#verification').css("border-color", "green")
+                $('#verificationerror').text('');
+                $('#verification').css("border-color", "green");
                 verificationFlag = true;
             } else {
-                $('#verificationerror').text('請輸入長度為四位的數字')
+                $('#verificationerror').text('請輸入長度為四位的數字');
                 $('#verificationerror').css({
                     "color": "red",
                     "font-size": "0.8rem"
-                })
-                $('#verification').css("border-color", "red")
+                });
+                $('#verification').css("border-color", "red");
+                verificationFlag = false;
             }
         })
         //勾選同意才可點確認
@@ -118,10 +120,10 @@ $(document).ready(function () {
         var chtarr = new Array();
         chtarr[0] = 100;
         chtarr[1] = 300;
-        $('input[type=radio][name="price"]').change(function () {
+        $('input[type=radio][name="chtprice"]').change(function () {
             var arr = new Array();
-            var pricecoin = this.value;
-            chtarr = pricecoin.split(',');
+            var chtpricecoin = this.value;
+            chtarr = chtpricecoin.split(',');
 
             document.getElementById("chtpricetable").innerHTML = "NT$ " + chtarr[0];
             document.getElementById("chtcointable").innerHTML = "遊戲幣 × " + chtarr[1];
@@ -171,16 +173,17 @@ $(document).ready(function () {
         var farpassphonerule = /^09[0-9]{8}$/;
         $("#farpasscelphone").blur(function () {
             if (farpassphonerule.test($(this).val())) {
-                $('#farpassphoneerror').text('')
-                $('#farpasscelphone').css("border-color", "green")
+                $('#farpassphoneerror').text('');
+                $('#farpasscelphone').css("border-color", "green");
                 farpassphoneFlag = true;
             } else {
-                $('#farpassphoneerror').text('請輸入開頭為09的十位數字')
+                $('#farpassphoneerror').text('請輸入開頭為09的十位數字');
                 $('#farpassphoneerror').css({
                     "color": "red",
                     "font-size": "0.8rem"
-                })
-                $('#farpasscelphone').css("border-color", "red")
+                });
+                $('#farpasscelphone').css("border-color", "red");
+                farpassphoneFlag = false;
             }
         })
         var farpassverificationrule = /^[0-9]{4}$/;
@@ -196,6 +199,7 @@ $(document).ready(function () {
                     "font-size": "0.8rem"
                 })
                 $('#farpassverification').css("border-color", "red")
+                farpassverificationFlag = false;
             }
         })
         //勾選同意才可點確認
@@ -210,12 +214,12 @@ $(document).ready(function () {
         var farpassarr = new Array();
         farpassarr[0] = 100;
         farpassarr[1] = 300;
-        $('input[type=radio][name="price"]').change(function () {
-            var pricecoin = this.value;
-            farpassarr = pricecoin.split(',');
+        $('input[type=radio][name="farprice"]').change(function () {
+            var farpricecoin = this.value;
+            farpassarr = farpricecoin.split(',');
 
-            document.getElementById("farpasspricetable").innerHTML = "NT$ " + chtarr[0];
-            document.getElementById("farpasscointable").innerHTML = "遊戲幣 × " + chtarr[1];
+            document.getElementById("farpasspricetable").innerHTML = "NT$ " + farpassarr[0];
+            document.getElementById("farpasscointable").innerHTML = "遊戲幣 × " + farpassarr[1];
 
         })
         //完成遠傳電信送資料給後端
@@ -262,31 +266,33 @@ $(document).ready(function () {
         var taiwanmobilephonerule = /^09[0-9]{8}$/;
         $("#taiwanmobilecelphone").blur(function () {
             if (taiwanmobilephonerule.test($(this).val())) {
-                $('#taiwanmobilephoneerror').text('')
-                $('#taiwanmobilecelphone').css("border-color", "green")
+                $('#taiwanmobilephoneerror').text('');
+                $('#taiwanmobilecelphone').css("border-color", "green");
                 taiwanmobilephoneFlag = true;
             } else {
-                $('#taiwanmobilephoneerror').text('請輸入開頭為09的十位數字')
+                $('#taiwanmobilephoneerror').text('請輸入開頭為09的十位數字');
                 $('#taiwanmobilephoneerror').css({
                     "color": "red",
                     "font-size": "0.8rem"
-                })
-                $('#taiwanmobilecelphone').css("border-color", "red")
+                });
+                $('#taiwanmobilecelphone').css("border-color", "red");
+                taiwanmobilephoneFlag = false;
             }
         })
         var taiwanmobileverificationrule = /^[0-9]{4}$/;
         $("#taiwanmobileverification").blur(function () {
             if (taiwanmobileverificationrule.test($(this).val())) {
-                $('#taiwanmobileverificationerror').text('')
-                $('#taiwanmobileverification').css("border-color", "green")
+                $('#taiwanmobileverificationerror').text('');
+                $('#taiwanmobileverification').css("border-color", "green");
                 taiwanmobileverificationFlag = true;
             } else {
-                $('#taiwanmobileverificationerror').text('請輸入長度為四位的數字')
+                $('#taiwanmobileverificationerror').text('請輸入長度為四位的數字');
                 $('#taiwanmobileverificationerror').css({
                     "color": "red",
                     "font-size": "0.8rem"
-                })
-                $('#taiwanmobileverification').css("border-color", "red")
+                });
+                $('#taiwanmobileverification').css("border-color", "red");
+                taiwanmobileverificationFlag = false;
             }
         })
         //勾選同意才可點確認
@@ -301,9 +307,9 @@ $(document).ready(function () {
         var taiwanmobilearr = new Array();
         taiwanmobilearr[0] = 100;
         taiwanmobilearr[1] = 300;
-        $('input[type=radio][name="price"]').change(function () {
-            var pricecoin = this.value;
-            taiwanmobilearr = pricecoin.split(',');
+        $('input[type=radio][name="taiprice"]').change(function () {
+            var taipricecoin = this.value;
+            taiwanmobilearr = taipricecoin.split(',');
 
             document.getElementById("taiwanmobilepricetable").innerHTML = "NT$ " + taiwanmobilearr[0];
             document.getElementById("taiwanmobilecointable").innerHTML = "遊戲幣 × " + taiwanmobilearr[1];

@@ -83,28 +83,28 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="radio" name="price" id="jko100" value="100,300"
+                                            <td><input type="radio" name="jkoprice" id="jko100" value="100,300"
                                                     checked><label for="jko100">NT$ 100</label></td>
                                             <td><label for="jko100">遊戲幣 × 300</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="jko250" value="250,800"><label
+                                            <td><input type="radio" name="jkoprice" id="jko250" value="250,800"><label
                                                     for="jko250">NT$ 250</label></td>
                                             <td><label for="jko250">遊戲幣 × 800</label></td>
 
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="jko500" value="500,1700"><label
+                                            <td><input type="radio" name="jkoprice" id="jko500" value="500,1700"><label
                                                     for="jko500">NT$ 500</label></td>
                                             <td><label for="jko500">遊戲幣 × 1700</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="jko1000" value="1000,3500"><label
+                                            <td><input type="radio" name="jkoprice" id="jko1000" value="1000,3500"><label
                                                     for="jko1000">NT$1000</label></td>
                                             <td><label for="jko1000">遊戲幣 × 3500</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="jko2500" value="2500,8000"><label
+                                            <td><input type="radio" name="jkoprice" id="jko2500" value="2500,10000"><label
                                                     for="jko2500">NT$2500</label></td>
                                             <td><label for="jko2500">遊戲幣 × 10000</label></td>
                                         </tr>
@@ -183,27 +183,27 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="radio" name="price" id="cht100" value="100,300"
+                                            <td><input type="radio" name="chtprice" id="cht100" value="100,300"
                                                     checked><label for="cht100">NT$ 100</label></td>
                                             <td><label for="cht100">遊戲幣 × 300</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="cht250" value="250,800"><label
+                                            <td><input type="radio" name="chtprice" id="cht250" value="250,800"><label
                                                     for="cht250">NT$ 250</label></td>
                                             <td><label for="cht250">遊戲幣 × 800</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="cht500" value="500,1700"><label
+                                            <td><input type="radio" name="chtprice" id="cht500" value="500,1700"><label
                                                     for="cht500">NT$ 500</label></td>
                                             <td><label for="cht500">遊戲幣 × 1700</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="cht1000" value="1000,3500"><label
+                                            <td><input type="radio" name="chtprice" id="cht1000" value="1000,3500"><label
                                                     for="cht1000">NT$ 1000</label></td>
                                             <td><label for="cht1000">遊戲幣 × 3500</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="cht2500" value="2500,8000"><label
+                                            <td><input type="radio" name="chtprice" id="cht2500" value="2500,10000"><label
                                                     for="cht2500">NT$ 2500</label></td>
                                             <td><label for="cht2500">遊戲幣 × 10000</label></td>
                                         </tr>
@@ -289,7 +289,7 @@
                 {{-- farpass --}}
                 <div id="farpass" class="tab-pane fade">
                     <form>
-                        <div class="paytitle">遠傳手機</div>
+                        <div class="paytitle">遠傳電信手機</div>
                         <div>
                             <p id="buyDesc">輸入您的手機號碼，系統將發送驗證碼至您的手機號碼，填入驗證碼後在頁面上按下「確定」按鈕，即完成流程並獲得遊戲幣。</p>
                         </div>
@@ -305,28 +305,28 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="radio" name="price" id="farpass100" value="100,300"
+                                            <td><input type="radio" name="farprice" id="farpass100" value="100,300"
                                                     checked><label for="farpass100">NT$ 100</label></td>
                                             <td><label for="farpass100">遊戲幣 × 300</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="farpass250" value="250,800"><label
+                                            <td><input type="radio" name="farprice" id="farpass250" value="250,800"><label
                                                     for="farpass250">NT$ 250</label></td>
                                             <td><label for="farpass250">遊戲幣 × 800</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="farpass500" value="500,1700"><label
+                                            <td><input type="radio" name="farprice" id="farpass500" value="500,1700"><label
                                                     for="farpass500">NT$ 500</label></td>
                                             <td><label for="farpass500">遊戲幣 × 1700</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="farpass1000"
+                                            <td><input type="radio" name="farprice" id="farpass1000"
                                                     value="1000,3500"><label for="farpass1000">NT$ 1000</label></td>
                                             <td><label for="farpass1000">遊戲幣 × 3500</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="farpass2500"
-                                                    value="2500,8000"><label for="farpass2500">NT$ 2500</label></td>
+                                            <td><input type="radio" name="farprice" id="farpass2500"
+                                                    value="2500,10000"><label for="farpass2500">NT$ 2500</label></td>
                                             <td><label for="farpass2500">遊戲幣 × 10000</label></td>
                                         </tr>
                                     </tbody>
@@ -427,29 +427,29 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="radio" name="price" id="taiwanmobile100" value="100,300"
+                                            <td><input type="radio" name="taiprice" id="taiwanmobile100" value="100,300"
                                                     checked><label for="taiwanmobile100">NT$ 100</label></td>
                                             <td><label for="taiwanmobile100">遊戲幣 × 300</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="taiwanmobile250"
+                                            <td><input type="radio" name="taiprice" id="taiwanmobile250"
                                                     value="250,800"><label for="taiwanmobile250">NT$ 250</label></td>
                                             <td><label for="taiwanmobile250">遊戲幣 × 800</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="taiwanmobile500"
+                                            <td><input type="radio" name="taiprice" id="taiwanmobile500"
                                                     value="500,1700"><label for="taiwanmobile500">NT$ 500</label></td>
                                             <td><label for="taiwanmobile500">遊戲幣 × 1700</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="taiwanmobile1000"
+                                            <td><input type="radio" name="taiprice" id="taiwanmobile1000"
                                                     value="1000,3500"><label for="taiwanmobile1000">NT$ 1000</label>
                                             </td>
                                             <td><label for="taiwanmobile1000">遊戲幣 × 3500</label></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="price" id="taiwanmobile2500"
-                                                    value="2500,8000"><label for="taiwanmobile2500">NT$ 2500</label>
+                                            <td><input type="radio" name="taiprice" id="taiwanmobile2500"
+                                                    value="2500,10000"><label for="taiwanmobile2500">NT$ 2500</label>
                                             </td>
                                             <td><label for="taiwanmobile2500">遊戲幣 × 10000</label></td>
                                         </tr>
