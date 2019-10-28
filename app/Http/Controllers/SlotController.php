@@ -14,10 +14,15 @@ class SlotController extends Controller
 {
     // 確認遊戲開啟/關閉
     public function status(Request $request){
-        $status=Game::where('GameName', 'SlotMachine')->pluck('GameStatus');
-        // echo $status[0];
-        if($status[0] == 1) {
-            return view('slot.slot');
+        // 
+        if(Session::has('account')){
+            $status=Game::where('GameName', 'SlotMachine')->pluck('GameStatus');
+            // echo $status[0];
+            if($status[0] == 1) {
+                return view('slot.slot');
+            }
+        } else {
+            return view('fronted.login');
         }
     }
     

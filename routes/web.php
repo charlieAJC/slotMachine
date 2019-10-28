@@ -54,6 +54,9 @@ Route::get('/contact', function () {
 });
 Route::post('/contact',"memberController@contact");
 
+// 確認遊戲狀態
+Route::get('/gamestatus', "ManagerController@checkstatus");
+
 Route::group(['middleware'=>'Permission'],function(){
     // 會員資料修改
     Route::get('/update', function () {return view('fronted.Update');});
@@ -71,17 +74,16 @@ Route::group(['middleware'=>'Permission'],function(){
         // 開啟/關閉遊戲
         Route::post('/gamestatus', "ManagerController@switchstatus");
     });
-    
-    // 確認遊戲狀態
-    Route::get('/gamestatus', "ManagerController@checkstatus");
 
     //儲值
     Route::get('/buy', function () {return view('fronted.buy');});
     Route::post('/buy',"BuyController@buy");
+
     // 拉霸機
     // Route::get('/slot', function () {return view('slot.slot');});
     Route::get('/slot', "SlotController@status");
     Route::post('/slot', "SlotController@slot");
+
     // 小瑪莉
     Route::get('/LittleMary', function () {return view('Marry.Marry');});
     Route::post('/LittleMary', "MaryController@test");

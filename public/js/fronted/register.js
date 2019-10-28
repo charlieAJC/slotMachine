@@ -84,10 +84,21 @@ $(document).ready(function () {
                 },
                 success: function (e) {
                     if (e == "success") {
-                        alert("註冊成功！");
-                        window.location.href = "login";
+                        swal.fire({
+                            type: 'success',
+                            title: '註冊成功！',
+                            text: '2秒後自動跳轉',
+                            timer: 2000
+                        }).then(
+                            function () {
+                                window.location.href = "login";
+                            }
+                        )
                     } else {
-                        alert("帳號已存在");
+                        Swal.fire({
+                            type: 'error',
+                            title: '帳號已存在!',
+                        })
                     }
                 }
             });

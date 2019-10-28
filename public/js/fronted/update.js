@@ -18,8 +18,14 @@ $(document).ready(function () {
                 // console.log(e);
                 // let msg = JSON.parse(e);
                 if (e == 1) {
-                    alert("修改成功！");
-                    window.location.href = "/";
+                    swal.fire({
+                        type: 'success',
+                        title: '修改成功！',
+                    }).then(
+                        function () {
+                            window.location.href = "/";
+                        }
+                    )
                 } else {
                     alert("哪裡錯了?");
                 }

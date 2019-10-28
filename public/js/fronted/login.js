@@ -66,13 +66,29 @@ $(document).ready(function () {
                     // console.log(e);
                     let msg = JSON.parse(e);
                     if (msg.status === 1) {
-                        alert("登入成功！");
-                        sessionStorage.setItem('account', msg.account);
-                        sessionStorage.setItem('permission', msg.permission);
-                        window.location.href = "/";
+                        swal.fire({
+                            type: 'success',
+                            title: '登入成功！',
+                            text: '2秒後自動跳轉',
+                            timer: 2000
+                        }).then(
+                            function () {
+                                sessionStorage.setItem('account', msg.account);
+                                sessionStorage.setItem('permission', msg.permission);
+                                window.location.href = "/";
+                            }
+                        )
                     } else {
-                        alert("帳號或密碼錯誤");
-                        $("#loginPassword").val("");
+                        // alert("帳號或密碼錯誤");
+                        // $("#loginPassword").val("");
+                        Swal.fire({
+                            type: 'error',
+                            title: '帳號或密碼錯誤!',
+                        }).then(
+                            function () {
+                                $("#loginPassword").val("");
+                            }
+                        )
                     }
                 }
             });

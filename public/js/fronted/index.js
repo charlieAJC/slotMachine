@@ -29,7 +29,11 @@ function indexslot(){
         url: "gamestatus?action=check&game=slot",
         success: function(e){
             if (e == "1"){
-                window.location.href = "slot";
+                if(sessionStorage.getItem('account') == ''){
+                    window.location.href = "login";
+                } else {
+                    window.location.href = "slot";
+                }
             } else if (e == "0"){
                 Swal.fire(
                     "遊戲維修中",
