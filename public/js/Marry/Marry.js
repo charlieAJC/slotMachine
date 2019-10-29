@@ -82,7 +82,7 @@ $(document).ready(function () {
             }
         },
         error: function () {
-            alert("遊戲目前維修中");
+            // alert("遊戲目前維修中");
             window.location = "/index";
         }
     })

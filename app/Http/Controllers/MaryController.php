@@ -11,13 +11,13 @@ use Session;
 
 class MaryController extends Controller
 {
-    function start(Request $request){
-        $status=Game::where('GameName', 'LittleMary')->value('GameStatus');
-        if($status == 1) {
-            return view('Marry.Marry');
-        }
+    // function start(Request $request){
+    //     $status=Game::where('GameName', 'LittleMary')->value('GameStatus');
+    //     if($status == 1) {
+    //         return view('Marry.Marry');
+    //     }
 
-    }
+    // }
     function test(Request $request){
         $status=Game::where('GameName', 'LittleMary')->value('GameStatus');
         if ($status == 1) {

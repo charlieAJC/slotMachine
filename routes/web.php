@@ -85,7 +85,7 @@ Route::group(['middleware'=>'Permission'],function(){
     Route::post('/slot', "SlotController@slot");
 
     // 小瑪莉
-    Route::get('/LittleMary', "MaryController@start");
+    Route::get('/LittleMary', function () {return view('Marry.Marry');});
     Route::post('/LittleMary', "MaryController@test");
 
 });
