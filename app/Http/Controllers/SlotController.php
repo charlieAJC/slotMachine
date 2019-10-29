@@ -20,6 +20,8 @@ class SlotController extends Controller
             // echo $status[0];
             if($status[0] == 1) {
                 return view('slot.slot');
+            } else if ($status[0] == 0){
+                return view('fronted.index');
             }
         } else {
             return view('fronted.login');
