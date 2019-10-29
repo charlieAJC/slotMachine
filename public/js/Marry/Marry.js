@@ -83,6 +83,7 @@ $(document).ready(function () {
         },
         error: function () {
             alert("遊戲目前維修中");
+            window.location = "/index";
         }
     })
 });
@@ -155,6 +156,7 @@ function btnInsert() {
         },
         error:function(){
             alert("遊戲目前維修中");
+            history.go(-1);
         }
     })
 }
@@ -266,6 +268,7 @@ function btnStart() {
             },
             error:function(){
                 alert("遊戲目前維修中");
+                history.go(-1);
             }
         })
     } else {
