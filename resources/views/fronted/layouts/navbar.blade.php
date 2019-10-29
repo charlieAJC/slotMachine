@@ -37,7 +37,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="manager" style="color:red; display:none;" id="manager">管理者</a>
                         <a class="dropdown-item" href="update">更改個人資料</a>
-                        <a class="dropdown-item" href="" id="navLogout">登出</a>
+                        <a class="dropdown-item" id="navLogout">登出</a>
                     </div>
                 </li>
                 {{-- 登入成功才會顯示的下拉式選單 --}}

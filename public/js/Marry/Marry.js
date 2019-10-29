@@ -95,7 +95,11 @@ function increse(i) {
         document.getElementById(Id).value = parseInt(document.getElementById(Id).value) + increseMoney;
         coin.value = coin.value - increseMoney;
     } else {
-        alert("請投幣");
+        // alert("請投幣");
+        swal.fire({
+            type: 'warning',
+            title: '請投幣',
+        })
     }
 }
 
@@ -146,7 +150,11 @@ function btnInsert() {
         success: function (response) {
             insertMoney = parseInt(response["need"]);
             if (insertMoney == 0) {
-                alert("帳戶餘額不足請儲值");
+                // alert("帳戶餘額不足請儲值");
+                swal.fire({
+                    type: 'warning',
+                    title: '帳戶餘額不足請儲值',
+                })
             }
             coin.value = parseInt(coin.value) + insertMoney;
             lockInsert();
@@ -155,7 +163,11 @@ function btnInsert() {
             insertMoney = 1000;
         },
         error:function(){
-            alert("遊戲目前維修中");
+            // alert("遊戲目前維修中");
+            swal.fire({
+                type: 'warning',
+                title: '遊戲目前維修中',
+            })
             history.go(-1);
         }
     })
@@ -267,12 +279,20 @@ function btnStart() {
                 }, 20);
             },
             error:function(){
-                alert("遊戲目前維修中");
+                // alert("遊戲目前維修中");
+                swal.fire({
+                    type: 'warning',
+                    title: '遊戲目前維修中',
+                })
                 history.go(-1);
             }
         })
     } else {
         lockClick();
-        alert("請下注");
+        // alert("請下注");
+        swal.fire({
+            type: 'warning',
+            title: '請下注',
+        })
     }
 }
